@@ -323,7 +323,22 @@
       
         
           
-            
+            <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ol>
+<li>HTTP(HyperText Transfer Protocol), 超文本传输协议。</li>
+<li>HTTPS(HyperText Transfer Protocol Secure), 超文本传输安全协议。</li>
+<li>SPDY, 一种开放的网络传输协议，由Google开发，用来传输网页内容。基于传输控制协议(TCP)的应用层协议。SPDY也就是HTTP/2的前身。</li>
+</ol>
+<h3 id="HTTP与HTTPS的区别"><a href="#HTTP与HTTPS的区别" class="headerlink" title="HTTP与HTTPS的区别"></a>HTTP与HTTPS的区别</h3><ol>
+<li>HTTP协议运行在TCP之上，明文传输；HTTPS经由HTTP进行通讯，但利用SSL/TSL来加密封包。</li>
+<li>二者连接方式不同，HTTP端口号为80，HTTPS端口号为443。</li>
+</ol>
+<h3 id="HTTP2-0新特性"><a href="#HTTP2-0新特性" class="headerlink" title="HTTP2.0新特性"></a>HTTP2.0新特性</h3><ol>
+<li>Binary Format.HTTP1.x的协议解析是基于文本，HTTP2.0的协议解析采用的是二进制格式，实现方便且健壮。</li>
+<li>MultiPlexing.多路复用，即连接共享，每一个request都是用作连接共享机制的。一个request对应一个id，这样一个连接上可以有多个request，每个连接的request可以随机的混在一起，接收方可以根据request的id将request归属到各自不同的服务端请求里。</li>
+<li>Header Compression.HTTP1.x的header带有大量信息，而且每次都要重复发送，HTTP2.0使用encoder来减少需要传输的header大小，通讯双方各自缓存一份header fields表，既避免了重复header的传输，又减少了需要传输的大小。</li>
+<li>Server Push.服务端推送。</li>
+</ol>
+
           
         
       
