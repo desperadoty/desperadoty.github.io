@@ -329,12 +329,12 @@
 </ul>
 <p>2018美团笔试<br>String s = new String(“str”) + new String(“ing”)创建了几个String对象?</p>
 <p><strong>答案是5个String对象，1个StringBuilder对象</strong></p>
-<p>“str”和”ing”两个对象，在类加载阶段，JVM会在堆中这两个字符串对象实例，前提是这两个对象之前并没有出现过，然后常量池中会驻留这两个对象的引用，而对象本身并不在常量池中。</p>
+<p>“str”和”ing”两个对象，在类加载阶段，JVM会在堆中创建这两个字符串对象实例，前提是这两个对象之前并没有出现过，然后常量池中会驻留这两个对象的引用，而对象本身并不在常量池中。</p>
 <p>每出现一个new关键字，就会创建一个对象。所以又会有两个对象。</p>
 <p>最后字符串相加的操作，由于String对象不可变，所以这里创建了一个新的”string”对象，s指向这个对象的引用。</p>
 <p>以上，共有5个String对象。</p>
 <p>接下来是StringBuilder对象出现在哪里？</p>
-<p>原来，字符串相加的操作实际上创建了一个StringBuilder对象，然后每次调用它的append()方法，实现字符串相连，最后调用一个toString()方法，在toString()方法中会创建一个新的String对象并返回。</p>
+<p>原来，字符串相加的操作实际创建了一个StringBuilder对象，然后每次调用它的append()方法，实现字符串相连，最后调用一个toString()方法，在toString()方法中会创建一个新的String对象并返回。</p>
 
           
         
@@ -945,7 +945,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
