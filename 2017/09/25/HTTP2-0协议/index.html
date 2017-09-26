@@ -76,7 +76,7 @@
 <meta property="og:site_name" content="CharingCrossRoad">
 <meta property="og:description" content="基本概念 HTTP(HyperText Transfer Protocol), 超文本传输协议。 HTTPS(HyperText Transfer Protocol Secure), 超文本传输安全协议。 SPDY, 一种开放的网络传输协议，由Google开发，用来传输网页内容。基于传输控制协议(TCP)的应用层协议。SPDY也就是HTTP/2的前身。  HTTP与HTTPS的区别 HTTP协议运">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-26T03:54:06.000Z">
+<meta property="og:updated_time" content="2017-09-26T04:05:27.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTTP2.0协议">
 <meta name="twitter:description" content="基本概念 HTTP(HyperText Transfer Protocol), 超文本传输协议。 HTTPS(HyperText Transfer Protocol Secure), 超文本传输安全协议。 SPDY, 一种开放的网络传输协议，由Google开发，用来传输网页内容。基于传输控制协议(TCP)的应用层协议。SPDY也就是HTTP/2的前身。  HTTP与HTTPS的区别 HTTP协议运">
@@ -333,7 +333,9 @@
 <li>TCP面向连接，UDP面向无连接。</li>
 <li>TCP提供可靠的服务，保证数据的正确性和数据顺序，UDP提供不可靠的服务，可能会导致数据缺失，也不保证数据顺序。</li>
 <li>TCP用于传输大量数据（流模式），UDP用于传输少量数据（数据报模式）。</li>
-<li>TCP对系统资源要求多，UDP相对较少。<h3 id="HTTP2-0新特性"><a href="#HTTP2-0新特性" class="headerlink" title="HTTP2.0新特性"></a>HTTP2.0新特性</h3></li>
+<li>TCP对系统资源要求多，UDP相对较少。</li>
+</ol>
+<h3 id="HTTP2-0新特性"><a href="#HTTP2-0新特性" class="headerlink" title="HTTP2.0新特性"></a>HTTP2.0新特性</h3><ol>
 <li>Binary Format.HTTP1.x的协议解析是基于文本，HTTP2.0的协议解析采用的是二进制格式，实现方便且健壮。</li>
 <li>MultiPlexing.多路复用，即连接共享，每一个request都是用作连接共享机制的。一个request对应一个id，这样一个连接上可以有多个request，每个连接的request可以随机的混在一起，接收方可以根据request的id将request归属到各自不同的服务端请求里。该特性消除了同域名并发连接数限制。</li>
 <li>Header Compression.HTTP1.x的header带有大量信息，而且每次都要重复发送，HTTP2.0使用encoder来减少需要传输的header大小，通讯双方各自缓存一份header fields表，既避免了重复header的传输，又减少了需要传输的大小。</li>
