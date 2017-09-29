@@ -69,18 +69,18 @@
 
 
 
-<meta name="description" content="String是不可变对象，一旦被创建，值就不能修改，是线程安全的。String类被final修饰，所以不能被继承。 StringBuffer是可变对象。它对方法加了同步锁或者对调用的方法加了同步锁，所以也是线程安全的。  2018美团笔试String s = new String(“str”) + new String(“ing”)创建了几个String对象? 答案是5个String对象，1个S">
+<meta name="description" content="String是不可变对象，一旦被创建，值就不能修改，是线程安全的。String类被final修饰，所以不能被继承。 StringBuffer是可变对象。它对方法加了同步锁或者对调用的方法加了同步锁，所以也是线程安全的。 String重写了equals方法和hashCode方法 StringBuffer未重写equals方法和hashCode方法  2018美团笔试String s = new S">
 <meta name="keywords" content="Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java中String和StringBuffer的区别">
 <meta property="og:url" content="http://yoursite.com/2017/09/26/Java中String和StringBuffer的区别/index.html">
 <meta property="og:site_name" content="CharingCrossRoad">
-<meta property="og:description" content="String是不可变对象，一旦被创建，值就不能修改，是线程安全的。String类被final修饰，所以不能被继承。 StringBuffer是可变对象。它对方法加了同步锁或者对调用的方法加了同步锁，所以也是线程安全的。  2018美团笔试String s = new String(“str”) + new String(“ing”)创建了几个String对象? 答案是5个String对象，1个S">
+<meta property="og:description" content="String是不可变对象，一旦被创建，值就不能修改，是线程安全的。String类被final修饰，所以不能被继承。 StringBuffer是可变对象。它对方法加了同步锁或者对调用的方法加了同步锁，所以也是线程安全的。 String重写了equals方法和hashCode方法 StringBuffer未重写equals方法和hashCode方法  2018美团笔试String s = new S">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-26T07:46:09.000Z">
+<meta property="og:updated_time" content="2017-09-28T09:33:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java中String和StringBuffer的区别">
-<meta name="twitter:description" content="String是不可变对象，一旦被创建，值就不能修改，是线程安全的。String类被final修饰，所以不能被继承。 StringBuffer是可变对象。它对方法加了同步锁或者对调用的方法加了同步锁，所以也是线程安全的。  2018美团笔试String s = new String(“str”) + new String(“ing”)创建了几个String对象? 答案是5个String对象，1个S">
+<meta name="twitter:description" content="String是不可变对象，一旦被创建，值就不能修改，是线程安全的。String类被final修饰，所以不能被继承。 StringBuffer是可变对象。它对方法加了同步锁或者对调用的方法加了同步锁，所以也是线程安全的。 String重写了equals方法和hashCode方法 StringBuffer未重写equals方法和hashCode方法  2018美团笔试String s = new S">
 
 
 
@@ -323,6 +323,8 @@
         <ul>
 <li>String是不可变对象，一旦被创建，值就不能修改，是线程安全的。String类被final修饰，所以不能被继承。</li>
 <li>StringBuffer是可变对象。它对方法加了同步锁或者对调用的方法加了同步锁，所以也是线程安全的。</li>
+<li>String重写了equals方法和hashCode方法</li>
+<li>StringBuffer未重写equals方法和hashCode方法</li>
 </ul>
 <p>2018美团笔试<br>String s = new String(“str”) + new String(“ing”)创建了几个String对象?</p>
 <p><strong>答案是5个String对象，1个StringBuilder对象</strong></p>
@@ -445,12 +447,21 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
           
 
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              </a>
+            </div>
           
 
           
