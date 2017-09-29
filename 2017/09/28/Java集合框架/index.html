@@ -77,7 +77,7 @@
 <meta property="og:site_name" content="CharingCrossRoad">
 <meta property="og:description" content="集合类型主要分为Set(集), List(列表), Map(映射)。集合类存放的是对象的引用，而非对象本身。 ListList接口继承Collection接口，允许集合中存在重复项。List中的元素是有序的。 常用的实现类：  ArrayList LinkedList。 Vector  SetSet接口继承Collection接口，不允许集合中存在重复项。Set中的元素是无序的。 常用的实现类：">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-29T16:42:09.000Z">
+<meta property="og:updated_time" content="2017-09-29T16:44:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java集合框架">
 <meta name="twitter:description" content="集合类型主要分为Set(集), List(列表), Map(映射)。集合类存放的是对象的引用，而非对象本身。 ListList接口继承Collection接口，允许集合中存在重复项。List中的元素是有序的。 常用的实现类：  ArrayList LinkedList。 Vector  SetSet接口继承Collection接口，不允许集合中存在重复项。Set中的元素是无序的。 常用的实现类：">
@@ -342,7 +342,10 @@
 </ul>
 <p>根据key的HashCode值存储数据，根据key可以直接获取它的value，具有很快的访问速度。最多只允许一条记录的key为null(多条会覆盖)，允许多条记录的value为null。非同步。</p>
 <ul>
-<li>TreeMap<br>其中键值对默认按照key升序排序。使用Iterator遍历时得到的结果是有序的。不允许key的值为null。非同步。</li>
+<li>TreeMap</li>
+</ul>
+<p>其中键值对默认按照key升序排序。使用Iterator遍历时得到的结果是有序的。不允许key的值为null。非同步。</p>
+<ul>
 <li>LinkedHashMap<br>保存了记录的插入顺序，使用Iterator遍历时，先得到的记录肯定是先插入的。允许key和value为null。非同步。</li>
 <li>Hashtable<br>不允许key和value的值为null。同步。</li>
 </ul>
