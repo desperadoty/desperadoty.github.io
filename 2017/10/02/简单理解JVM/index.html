@@ -77,7 +77,7 @@
 <meta property="og:site_name" content="CharingCrossRoad">
 <meta property="og:description" content="JVM(Java Virtual Machine),一种能够运行Java字节码的虚拟机，以堆栈结构机器来进行实做。 源文件.java经编译器编译成字节码文件，字节码文件.class经解释器解释翻译成为可执行程序。JVM里面包含解释器。JVM屏蔽了与具体操作系统平台相关的信息，使得Java程序只需生成在Java虚拟机上运行的字节码，就可以在多种平台上不加修改的运行。 JVM的特征：  JVM是基于栈">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-10-02T15:04:47.000Z">
+<meta property="og:updated_time" content="2017-10-02T15:34:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="简单理解JVM">
 <meta name="twitter:description" content="JVM(Java Virtual Machine),一种能够运行Java字节码的虚拟机，以堆栈结构机器来进行实做。 源文件.java经编译器编译成字节码文件，字节码文件.class经解释器解释翻译成为可执行程序。JVM里面包含解释器。JVM屏蔽了与具体操作系统平台相关的信息，使得Java程序只需生成在Java虚拟机上运行的字节码，就可以在多种平台上不加修改的运行。 JVM的特征：  JVM是基于栈">
@@ -325,9 +325,11 @@
 <p>JVM的特征：</p>
 <ul>
 <li>JVM是基于栈的虚拟机<br>X86和ARM是基于寄存器运行的，而JVM是基于栈运行的。</li>
-<li>符号引用<br>除了原始数据类型以外的所有类型（类和接口）都是通过符号引用，而不是通过直接的内存地址引用。</li>
+<li>符号引用<br>除了原始数据类型以外的所有类型（类和接口）是通过符号引用，而不是直接通过内存地址引用。</li>
 <li>垃圾回收<br>类的实例是通过用户代码手动创建，但是通过垃圾回收自动销毁。</li>
 </ul>
+<p>垃圾回收GC(Garbage Collection)，是Java语言中一个显著的特点，使得Java程序员在编写程序的时候不再考虑内存管理。<strong>垃圾回收可以有效的防止内存泄露，有效的使用空闲的内存。</strong>其中，内存泄露是指该内存空间使用完毕之后未回收。</p>
+<p>对GC来说，当对象被创建的时候，GC就开始监控这个对象的地址、大小及使用情况。通常，GC采用有向图的方式记录和管理堆中的所有对象。通过这种方式确定那些对象是“可达的”，哪些对象是“不可达的”。当GC确定一些对象是“不可达”的时候，就可以回收这些内存空间。我们也可以通过手动执行System.gc()来通知GC运行，但是Java语言规范并不保证GC一定会执行。</p>
 
       
     </div>
