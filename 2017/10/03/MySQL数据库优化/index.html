@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="DataBase," />
 
 
 
@@ -69,17 +69,18 @@
 
 
 
-<meta name="description" content="better late than never">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="1.表的设计要规范。 2.适当建立索引，在频繁作为检索条件，更新较少的字段上建立索引，以提高查询速度。 3.分表查询，包括水平分割和垂直分割。 4.读写分离，读(read)，写(create、update、delete)。 5.建立存储过程。 数据库范式：1NF、2NF、3NF、BCNF、4NF、5NF（由高到低）。 规范化：一个低一级范式的关系模式通过模式分解可以转换为若干个高一级范式的关系模式">
+<meta name="keywords" content="DataBase">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL数据库优化">
+<meta property="og:url" content="http://yoursite.com/2017/10/03/MySQL数据库优化/index.html">
 <meta property="og:site_name" content="CharingCrossRoad">
-<meta property="og:description" content="better late than never">
+<meta property="og:description" content="1.表的设计要规范。 2.适当建立索引，在频繁作为检索条件，更新较少的字段上建立索引，以提高查询速度。 3.分表查询，包括水平分割和垂直分割。 4.读写分离，读(read)，写(create、update、delete)。 5.建立存储过程。 数据库范式：1NF、2NF、3NF、BCNF、4NF、5NF（由高到低）。 规范化：一个低一级范式的关系模式通过模式分解可以转换为若干个高一级范式的关系模式">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-23T07:43:31.000Z">
+<meta property="og:updated_time" content="2017-10-03T14:18:22.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="better late than never">
+<meta name="twitter:title" content="MySQL数据库优化">
+<meta name="twitter:description" content="1.表的设计要规范。 2.适当建立索引，在频繁作为检索条件，更新较少的字段上建立索引，以提高查询速度。 3.分表查询，包括水平分割和垂直分割。 4.读写分离，读(read)，写(create、update、delete)。 5.建立存储过程。 数据库范式：1NF、2NF、3NF、BCNF、4NF、5NF（由高到低）。 规范化：一个低一级范式的关系模式通过模式分解可以转换为若干个高一级范式的关系模式">
 
 
 
@@ -109,13 +110,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/03/MySQL数据库优化/"/>
 
 
 
 
 
-  <title>tags | CharingCrossRoad</title>
+  <title>MySQL数据库优化 | CharingCrossRoad</title>
   
 
 
@@ -240,40 +241,155 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/03/MySQL数据库优化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-	<h1 class="post-title" itemprop="name headline">tags</h1>
-
-
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="tag-cloud">
-            <div class="tag-cloud-title">
-                5 tags in total
-            </div>
-            <div class="tag-cloud-tags">
-              <a href="/tags/DataBase/" style="font-size: 18px; color: #8e8e8e">DataBase</a> <a href="/tags/Git/" style="font-size: 12px; color: #ccc">Git</a> <a href="/tags/IDE/" style="font-size: 12px; color: #ccc">IDE</a> <a href="/tags/Java/" style="font-size: 30px; color: #111">Java</a> <a href="/tags/Network/" style="font-size: 24px; color: #4f4f4f">Network</a>
-            </div>
-          </div>
+          <h1 class="post-title" itemprop="name headline">MySQL数据库优化</h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-03T20:05:08+08:00">
+                2017-10-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>1.表的设计要规范。</p>
+<p>2.适当建立索引，在频繁作为检索条件，更新较少的字段上建立索引，以提高查询速度。</p>
+<p>3.分表查询，包括水平分割和垂直分割。</p>
+<p>4.读写分离，读(read)，写(create、update、delete)。</p>
+<p>5.建立存储过程。</p>
+<p>数据库范式：1NF、2NF、3NF、BCNF、4NF、5NF（由高到低）。</p>
+<p>规范化：一个低一级范式的关系模式通过模式分解可以转换为若干个高一级范式的关系模式的集合。</p>
+<p>1NF: 每一个分量都是不可分割的数据项。</p>
+<p>2NF: 不存在非主属性对码的部分函数依赖。</p>
+<p>3NF: 不存在非主属性对码的传递函数依赖。</p>
+<p>BCNF: 决定因素都是码。不存在主属性对码的部分和传递函数依赖。</p>
+<p>4NF: 不存在多值依赖。</p>
+
       
     </div>
     
     
     
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/DataBase/" rel="tag"># DataBase</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/03/Redis安装及配置/" rel="next" title="Redis安装及配置">
+                <i class="fa fa-chevron-left"></i> Redis安装及配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -282,6 +398,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
