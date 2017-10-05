@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Java," />
+  <meta name="keywords" content="DataBase," />
 
 
 
@@ -69,18 +69,18 @@
 
 
 
-<meta name="description" content="集合类型主要分为Set(集), List(列表), Map(映射)。集合类存放的是对象的引用，而非对象本身。 ListList接口继承Collection接口，允许集合中存在重复项。List中的元素是有序的。 常用的实现类：  ArrayList可变大小的数组。   LinkedList是一种可以在任何位置进行高效的插入和删除操作的有序序列。  SetSet接口继承Collection接口，不允许">
-<meta name="keywords" content="Java">
+<meta name="description" content="数据库操作1.创建数据库mysql&amp;gt;CREATE DATABASE test; //创建test数据库 2.查看数据库mysql&amp;gt;SHOW DATABASES; //查看所有数据库 3.选择数据库mysql&amp;gt;USE DATABASE test; //使test成为当前默认数据库 4.删除数据库mysql&amp;gt;DROP DATABASE test; //删掉test数据库 5.备">
+<meta name="keywords" content="DataBase">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Java集合框架">
-<meta property="og:url" content="http://yoursite.com/2017/09/28/Java集合框架/index.html">
+<meta property="og:title" content="MySQL数据库基本操作">
+<meta property="og:url" content="http://yoursite.com/2017/10/05/数据库基本操作/index.html">
 <meta property="og:site_name" content="CharingCrossRoad">
-<meta property="og:description" content="集合类型主要分为Set(集), List(列表), Map(映射)。集合类存放的是对象的引用，而非对象本身。 ListList接口继承Collection接口，允许集合中存在重复项。List中的元素是有序的。 常用的实现类：  ArrayList可变大小的数组。   LinkedList是一种可以在任何位置进行高效的插入和删除操作的有序序列。  SetSet接口继承Collection接口，不允许">
+<meta property="og:description" content="数据库操作1.创建数据库mysql&amp;gt;CREATE DATABASE test; //创建test数据库 2.查看数据库mysql&amp;gt;SHOW DATABASES; //查看所有数据库 3.选择数据库mysql&amp;gt;USE DATABASE test; //使test成为当前默认数据库 4.删除数据库mysql&amp;gt;DROP DATABASE test; //删掉test数据库 5.备">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-29T17:29:48.000Z">
+<meta property="og:updated_time" content="2017-10-05T13:42:20.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Java集合框架">
-<meta name="twitter:description" content="集合类型主要分为Set(集), List(列表), Map(映射)。集合类存放的是对象的引用，而非对象本身。 ListList接口继承Collection接口，允许集合中存在重复项。List中的元素是有序的。 常用的实现类：  ArrayList可变大小的数组。   LinkedList是一种可以在任何位置进行高效的插入和删除操作的有序序列。  SetSet接口继承Collection接口，不允许">
+<meta name="twitter:title" content="MySQL数据库基本操作">
+<meta name="twitter:description" content="数据库操作1.创建数据库mysql&amp;gt;CREATE DATABASE test; //创建test数据库 2.查看数据库mysql&amp;gt;SHOW DATABASES; //查看所有数据库 3.选择数据库mysql&amp;gt;USE DATABASE test; //使test成为当前默认数据库 4.删除数据库mysql&amp;gt;DROP DATABASE test; //删掉test数据库 5.备">
 
 
 
@@ -110,13 +110,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/28/Java集合框架/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/05/数据库基本操作/"/>
 
 
 
 
 
-  <title>Java集合框架 | CharingCrossRoad</title>
+  <title>MySQL数据库基本操作 | CharingCrossRoad</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/28/Java集合框架/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/05/数据库基本操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yvette Young">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Java集合框架</h1>
+          <h1 class="post-title" itemprop="name headline">MySQL数据库基本操作</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-28T17:19:02+08:00">
-                2017-09-28
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-05T19:34:33+08:00">
+                2017-10-05
               </time>
             
 
@@ -320,28 +320,25 @@
       
 
       
-        <p>集合类型主要分为Set(集), List(列表), Map(映射)。<br>集合类存放的是对象的引用，而非对象本身。</p>
-<h3 id="List"><a href="#List" class="headerlink" title="List"></a>List</h3><p>List接口继承Collection接口，允许集合中存在重复项。List中的元素是有序的。</p>
-<p>常用的实现类：</p>
-<ul>
-<li>ArrayList<br>可变大小的数组。  </li>
-<li>LinkedList<br>是一种可以在任何位置进行高效的插入和删除操作的有序序列。</li>
-</ul>
-<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p>Set接口继承Collection接口，不允许集合中存在重复项。Set中的元素是无序的。</p>
-<p>常用的实现类：</p>
-<ul>
-<li>HashSet<br>按照哈希算法存取集合中的对象，存取速度比较快。允许包含值为null的元素，但最多只能有一个null元素。采用散列的存储方法，所以没有顺序，元素的插入顺序和输出顺序不一致。</li>
-<li>TreeSet<br>实现了SortedSet接口，能够对集合中的对象进行排序。</li>
-<li>LinkedHashSet<br>保存了元素的添加顺序，所以其中元素是有序的。</li>
-</ul>
-<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p>Map接口是一组成对的键-值对象，即所持有的是key-value pairs。Map中不允许有重复的key。</p>
-<p>常用的实现类：</p>
-<ul>
-<li>HashMap<br>根据key的HashCode值存储数据，根据key可以直接获取它的value，具有很快的访问速度。最多只允许一条记录的key为null(多条会覆盖)，允许多条记录的value为null。非同步。</li>
-<li>TreeMap<br>其中键值对默认按照key升序排序。使用Iterator遍历时得到的结果是有序的。不允许key的值为null。非同步。</li>
-<li>LinkedHashMap<br>保存了记录的添加顺序，使用Iterator遍历时，先得到的记录肯定是先添加的。允许key和value为null。非同步。</li>
-<li>Hashtable<br>不允许key和value的值为null。同步。</li>
-</ul>
+        <h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><p>1.创建数据库<br><code>mysql&gt;CREATE DATABASE test; //创建test数据库</code></p>
+<p>2.查看数据库<br><code>mysql&gt;SHOW DATABASES; //查看所有数据库</code></p>
+<p>3.选择数据库<br><code>mysql&gt;USE DATABASE test; //使test成为当前默认数据库</code></p>
+<p>4.删除数据库<br><code>mysql&gt;DROP DATABASE test; //删掉test数据库</code></p>
+<p>5.备份数据库</p>
+<p><code>mysqldump -u root -p test &gt; /home/bak.sql //备份test数据库</code><br><code>mysqldump -u root -p --databases db1 db2 db3 &gt; /home/bak.sql //备份多个数据库</code><br><code>mysqldump -u root -p -all-databases &gt; /home/bak.sql //备份所有数据库</code><br><code>cat bak.sql //查看备份文件是否与原来数据库一致</code></p>
+<p>6.还原数据库<br><code>mysql -u root -p test &lt; /home/bak.sql //执行备份文件进行恢复</code></p>
+<h3 id="数据表操作"><a href="#数据表操作" class="headerlink" title="数据表操作"></a>数据表操作</h3><p>1.创建数据表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysql&gt;CREATE TABLE IF NOT EXISTS student (</div><div class="line">        id INT(11),</div><div class="line">        name VARCHAR(20) NOT NULL,</div><div class="line">        courseId CHAR(3) NOT NULL,</div><div class="line">        PRIMARY KEY(id)</div><div class="line">    )ENGINE=InnoDB;</div></pre></td></tr></table></figure>
+<p>2.查看表结构<br><code>mysql&gt;SHOW COLUMNS FROM student; //查看student表的结构</code></p>
+<p>3.修改表结构<br><code>mysql&gt;ALTER TABLE student ADD CONSTRAINT FK_STU_COURSE FOREIGN KEY(courseId) REFERENCES course(id); //给student表添加外键约束</code></p>
+<p>4.重命名表<br><code>mysql&gt;RENAME TABLE student TO stu;</code></p>
+<p>5.删除表<br><code>mysql&gt;DROP TABLE IF EXISTS student;</code></p>
+<h3 id="SQL操作"><a href="#SQL操作" class="headerlink" title="SQL操作"></a>SQL操作</h3><p>1.新增记录<br><code>mysql&gt;INSERT INTO student(id,name,courseId) VALUES (&#39;14151106149&#39;,&#39;yvette&#39;,&#39;002&#39;);</code></p>
+<p>2.修改记录<br><code>mysql&gt;UPDATE student SET name = &#39;young&#39;; //所有记录都将被修改</code><br><code>mysql&gt;UPDATE student SET name = &#39;young&#39; WHERE id = &#39;14151106149&#39;; //一行记录被修改</code></p>
+<p>3.删除记录<br><code>mysql&gt;DELETE FROM student; //删除所有记录</code><br><code>mysql&gt;DELETE FROM student WHERE id =  &#39;14151106149&#39;; //删除一行记录</code></p>
+<p>4.查询记录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysql&gt;SELECT id,name,COUNT(courseId) AS totalCourse</div><div class="line">      FROM student</div><div class="line">      WHERE name IS NOT NULL</div><div class="line">      GROUP BY id,name</div><div class="line">      ORDER BY id,name DESC</div><div class="line">      HAVING COUNT(courseId) &gt; 0;</div></pre></td></tr></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><code>mysql&gt;source test.sql //执行test.sql文件</code></p>
 
       
     </div>
@@ -359,7 +356,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/DataBase/" rel="tag"># DataBase</a>
           
         </div>
       
@@ -372,8 +369,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/28/HTTP状态码及含义/" rel="next" title="HTTP状态码及含义">
-                <i class="fa fa-chevron-left"></i> HTTP状态码及含义
+              <a href="/2017/10/03/MySQL数据库优化/" rel="next" title="MySQL数据库优化">
+                <i class="fa fa-chevron-left"></i> MySQL数据库优化
               </a>
             
           </div>
@@ -382,8 +379,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/09/28/Java多线程/" rel="prev" title="Java多线程">
-                Java多线程 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/10/05/使用binlog恢复MySQL数据库/" rel="prev" title="使用binlog恢复MySQL数据库">
+                使用binlog恢复MySQL数据库 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -512,7 +509,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#List"><span class="nav-number">1.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set"><span class="nav-number">2.</span> <span class="nav-text">Set</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-number">3.</span> <span class="nav-text">Map</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库操作"><span class="nav-number">1.</span> <span class="nav-text">数据库操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据表操作"><span class="nav-number">2.</span> <span class="nav-text">数据表操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL操作"><span class="nav-number">3.</span> <span class="nav-text">SQL操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">4.</span> <span class="nav-text">其他</span></a></li></ol></div>
             
 
           </div>
