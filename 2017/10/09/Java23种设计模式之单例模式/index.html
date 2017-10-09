@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Network," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -69,18 +69,18 @@
 
 
 
-<meta name="description" content="当你输入一个网址的时候，实际会发生什么？  在浏览器中输入网址，按下回车  浏览器通过DNS查找域名的IP地址 DNS(Domain Name System)域名系统，因特网上作为域名和IP地址相互映射的一个分布式数据库，能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。通过主机名，最终得到对应的IP地址的过程叫做域名解析。  浏览器给WEB服务器发送一个HTTP请求 GET">
-<meta name="keywords" content="Network">
+<meta name="description" content="Java23种设计模式：Abstract Factory(抽象工厂模式)、Builder(建造者模式)、Factory Method(工厂方法模式)、Prototype(原始模型模式)、Singleton(单例模式)、Facade(门面模式)、Adapter(适配器模式)、Bridge(桥梁模式)、Composite(合成模式)、Decorator(装饰模式)、Flyweight(享元模式)、Pr">
+<meta name="keywords" content="Java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="当你输入一个网址的时候">
-<meta property="og:url" content="http://yoursite.com/2017/09/26/当你输入一个网址的时候/index.html">
+<meta property="og:title" content="Java23种设计模式之单例模式">
+<meta property="og:url" content="http://yoursite.com/2017/10/09/Java23种设计模式之单例模式/index.html">
 <meta property="og:site_name" content="CharingCrossRoad">
-<meta property="og:description" content="当你输入一个网址的时候，实际会发生什么？  在浏览器中输入网址，按下回车  浏览器通过DNS查找域名的IP地址 DNS(Domain Name System)域名系统，因特网上作为域名和IP地址相互映射的一个分布式数据库，能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。通过主机名，最终得到对应的IP地址的过程叫做域名解析。  浏览器给WEB服务器发送一个HTTP请求 GET">
+<meta property="og:description" content="Java23种设计模式：Abstract Factory(抽象工厂模式)、Builder(建造者模式)、Factory Method(工厂方法模式)、Prototype(原始模型模式)、Singleton(单例模式)、Facade(门面模式)、Adapter(适配器模式)、Bridge(桥梁模式)、Composite(合成模式)、Decorator(装饰模式)、Flyweight(享元模式)、Pr">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-09-26T12:49:47.000Z">
+<meta property="og:updated_time" content="2017-10-09T03:34:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="当你输入一个网址的时候">
-<meta name="twitter:description" content="当你输入一个网址的时候，实际会发生什么？  在浏览器中输入网址，按下回车  浏览器通过DNS查找域名的IP地址 DNS(Domain Name System)域名系统，因特网上作为域名和IP地址相互映射的一个分布式数据库，能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。通过主机名，最终得到对应的IP地址的过程叫做域名解析。  浏览器给WEB服务器发送一个HTTP请求 GET">
+<meta name="twitter:title" content="Java23种设计模式之单例模式">
+<meta name="twitter:description" content="Java23种设计模式：Abstract Factory(抽象工厂模式)、Builder(建造者模式)、Factory Method(工厂方法模式)、Prototype(原始模型模式)、Singleton(单例模式)、Facade(门面模式)、Adapter(适配器模式)、Bridge(桥梁模式)、Composite(合成模式)、Decorator(装饰模式)、Flyweight(享元模式)、Pr">
 
 
 
@@ -110,13 +110,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/26/当你输入一个网址的时候/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/10/09/Java23种设计模式之单例模式/"/>
 
 
 
 
 
-  <title>当你输入一个网址的时候 | CharingCrossRoad</title>
+  <title>Java23种设计模式之单例模式 | CharingCrossRoad</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/26/当你输入一个网址的时候/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/09/Java23种设计模式之单例模式/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yvette Young">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">当你输入一个网址的时候</h1>
+          <h1 class="post-title" itemprop="name headline">Java23种设计模式之单例模式</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-26T14:21:51+08:00">
-                2017-09-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-09T10:37:44+08:00">
+                2017-10-09
               </time>
             
 
@@ -320,34 +320,17 @@
       
 
       
-        <p>当你输入一个网址的时候，实际会发生什么？</p>
-<ol>
-<li><p>在浏览器中输入网址，按下回车</p>
-</li>
-<li><p>浏览器通过DNS查找域名的IP地址</p>
-<p>DNS(Domain Name System)域名系统，因特网上作为域名和IP地址相互映射的一个分布式数据库，能够使用户更方便的访问互联网，而不用去记住能够被机器直接读取的IP数串。通过主机名，最终得到对应的IP地址的过程叫做域名解析。</p>
-</li>
-<li><p>浏览器给WEB服务器发送一个HTTP请求</p>
-<p>GET请求定义了要读取的URL，也包含浏览器存储的该域名的cookies。在不同页面的请求中，cookies是与跟踪一个网站状态相匹配的键值。这样cookies会存储登录用户名，服务器分配的密码和一些用户设置等。cookies会以文本文档形式存储在客户机里，每次请求时发送给服务器。</p>
-</li>
-<li><p>服务器给浏览器一个301永久重定向响应</p>
-<p>页面永久性移走（301重定向）是一种非常重要的“自动转向”技术，是网址重定向最为可行的一种办法。当用户或搜索引擎向网站服务器发出浏览请求时，服务器返回的HTTP数据流中header的状态码的一种，表示本网页永久性转移到另一个地址。简单地说，301重定向会把不带www的地址转移到带www的网站地址。</p>
-</li>
-<li><p>浏览器跟踪重定向地址</p>
-<p> 浏览器知道正确的访问地址后，会向它发送一个新的GET请求。</p>
-</li>
-<li><p>服务器处理请求</p>
-</li>
-<li><p>服务器发回一个HTML响应</p>
-</li>
-<li><p>浏览器开始显示HTML</p>
-</li>
-<li><p>浏览器发送获取嵌入在HTML中的对象</p>
-</li>
-<li><p>浏览器发送异步（AJAX）请求</p>
-</li>
-</ol>
-<p><a href="http://igoro.com/archive/what-really-happens-when-you-navigate-to-a-url/" target="_blank" rel="external">参考英文原文</a><br><a href="http://www.cnblogs.com/wenanry/archive/2010/02/25/1673368.html" target="_blank" rel="external">参考中文翻译</a></p>
+        <p>Java23种设计模式：<br>Abstract Factory(抽象工厂模式)、Builder(建造者模式)、Factory Method(工厂方法模式)、Prototype(原始模型模式)、Singleton(单例模式)、Facade(门面模式)、Adapter(适配器模式)、Bridge(桥梁模式)、Composite(合成模式)、Decorator(装饰模式)、Flyweight(享元模式)、Proxy(代理模式)、Command(命令模式)、Interpreter(解释器模式)、Visitor(访问者模式)、Iterator(迭代子模式)、Mediator(调停者模式)、Memento(备忘录模式)、Observer(观察者模式)、State(状态模式)、Strategy(策略模式)、Template Method(模板方法模式)、Chain Of Responsibility(责任链模式)。</p>
+<p>单例模式：<br>确保一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。</p>
+<h6 id="饿汉式单例"><a href="#饿汉式单例" class="headerlink" title="饿汉式单例"></a>饿汉式单例</h6><p>饿汉式单例在单例类被加载时就实例化一个对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class Singleton &#123;</div><div class="line">    private static Singleton singleton = new Singleton();</div><div class="line">    private Singleton() &#123;&#125;</div><div class="line">    public static Singleton getInstance() &#123;</div><div class="line">        return singleton;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h6 id="懒汉式单例"><a href="#懒汉式单例" class="headerlink" title="懒汉式单例"></a>懒汉式单例</h6><p>懒汉式单例在调用getInstance方法时实例化对象。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public class Singleton &#123;</div><div class="line">    private static Singleton singleton;</div><div class="line">    private Singleton() &#123;&#125;</div><div class="line">    public static synchronized Singleton getInstance() &#123;</div><div class="line">        if(singleton == null)</div><div class="line">            singleton = new Singleton();</div><div class="line">        return singleton;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h6 id="单例模式的优点"><a href="#单例模式的优点" class="headerlink" title="单例模式的优点"></a>单例模式的优点</h6><ul>
+<li>只有一个可全局访问的对象，节省内存空间。</li>
+<li>避免频繁地创建和销毁对象，可以提高性能。</li>
+<li>避免对共享资源的多重占用。</li>
+</ul>
 
       
     </div>
@@ -365,7 +348,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Network/" rel="tag"># Network</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -378,8 +361,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/09/25/HTTP2-0协议/" rel="next" title="HTTP2.0协议">
-                <i class="fa fa-chevron-left"></i> HTTP2.0协议
+              <a href="/2017/10/07/Nginx负载均衡与反向代理/" rel="next" title="Nginx负载均衡与反向代理">
+                <i class="fa fa-chevron-left"></i> Nginx负载均衡与反向代理
               </a>
             
           </div>
@@ -387,10 +370,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/26/Java中String和StringBuffer的区别/" rel="prev" title="Java中String和StringBuffer的区别">
-                Java中String和StringBuffer的区别 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -442,8 +421,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -499,6 +487,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#饿汉式单例"><span class="nav-number">1.</span> <span class="nav-text">饿汉式单例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#懒汉式单例"><span class="nav-number">2.</span> <span class="nav-text">懒汉式单例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#单例模式的优点"><span class="nav-number">3.</span> <span class="nav-text">单例模式的优点</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
