@@ -325,11 +325,11 @@
           
             <p>Java23种设计模式：<br>Abstract Factory(抽象工厂模式)、Builder(建造者模式)、Factory Method(工厂方法模式)、Prototype(原始模型模式)、Singleton(单例模式)、Facade(门面模式)、Adapter(适配器模式)、Bridge(桥梁模式)、Composite(合成模式)、Decorator(装饰模式)、Flyweight(享元模式)、Proxy(代理模式)、Command(命令模式)、Interpreter(解释器模式)、Visitor(访问者模式)、Iterator(迭代子模式)、Mediator(调停者模式)、Memento(备忘录模式)、Observer(观察者模式)、State(状态模式)、Strategy(策略模式)、Template Method(模板方法模式)、Chain Of Responsibility(责任链模式)。</p>
 <p>单例模式：<br>确保一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。</p>
-<h6 id="饿汉式单例"><a href="#饿汉式单例" class="headerlink" title="饿汉式单例"></a>饿汉式单例</h6><p>饿汉式单例在单例类被加载时就实例化一个对象。</p>
+<h3 id="饿汉式单例"><a href="#饿汉式单例" class="headerlink" title="饿汉式单例"></a>饿汉式单例</h3><p>饿汉式单例在单例类被加载时就实例化一个对象。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class Singleton &#123;</div><div class="line">    private static Singleton singleton = new Singleton();</div><div class="line">    private Singleton() &#123;&#125;</div><div class="line">    public static Singleton getInstance() &#123;</div><div class="line">        return singleton;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h6 id="懒汉式单例"><a href="#懒汉式单例" class="headerlink" title="懒汉式单例"></a>懒汉式单例</h6><p>懒汉式单例在调用getInstance方法时实例化对象。</p>
+<h3 id="懒汉式单例"><a href="#懒汉式单例" class="headerlink" title="懒汉式单例"></a>懒汉式单例</h3><p>懒汉式单例在调用getInstance方法时实例化对象。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public class Singleton &#123;</div><div class="line">    private static Singleton singleton;</div><div class="line">    private Singleton() &#123;&#125;</div><div class="line">    public static synchronized Singleton getInstance() &#123;</div><div class="line">        if(singleton == null)</div><div class="line">            singleton = new Singleton();</div><div class="line">        return singleton;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h6 id="单例模式的优点"><a href="#单例模式的优点" class="headerlink" title="单例模式的优点"></a>单例模式的优点</h6><ul>
+<h3 id="单例模式的优点"><a href="#单例模式的优点" class="headerlink" title="单例模式的优点"></a>单例模式的优点</h3><ul>
 <li>只有一个可全局访问的对象，节省内存空间。</li>
 <li>避免频繁地创建和销毁对象，可以提高性能。</li>
 <li>避免对共享资源的多重占用。</li>
@@ -1128,6 +1128,9 @@
 <li>make test</li>
 <li>make install<br><img src="http://owsmors0l.bkt.clouddn.com/redis-server.png" alt=""></li>
 </ol>
+<h3 id="Redis配置"><a href="#Redis配置" class="headerlink" title="Redis配置"></a>Redis配置</h3><p>修改配置文件以开启进程守护模式</p>
+<p><code>sudo vim /usr/local/etc/redis.conf</code></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/redis%E5%BC%80%E5%90%AF%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B.png" alt=""></p>
 <h3 id="Redis常用命令"><a href="#Redis常用命令" class="headerlink" title="Redis常用命令"></a>Redis常用命令</h3><p>redis-server redis服务器<br>redis-cli redis客户端<br>redis-benchmark redis性能测试工具<br>redis-check-aof AOF文件修复工具<br>redis-check-rdb RDB文件修复工具</p>
 <p>检查是否启动:<br>redis-cli ping</p>
 <p>关闭命令：<br>redis-cli shutdown</p>
