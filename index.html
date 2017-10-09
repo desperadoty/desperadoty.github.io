@@ -323,9 +323,10 @@
       
         
           
-            <h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><p>负载均衡(loading balancing)，是一种计算机网络技术，用来在多个计算机（计算机集群）、网络连接、CPU、磁盘驱动器或其他资源中分配负载，以达到最优化资源使用、最大化吞吐率、最小化响应时间、同时避免过载的目的。</p>
+            <h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><p>负载均衡(Loading Balancing)，是一种计算机网络技术，用来在多个计算机（计算机集群）、网络连接、CPU、磁盘驱动器或其他资源中分配负载，以达到最优化资源使用、最大化吞吐率、最小化响应时间、同时避免过载的目的。</p>
 <h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><p>反向代理(Reverse Proxy)，是一种代理服务器。它根据客户端的请求，从后端的服务器（如WEB服务器）上获取资源，然后再将这些资源返回给客户端。与前向代理不同，前向代理作为一个媒介将互联网上获取的资源返回给相关联的客户端，而反向代理是在服务器端作为代理使用，而不是客户端。客户端通过前向代理可以访问很多不同的资源，而反向代理是很多客户端都通过它访问不同后端服务器上的资源，而不需要知道这些后端服务器的存在，而以为所有资源都来自愿这个反向代理服务器。<br><img src="http://owsmors0l.bkt.clouddn.com/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.png" alt=""></p>
 <h3 id="Nginx安装与配置"><a href="#Nginx安装与配置" class="headerlink" title="Nginx安装与配置"></a>Nginx安装与配置</h3><p>1.安装<br><code>brew install nginx</code><br>2.配置<br><code>sudo vim /usr/local/etc/nginx/nginx.conf</code><br><img src="http://owsmors0l.bkt.clouddn.com/nginx%E4%BF%AE%E6%94%B9http%E7%9B%91%E5%90%AC%E7%AB%AF%E5%8F%A3.png" alt=""><br>3.常用命令<br>启动nginx <code>sudo nginx</code><br>重启nginx <code>sudo nginx -s reload</code><br>停止nginx <code>sudo nginx -s stop</code></p>
+<h3 id="Nginx反向代理"><a href="#Nginx反向代理" class="headerlink" title="Nginx反向代理"></a>Nginx反向代理</h3><p>1.通过修改hosts文件模拟多个域名访问本机的nginx。<br><code>sudo vim /etc/hosts</code><br><img src="http://owsmors0l.bkt.clouddn.com/%E4%BF%AE%E6%94%B9hosts.png" alt=""><br>2.修改nginx配置文件设置反向代理<br><code>sudo vim /usr/local/etc/nginx/nginx.conf</code><br><img src="http://owsmors0l.bkt.clouddn.com/%E4%BF%AE%E6%94%B9nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.png" alt=""><br>3.重启nginx服务<br><code>sudo nginx -s reload</code><br>此时，在浏览器访问testnginx.com会访问到www.bilibili.com;访问testreverse.com会访问到www.acfun.cn;访问testproxy.com会访问到www.zhihu.com。</p>
 
           
         
