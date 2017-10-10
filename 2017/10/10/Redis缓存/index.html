@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="MyBatis自带一级缓存，Redis可以作为其二级缓存。适用于数据频繁被读而很少被修改的情况。 MyBatis开启二级缓存 1.配置mybatis-config.xml&amp;lt;setting name=&amp;quot;cacheEnabled&amp;quot; value=&amp;quot;true&amp;quot;/&amp;gt; 2.配置mapper.xml&amp;lt;cache type=&amp;quot;com.compan">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Redis缓存">
+<meta property="og:url" content="http://yoursite.com/2017/10/10/Redis缓存/index.html">
+<meta property="og:site_name" content="CharingCrossRoad">
+<meta property="og:description" content="MyBatis自带一级缓存，Redis可以作为其二级缓存。适用于数据频繁被读而很少被修改的情况。 MyBatis开启二级缓存 1.配置mybatis-config.xml&amp;lt;setting name=&amp;quot;cacheEnabled&amp;quot; value=&amp;quot;true&amp;quot;/&amp;gt; 2.配置mapper.xml&amp;lt;cache type=&amp;quot;com.compan">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-10-10T06:05:39.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Redis缓存">
+<meta name="twitter:description" content="MyBatis自带一级缓存，Redis可以作为其二级缓存。适用于数据频繁被读而很少被修改的情况。 MyBatis开启二级缓存 1.配置mybatis-config.xml&amp;lt;setting name=&amp;quot;cacheEnabled&amp;quot; value=&amp;quot;true&amp;quot;/&amp;gt; 2.配置mapper.xml&amp;lt;cache type=&amp;quot;com.compan">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/10/10/Redis缓存/"/>
+
+
+
+
+
+  <title>Redis缓存 | CharingCrossRoad</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">CharingCrossRoad</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/Redis缓存/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Redis缓存</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-10T13:31:16+08:00">
+                2017-10-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>MyBatis自带一级缓存，Redis可以作为其二级缓存。适用于数据频繁被读而很少被修改的情况。</p>
+<p>MyBatis开启二级缓存</p>
+<p>1.配置mybatis-config.xml<br><code>&lt;setting name=&quot;cacheEnabled&quot; value=&quot;true&quot;/&gt;</code></p>
+<p>2.配置mapper.xml<br><code>&lt;cache type=&quot;com.company.dao.mybatis.cache.RedisCache&quot;/&gt;</code></p>
+<p>redis.properties</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">redis.ip=127.0.0.1    redis地址</div><div class="line">redis.port=6379        redis端口</div><div class="line">jedis.pool.maxActive=3000    最大连接数</div><div class="line">jedis.pool.maxIdle=1000        空闲时最大连接数</div><div class="line">jedis.pool.maxWait=1500        最大等待时间</div><div class="line">jedis.pool.testOnBorrow=true</div><div class="line">jedis.pool.testOnReturn=true</div><div class="line"></div><div class="line">redis.switch = true </div><div class="line">redis.key = SOA</div></pre></td></tr></table></figure>
+<p>RedisCache.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">package com.company.dao.mybatis.cache;</div><div class="line"></div><div class="line">import java.util.concurrent.locks.ReadWriteLock;</div><div class="line">import java.util.concurrent.locks.ReentrantReadWriteLock;</div><div class="line"></div><div class="line">import org.apache.ibatis.cache.Cache;</div><div class="line">import org.slf4j.Logger;</div><div class="line">import org.slf4j.LoggerFactory;</div><div class="line">import com.company.dao.redis.RedisPool;</div><div class="line">import redis.clients.jedis.Jedis;</div><div class="line"></div><div class="line">public class RedisCache implements Cache&#123;</div><div class="line"></div><div class="line">    private static Logger logger = LoggerFactory.getLogger(RedisCache.class);</div><div class="line">    private String id;</div><div class="line">    private Jedis redisClient=createRedis();</div><div class="line">    private ReadWriteLock readWriteLock = new ReentrantReadWriteLock(true);</div><div class="line"></div><div class="line">    public void setReadWriteLock(ReadWriteLock readWriteLock) &#123;</div><div class="line">        this.readWriteLock = readWriteLock;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public RedisCache(String id) &#123;</div><div class="line">        if(id==null)&#123;</div><div class="line">            throw new IllegalArgumentException(&quot;Cache instance requires an ID&quot;);</div><div class="line">        &#125;</div><div class="line">        logger.debug(&quot;create an cache instance with id&quot;+id);</div><div class="line">        this.id=id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public String getId() &#123;</div><div class="line">        return this.id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private  static Jedis createRedis() &#123;</div><div class="line">        Jedis jedis =RedisPool.getPool().getResource();</div><div class="line">        return jedis;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void putObject(Object key, Object value) &#123;</div><div class="line">        byte[] keybyte=SerializableUtil.serialize(key);</div><div class="line">        byte[]valuebyte=SerializableUtil.serialize(value);</div><div class="line">        this.redisClient.set(keybyte, valuebyte);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public Object getObject(Object key) &#123;</div><div class="line"></div><div class="line">        byte[] values=this.redisClient.get(SerializableUtil.serialize(key));</div><div class="line">        </div><div class="line">        if(values==null)&#123;</div><div class="line">            return null;</div><div class="line">        &#125;</div><div class="line">        Object obj =SerializableUtil.unserizlize(values);</div><div class="line">        return obj;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public Object removeObject(Object key) &#123;</div><div class="line">        byte[]keybyte=SerializableUtil.serialize(key);</div><div class="line">        return this.redisClient.expire(keybyte, 0);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void clear() &#123;</div><div class="line">        this.redisClient.flushDB();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public int getSize() &#123;</div><div class="line">        Long size = this.redisClient.dbSize();</div><div class="line">        int s =Integer.valueOf(size+&quot;&quot;);</div><div class="line">        return s;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public ReadWriteLock getReadWriteLock() &#123;</div><div class="line">        return readWriteLock;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>RedisPool.java</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">package com.company.dao.redis; </div><div class="line">import java.util.ResourceBundle; </div><div class="line">import redis.clients.jedis.JedisPool; </div><div class="line">import redis.clients.jedis.JedisPoolConfig; </div><div class="line">public class RedisPool &#123; </div><div class="line">    private static JedisPool pool; </div><div class="line">    private RedisPool()&#123; </div><div class="line">        ResourceBundle bundle =ResourceBundle.getBundle(&quot;redis&quot;);</div><div class="line">        if(bundle==null)&#123; </div><div class="line">            throw new IllegalArgumentException(&quot;[redis.properties] is not find &quot;); </div><div class="line">        &#125; </div><div class="line">        JedisPoolConfig config = new JedisPoolConfig();     </div><div class="line">        config.setMaxTotal(Integer.valueOf(bundle.getString(&quot;redis.pool.maxActive&quot;))); </div><div class="line">        config.setMaxIdle(Integer.valueOf(bundle.getString(&quot;redis.pool.maxIdle&quot;))); </div><div class="line">        config.setMaxWaitMillis(Long.valueOf(bundle.getString(&quot;redis.pool.maxWait&quot;))); </div><div class="line">        config.setTestOnBorrow(Boolean.valueOf(</div><div class="line">                                bundle.getString(&quot;redis.pool.testOnBorrow&quot;))); </div><div class="line">        config.setTestOnReturn(Boolean.valueOf(</div><div class="line">                                bundle.getString(&quot;redis.pool.testOnReturn&quot;)));  </div><div class="line">        pool = newJedisPool(config,bundle.getString(&quot;redis.ip&quot;),</div><div class="line">                            Integer.valueOf(bundle.getString(&quot;redis.port&quot;))); </div><div class="line">        &#125;</div><div class="line">         </div><div class="line">        public synchronized static JedisPool getPool() &#123; </div><div class="line">            if(pool==null)&#123; </div><div class="line">                new RedisPool(); </div><div class="line">            &#125; </div><div class="line">            return pool; </div><div class="line">        &#125;</div><div class="line">     &#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/09/Shiro权限管理框架/" rel="next" title="Shiro权限管理框架">
+                <i class="fa fa-chevron-left"></i> Shiro权限管理框架
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          
+            <img class="site-author-image" itemprop="image"
+              src="/images/avatar.JPG"
+              alt="Yvette Young" />
+          
+            <p class="site-author-name" itemprop="name">Yvette Young</p>
+            <p class="site-description motion-element" itemprop="description">better late than never</p>
+        </div>
+
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+            
+              <a href="/archives/">
+            
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">posts</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Yvette Young</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" href="https://hexo.io">Hexo</a></div>
+
+  <span class="post-meta-divider">|</span>
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.2</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
