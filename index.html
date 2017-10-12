@@ -327,7 +327,7 @@
 <h3 id="创建-New"><a href="#创建-New" class="headerlink" title="创建(New)"></a>创建(New)</h3><p>仅创建了线程对象，并没有调用其start()方法。</p>
 <h3 id="就绪-Runnable"><a href="#就绪-Runnable" class="headerlink" title="就绪(Runnable)"></a>就绪(Runnable)</h3><p>当线程的start()方法被调用后，线程进入就绪状态，等待获取CPU资源。</p>
 <h3 id="运行-Running"><a href="#运行-Running" class="headerlink" title="运行(Running)"></a>运行(Running)</h3><p>当线程获取了CPU资源后，进入运行状态，执行run()方法中的程序代码。</p>
-<h3 id="阻塞-Blocked"><a href="#阻塞-Blocked" class="headerlink" title="阻塞(Blocked)"></a>阻塞(Blocked)</h3><p>当正在运行的线程因某种原因暂时停止运行时，线程进入阻塞状态。<br>1.等待阻塞：<br>运行的线程执行某个对象的wait()方法，线程会被置入该对象的等待集(Wait Pool)中。<br>2.同步阻塞：<br>运行的线程在获取对象的同步锁时，若同步锁被别的线程占用，线程会被置入锁定集(Lock Pool)中。<br>3.其他阻塞：<br>运行的线程执行sleep()或join()方法，或者发出了I/O请求，线程会被置入阻塞集(Block Pool)中。</p>
+<h3 id="阻塞-Blocked"><a href="#阻塞-Blocked" class="headerlink" title="阻塞(Blocked)"></a>阻塞(Blocked)</h3><p>当正在运行的线程因某种原因暂时停止运行时，线程进入阻塞状态。<br>1.等待阻塞：<br>运行的线程执行某个对象的wait()方法，线程会被置入该对象的等待集(Wait Pool)中。<br>2.同步阻塞：<br>运行的线程在获取对象同步锁时，若同步锁被别的线程占用，线程会被置入锁定集(Lock Pool)中。<br>3.其他阻塞：<br>运行的线程执行sleep()或join()方法，或者发出了I/O请求，线程会被置入阻塞集(Block Pool)中。</p>
 <h3 id="死亡-Dead"><a href="#死亡-Dead" class="headerlink" title="死亡(Dead)"></a>死亡(Dead)</h3><p>当线程的run()方法执行结束后进入死亡状态。此外，若线程执行了interrupt()或stop()方法，那么它也会以异常退出的方式进入死亡状态。</p>
 
           
