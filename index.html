@@ -377,135 +377,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/10/Redis缓存/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yvette Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CharingCrossRoad">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/10/Redis缓存/" itemprop="url">Redis缓存</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-10T13:31:16+08:00">
-                2017-10-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>MyBatis自带一级缓存，Redis可以作为其二级缓存。适用于数据频繁被读而很少被修改的情况。</p>
-<p>MyBatis开启二级缓存</p>
-<p>1.配置mybatis-config.xml<br><code>&lt;setting name=&quot;cacheEnabled&quot; value=&quot;true&quot;/&gt;</code></p>
-<p>2.配置mapper.xml<br><code>&lt;cache type=&quot;com.company.dao.mybatis.cache.RedisCache&quot;/&gt;</code></p>
-<p>redis.properties</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">redis.ip=127.0.0.1    redis地址</div><div class="line">redis.port=6379        redis端口</div><div class="line">jedis.pool.maxActive=3000    最大连接数</div><div class="line">jedis.pool.maxIdle=1000        空闲时最大连接数</div><div class="line">jedis.pool.maxWait=1500        最大等待时间</div><div class="line">jedis.pool.testOnBorrow=true</div><div class="line">jedis.pool.testOnReturn=true</div><div class="line"></div><div class="line">redis.switch = true </div><div class="line">redis.key = SOA</div></pre></td></tr></table></figure>
-<p>RedisCache.java</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line">package com.company.dao.mybatis.cache;</div><div class="line"></div><div class="line">import java.util.concurrent.locks.ReadWriteLock;</div><div class="line">import java.util.concurrent.locks.ReentrantReadWriteLock;</div><div class="line"></div><div class="line">import org.apache.ibatis.cache.Cache;</div><div class="line">import org.slf4j.Logger;</div><div class="line">import org.slf4j.LoggerFactory;</div><div class="line">import com.company.dao.redis.RedisPool;</div><div class="line">import redis.clients.jedis.Jedis;</div><div class="line"></div><div class="line">public class RedisCache implements Cache&#123;</div><div class="line"></div><div class="line">    private static Logger logger = LoggerFactory.getLogger(RedisCache.class);</div><div class="line">    private String id;</div><div class="line">    private Jedis redisClient=createRedis();</div><div class="line">    private ReadWriteLock readWriteLock = new ReentrantReadWriteLock(true);</div><div class="line"></div><div class="line">    public void setReadWriteLock(ReadWriteLock readWriteLock) &#123;</div><div class="line">        this.readWriteLock = readWriteLock;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public RedisCache(String id) &#123;</div><div class="line">        if(id==null)&#123;</div><div class="line">            throw new IllegalArgumentException(&quot;Cache instance requires an ID&quot;);</div><div class="line">        &#125;</div><div class="line">        logger.debug(&quot;create an cache instance with id&quot;+id);</div><div class="line">        this.id=id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public String getId() &#123;</div><div class="line">        return this.id;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    private  static Jedis createRedis() &#123;</div><div class="line">        Jedis jedis =RedisPool.getPool().getResource();</div><div class="line">        return jedis;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void putObject(Object key, Object value) &#123;</div><div class="line">        byte[] keybyte=SerializableUtil.serialize(key);</div><div class="line">        byte[]valuebyte=SerializableUtil.serialize(value);</div><div class="line">        this.redisClient.set(keybyte, valuebyte);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public Object getObject(Object key) &#123;</div><div class="line"></div><div class="line">        byte[] values=this.redisClient.get(SerializableUtil.serialize(key));</div><div class="line">        </div><div class="line">        if(values==null)&#123;</div><div class="line">            return null;</div><div class="line">        &#125;</div><div class="line">        Object obj =SerializableUtil.unserizlize(values);</div><div class="line">        return obj;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public Object removeObject(Object key) &#123;</div><div class="line">        byte[]keybyte=SerializableUtil.serialize(key);</div><div class="line">        return this.redisClient.expire(keybyte, 0);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public void clear() &#123;</div><div class="line">        this.redisClient.flushDB();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public int getSize() &#123;</div><div class="line">        Long size = this.redisClient.dbSize();</div><div class="line">        int s =Integer.valueOf(size+&quot;&quot;);</div><div class="line">        return s;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    public ReadWriteLock getReadWriteLock() &#123;</div><div class="line">        return readWriteLock;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>RedisPool.java</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">package com.company.dao.redis; </div><div class="line">import java.util.ResourceBundle; </div><div class="line">import redis.clients.jedis.JedisPool; </div><div class="line">import redis.clients.jedis.JedisPoolConfig; </div><div class="line">public class RedisPool &#123; </div><div class="line">    private static JedisPool pool; </div><div class="line">    private RedisPool()&#123; </div><div class="line">        ResourceBundle bundle =ResourceBundle.getBundle(&quot;redis&quot;);</div><div class="line">        if(bundle==null)&#123; </div><div class="line">            throw new IllegalArgumentException(&quot;[redis.properties] is not find &quot;); </div><div class="line">        &#125; </div><div class="line">        JedisPoolConfig config = new JedisPoolConfig();     </div><div class="line">        config.setMaxTotal(Integer.valueOf(bundle.getString(&quot;redis.pool.maxActive&quot;))); </div><div class="line">        config.setMaxIdle(Integer.valueOf(bundle.getString(&quot;redis.pool.maxIdle&quot;))); </div><div class="line">        config.setMaxWaitMillis(Long.valueOf(bundle.getString(&quot;redis.pool.maxWait&quot;))); </div><div class="line">        config.setTestOnBorrow(Boolean.valueOf(</div><div class="line">                                bundle.getString(&quot;redis.pool.testOnBorrow&quot;))); </div><div class="line">        config.setTestOnReturn(Boolean.valueOf(</div><div class="line">                                bundle.getString(&quot;redis.pool.testOnReturn&quot;)));  </div><div class="line">        pool = newJedisPool(config,bundle.getString(&quot;redis.ip&quot;),</div><div class="line">                            Integer.valueOf(bundle.getString(&quot;redis.port&quot;))); </div><div class="line">        &#125;</div><div class="line">         </div><div class="line">        public synchronized static JedisPool getPool() &#123; </div><div class="line">            if(pool==null)&#123; </div><div class="line">                new RedisPool(); </div><div class="line">            &#125; </div><div class="line">            return pool; </div><div class="line">        &#125;</div><div class="line">     &#125;</div></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/09/Shiro权限管理框架/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1553,6 +1424,135 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/02/简单理解JVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/02/简单理解JVM/" itemprop="url">简单理解JVM</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-02T22:08:24+08:00">
+                2017-10-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>JVM(Java Virtual Machine),一种能够运行Java字节码的虚拟机，以堆栈结构机器来进行实做。</p>
+<p>源文件.java经编译器编译成字节码文件，字节码文件.class经解释器解释翻译成为可执行程序。JVM里面包含解释器。JVM屏蔽了与具体操作系统平台相关的信息，使得Java程序只需生成在Java虚拟机上运行的字节码，就可以在多种平台上不加修改的运行。</p>
+<p>JVM的特征：</p>
+<ul>
+<li>JVM是基于栈的虚拟机<br>X86和ARM是基于寄存器运行的，而JVM是基于栈运行的。</li>
+<li>符号引用<br>除原始数据类型以外的所有类型（类和接口）是通过符号引用，而不直接通过内存地址引用。</li>
+<li>垃圾回收<br>类的实例是通过用户代码手动创建，但是通过垃圾回收自动销毁。</li>
+</ul>
+<p>垃圾回收GC(Garbage Collection)，是Java语言中一个显著的特点，使得Java程序员在编写程序的时候不再考虑内存管理。<strong>垃圾回收可以有效的防止内存泄露，有效的使用空闲的内存。</strong>其中，内存泄露是指该内存空间使用完毕之后未回收。</p>
+<p>对GC来说，当对象被创建的时候，GC就开始监控这个对象的地址、大小及使用情况。通常，GC采用有向图的方式记录和管理堆中的所有对象。通过这种方式确定那些对象是“可达的”，哪些对象是“不可达的”。当GC确定一些对象是“不可达”的时候，就可以回收这些内存空间。我们也可以通过手动执行System.gc()来通知GC运行，但是Java语言规范并不保证GC一定会执行。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
   </section>
 
   
@@ -1606,7 +1606,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
