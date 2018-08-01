@@ -294,6 +294,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -323,7 +345,36 @@
       
         
           
-            
+            <p><a href="https://docs.docker.com/docker-for-mac/install/" target="_blank" rel="external">Download Docker</a><br><img src="http://owsmors0l.bkt.clouddn.com/docker%E4%B8%8B%E8%BD%BD%E9%A1%B5%E9%9D%A2.png" alt=""></p>
+<h5 id="Install-Portainer"><a href="#Install-Portainer" class="headerlink" title="Install Portainer"></a>Install Portainer</h5><p><code>docker run -d -v &quot;/var/run/docker.sock:/var/run/docker.sock&quot; -p 9000:9000 portainer/portainer</code></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/install%20portainer.png" alt=""></p>
+<p><code>localhost:9000</code></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/portainer.png" alt=""><br><img src="http://owsmors0l.bkt.clouddn.com/portainer2.png" alt=""><br><img src="http://owsmors0l.bkt.clouddn.com/portainer3.png" alt=""></p>
+<h5 id="Install-gitlab-ce"><a href="#Install-gitlab-ce" class="headerlink" title="Install gitlab-ce"></a>Install gitlab-ce</h5><p><code>sudo docker run --detach \
+    --hostname mygitlab.com \
+    --publish 443:443 --publish 81:80 --publish 22:22 \
+    --name gitlab \
+    --restart always \
+    --volume /Users/Shared/gitlab/config:/etc/gitlab \
+    --volume /Users/Shared/gitlab/logs:/var/log/gitlab \
+    --volume /Users/Shared/gitlab/data:/var/opt/gitlab \
+    gitlab/gitlab-ce:latest</code></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/gitlab.png" alt=""></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/gitlab2.png" alt=""> </p>
+<p><code>localhost:81</code></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/localhost81.png" alt=""></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/gitlab4.png" alt=""></p>
+<h5 id="Install-gitlab-runner"><a href="#Install-gitlab-runner" class="headerlink" title="Install gitlab-runner"></a>Install gitlab-runner</h5><p><a href="https://docs.gitlab.com/runner/install/docker.html" target="_blank" rel="external">GitLab Docs</a></p>
+<p><code>docker run -d --name gitlab-runner --restart always \
+  -v /Users/Shared/gitlab-runner/config:/etc/gitlab-runner \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  gitlab/gitlab-runner:latest</code></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/gitlabrunner.png" alt=""></p>
+<h5 id="Register-gitlab-runner"><a href="#Register-gitlab-runner" class="headerlink" title="Register gitlab-runner"></a>Register gitlab-runner</h5><p><code>docker exec -it gitlab-runner gitlab-runner register</code></p>
+<p><code>https://gitlab.com</code></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/runnertoken2.png" alt=""></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/runner%20register2.png" alt=""></p>
+
           
         
       
@@ -1700,7 +1751,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>

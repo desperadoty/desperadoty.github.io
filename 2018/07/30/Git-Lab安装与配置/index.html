@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Notes," />
 
 
 
@@ -69,17 +69,31 @@
 
 
 
-<meta name="description" content="better late than never">
+<meta name="description" content="Download Docker Install Portainerdocker run -d -v &amp;quot;/var/run/docker.sock:/var/run/docker.sock&amp;quot; -p 9000:9000 portainer/portainer  localhost:9000  Install gitlab-cesudo docker run --detach \">
+<meta name="keywords" content="Notes">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git Lab安装与配置">
 <meta property="og:url" content="http://yoursite.com/2018/07/30/Git-Lab安装与配置/index.html">
 <meta property="og:site_name" content="CharingCrossRoad">
-<meta property="og:description" content="better late than never">
+<meta property="og:description" content="Download Docker Install Portainerdocker run -d -v &amp;quot;/var/run/docker.sock:/var/run/docker.sock&amp;quot; -p 9000:9000 portainer/portainer  localhost:9000  Install gitlab-cesudo docker run --detach \">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-07-30T09:26:53.000Z">
+<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/docker%E4%B8%8B%E8%BD%BD%E9%A1%B5%E9%9D%A2.png">
+<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/install%20portainer.png">
+<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/portainer.png">
+<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/portainer2.png">
+<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/portainer3.png">
+<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/gitlab.png">
+<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/gitlab2.png">
+<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/localhost81.png">
+<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/gitlab4.png">
+<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/gitlabrunner.png">
+<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/runnertoken2.png">
+<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/runner%20register2.png">
+<meta property="og:updated_time" content="2018-08-01T08:40:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git Lab安装与配置">
-<meta name="twitter:description" content="better late than never">
+<meta name="twitter:description" content="Download Docker Install Portainerdocker run -d -v &amp;quot;/var/run/docker.sock:/var/run/docker.sock&amp;quot; -p 9000:9000 portainer/portainer  localhost:9000  Install gitlab-cesudo docker run --detach \">
+<meta name="twitter:image" content="http://owsmors0l.bkt.clouddn.com/docker%E4%B8%8B%E8%BD%BD%E9%A1%B5%E9%9D%A2.png">
 
 
 
@@ -292,6 +306,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -319,7 +355,36 @@
       
 
       
-        
+        <p><a href="https://docs.docker.com/docker-for-mac/install/" target="_blank" rel="external">Download Docker</a><br><img src="http://owsmors0l.bkt.clouddn.com/docker%E4%B8%8B%E8%BD%BD%E9%A1%B5%E9%9D%A2.png" alt=""></p>
+<h5 id="Install-Portainer"><a href="#Install-Portainer" class="headerlink" title="Install Portainer"></a>Install Portainer</h5><p><code>docker run -d -v &quot;/var/run/docker.sock:/var/run/docker.sock&quot; -p 9000:9000 portainer/portainer</code></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/install%20portainer.png" alt=""></p>
+<p><code>localhost:9000</code></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/portainer.png" alt=""><br><img src="http://owsmors0l.bkt.clouddn.com/portainer2.png" alt=""><br><img src="http://owsmors0l.bkt.clouddn.com/portainer3.png" alt=""></p>
+<h5 id="Install-gitlab-ce"><a href="#Install-gitlab-ce" class="headerlink" title="Install gitlab-ce"></a>Install gitlab-ce</h5><p><code>sudo docker run --detach \
+    --hostname mygitlab.com \
+    --publish 443:443 --publish 81:80 --publish 22:22 \
+    --name gitlab \
+    --restart always \
+    --volume /Users/Shared/gitlab/config:/etc/gitlab \
+    --volume /Users/Shared/gitlab/logs:/var/log/gitlab \
+    --volume /Users/Shared/gitlab/data:/var/opt/gitlab \
+    gitlab/gitlab-ce:latest</code></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/gitlab.png" alt=""></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/gitlab2.png" alt=""> </p>
+<p><code>localhost:81</code></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/localhost81.png" alt=""></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/gitlab4.png" alt=""></p>
+<h5 id="Install-gitlab-runner"><a href="#Install-gitlab-runner" class="headerlink" title="Install gitlab-runner"></a>Install gitlab-runner</h5><p><a href="https://docs.gitlab.com/runner/install/docker.html" target="_blank" rel="external">GitLab Docs</a></p>
+<p><code>docker run -d --name gitlab-runner --restart always \
+  -v /Users/Shared/gitlab-runner/config:/etc/gitlab-runner \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  gitlab/gitlab-runner:latest</code></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/gitlabrunner.png" alt=""></p>
+<h5 id="Register-gitlab-runner"><a href="#Register-gitlab-runner" class="headerlink" title="Register gitlab-runner"></a>Register gitlab-runner</h5><p><code>docker exec -it gitlab-runner gitlab-runner register</code></p>
+<p><code>https://gitlab.com</code></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/runnertoken2.png" alt=""></p>
+<p><img src="http://owsmors0l.bkt.clouddn.com/runner%20register2.png" alt=""></p>
+
       
     </div>
     
@@ -333,6 +398,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+        </div>
       
 
       
@@ -403,8 +474,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -444,7 +524,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -469,6 +549,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Install-Portainer"><span class="nav-number">1.</span> <span class="nav-text">Install Portainer</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Install-gitlab-ce"><span class="nav-number">2.</span> <span class="nav-text">Install gitlab-ce</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Install-gitlab-runner"><span class="nav-number">3.</span> <span class="nav-text">Install gitlab-runner</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Register-gitlab-runner"><span class="nav-number">4.</span> <span class="nav-text">Register gitlab-runner</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
