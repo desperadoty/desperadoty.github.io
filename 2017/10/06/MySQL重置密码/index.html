@@ -77,12 +77,12 @@
 <meta property="og:site_name" content="CharingCrossRoad">
 <meta property="og:description" content="MySQL安装时会有一个临时密码，如下图： 在知道临时密码的情况下，我直接使用mysqladmin -u root password &amp;#39;your new password&amp;#39;然而，今天发现重启过电脑之后就不再生效了。 改用以下方法重置密码：1.停止MySQL服务器2.cd /usr/local/mysql/bin3.sudo su4.输入开机密码5.sudo /usr/local/m">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/MySQL%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81.png">
-<meta property="og:updated_time" content="2018-01-13T06:14:26.000Z">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/MySQL%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81.png?Expires=1541149740&OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&Signature=y6YiLp3CGKMOeuf0cj65eEOXfIo%3D">
+<meta property="og:updated_time" content="2018-11-02T08:09:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL重置密码">
 <meta name="twitter:description" content="MySQL安装时会有一个临时密码，如下图： 在知道临时密码的情况下，我直接使用mysqladmin -u root password &amp;#39;your new password&amp;#39;然而，今天发现重启过电脑之后就不再生效了。 改用以下方法重置密码：1.停止MySQL服务器2.cd /usr/local/mysql/bin3.sudo su4.输入开机密码5.sudo /usr/local/m">
-<meta name="twitter:image" content="http://owsmors0l.bkt.clouddn.com/MySQL%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81.png">
+<meta name="twitter:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/MySQL%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81.png?Expires=1541149740&OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&Signature=y6YiLp3CGKMOeuf0cj65eEOXfIo%3D">
 
 
 
@@ -344,7 +344,7 @@
       
 
       
-        <p>MySQL安装时会有一个临时密码，如下图：<br><img src="http://owsmors0l.bkt.clouddn.com/MySQL%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81.png" alt=""></p>
+        <p>MySQL安装时会有一个临时密码，如下图：<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/MySQL%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81.png?Expires=1541149740&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=y6YiLp3CGKMOeuf0cj65eEOXfIo%3D" alt=""></p>
 <p>在知道临时密码的情况下，我直接使用<br><code>mysqladmin -u root password &#39;your new password&#39;</code><br>然而，今天发现重启过电脑之后就不再生效了。</p>
 <p>改用以下方法重置密码：<br>1.停止MySQL服务器<br>2.<code>cd /usr/local/mysql/bin</code><br>3.<code>sudo su</code><br>4.输入开机密码<br>5.<code>sudo /usr/local/mysql/bin/mysqld_safe --skip-grant-tables</code><br>6.重新打开一个新的终端<br>7.<code>sudo /usr/local/mysql/bin/mysql -u root</code><br>8.输入开机密码<br>9.<code>UPDATE mysql.user SET authentication_string=PASSWORD(&#39;your new password&#39; WHERE User=&#39;root&#39;;</code><br>10.<code>FLUSH PRIVILEGES;</code><br>11.<code>\q</code></p>
 <p>修改密码后确实能够使用新密码登录，但可能会遇到如下错误：<br><code>You must reset your password using ALTER USER statement before executing this statement</code><br>解决方法如下：<br>1.<code>mysql&gt;SET PASSWORD = PASSWORD(&#39;your new password&#39;);</code><br>2.<code>mysql&gt;ALTER USER &#39;root&#39;@&#39;localhost&#39; PASSWORD EXPIRE NEVER;</code><br>3.<code>mysql&gt;FLUSH PRIVILEGES;</code></p>
@@ -461,7 +461,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -472,7 +472,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>

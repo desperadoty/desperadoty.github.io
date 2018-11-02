@@ -252,6 +252,155 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/02/08/nodejs环境搭建/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/02/08/nodejs环境搭建/" itemprop="url">Node.js Vue 环境搭建</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-08T23:39:10+08:00">
+                2018-02-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Vue/" itemprop="url" rel="index">
+                    <span itemprop="name">Vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>brew install nodejs</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/1.png?Expires=1541150180&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=4D89vsisZy6NBW1I2ZVqpLLchQk%3D" alt=""><br><code>npm install webpack -g</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/2.png?Expires=1541150192&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=PiV%2FnXnlpgV%2Bex6wR2QNfw6ZxzQ%3D" alt=""></p>
+<p><code>npm install vue-cli -g</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/3.png?Expires=1541150207&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=qirxw3wdUC1GFEJCnRh1CslOlKA%3D" alt=""></p>
+<p><code>vue init webpack-simple#1.0 projectname</code><br><code>OR</code> <code>vue init webpack projectname</code></p>
+<p><code>cd projectname</code></p>
+<p><code>npm install</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/4.png?Expires=1541150218&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=HQdtt5%2BYMRoOO9W%2F9BBnWoGNomg%3D" alt=""></p>
+<p><code>npm install vue-router vue-resource --save</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/6.png?Expires=1541150249&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=46F6pV606WBtchMkUbHzaOp%2Fg%2B4%3D" alt=""></p>
+<p><code>npm run dev</code></p>
+<h5 id="浏览器输入-localhost-8080"><a href="#浏览器输入-localhost-8080" class="headerlink" title="浏览器输入  localhost:8080"></a>浏览器输入  localhost:8080</h5><p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/5.png?Expires=1541150230&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=JdBMYg0%2F7wjzLi22fAppWLwCVBY%3D" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/13/Python-Selenuim3-环境搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -347,21 +496,21 @@
           
             <h1 id="【MacOS】Python-Selenium3环境搭建"><a href="#【MacOS】Python-Selenium3环境搭建" class="headerlink" title="【MacOS】Python Selenium3环境搭建"></a>【MacOS】Python Selenium3环境搭建</h1><ul>
 <li><p>Python</p>
-<p>  Mac自带的Python2,自己可以下载Python3<br>  <img src="http://owsmors0l.bkt.clouddn.com/macpython.png" alt=""></p>
+<p>  Mac自带的Python2,自己可以下载Python3<br>  <img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/macpython.png?Expires=1541149942&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=l4JxWQ58TmwALcr3SUtPGfM8lZc%3D" alt=""></p>
 </li>
-<li><p>Selenium<br><code>pip3 install selenium -U</code><br><img src="http://owsmors0l.bkt.clouddn.com/selenium.png" alt=""></p>
+<li><p>Selenium<br><code>pip3 install selenium -U</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/selenium.png?Expires=1541149965&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=tFt%2Fu2QMeiZkFK2dm%2BDpWZSmTro%3D" alt=""></p>
 </li>
-<li><p>PyCharm<br><code>Configure -&gt; Preferences -&gt; Project Interpreter</code><br><img src="http://owsmors0l.bkt.clouddn.com/py1.png" alt=""><br><img src="http://owsmors0l.bkt.clouddn.com/py.png" alt=""></p>
+<li><p>PyCharm<br><code>Configure -&gt; Preferences -&gt; Project Interpreter</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/py1.png?Expires=1541149985&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=sw6DnI5DVXiODJUUQ9x2SIhlHxo%3D" alt=""><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/py.png?Expires=1541149998&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=9qghQv%2FR1QWQWyc3Ft3dRU8aUUA%3D" alt=""></p>
 </li>
 <li><p>Chromedriver</p>
 </li>
 </ul>
-<p><img src="http://owsmors0l.bkt.clouddn.com/Chrome.png" alt=""></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Chrome.png?Expires=1541150056&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=kTdyECpo1d0DiUJV9OwMR8dlTC8%3D" alt=""></p>
 <p><a href="https://sites.google.com/a/chromium.org/chromedriver/home" target="_blank" rel="external">Download Chromedriver</a></p>
 <p>下载之后解压</p>
-<p><img src="http://owsmors0l.bkt.clouddn.com/bin.png" alt=""></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/bin.png?Expires=1541150089&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=8mS6oYEiADvquVrD5%2Bisyd2npdk%3D" alt=""></p>
 <p>将chromedriver.exec文件放在打开的/usr/bin目录下</p>
-<p><img src="http://owsmors0l.bkt.clouddn.com/test.png" alt=""></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/test.png?Expires=1541150119&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=2OEcfU4E3SdvEh4DN6rZk12wct8%3D" alt=""></p>
 
           
         
@@ -955,9 +1104,9 @@
         
           
             <h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><p>负载均衡(Loading Balancing)，是一种计算机网络技术，用来在多个计算机（计算机集群）、网络连接、CPU、磁盘驱动器或其他资源中分配负载，以达到最优化资源使用、最大化吞吐率、最小化响应时间、同时避免过载的目的。</p>
-<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><p>反向代理(Reverse Proxy)，是一种代理服务器。它根据客户端的请求，从后端的服务器（如WEB服务器）上获取资源，然后再将这些资源返回给客户端。与前向代理不同，前向代理作为一个媒介将互联网上获取的资源返回给相关联的客户端，而反向代理是在服务器端作为代理使用，而不是客户端。客户端通过前向代理可以访问很多不同的资源，而反向代理是很多客户端都通过它访问不同后端服务器上的资源，而不需要知道这些后端服务器的存在，而以为所有资源都来自愿这个反向代理服务器。<br><img src="http://owsmors0l.bkt.clouddn.com/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.png" alt=""></p>
-<h3 id="Nginx安装与配置"><a href="#Nginx安装与配置" class="headerlink" title="Nginx安装与配置"></a>Nginx安装与配置</h3><p>1.安装<br><code>brew install nginx</code><br>2.配置<br><code>sudo vim /usr/local/etc/nginx/nginx.conf</code><br><img src="http://owsmors0l.bkt.clouddn.com/nginx%E4%BF%AE%E6%94%B9http%E7%9B%91%E5%90%AC%E7%AB%AF%E5%8F%A3.png" alt=""><br>3.常用命令<br>启动nginx <code>sudo nginx</code><br>重启nginx <code>sudo nginx -s reload</code><br>停止nginx <code>sudo nginx -s stop</code></p>
-<h3 id="Nginx反向代理"><a href="#Nginx反向代理" class="headerlink" title="Nginx反向代理"></a>Nginx反向代理</h3><p>1.通过修改hosts文件模拟多个域名访问本机的nginx。<br><code>sudo vim /etc/hosts</code><br><img src="http://owsmors0l.bkt.clouddn.com/%E4%BF%AE%E6%94%B9hosts.png" alt=""><br>2.修改nginx配置文件设置反向代理<br><code>sudo vim /usr/local/etc/nginx/nginx.conf</code><br><img src="http://owsmors0l.bkt.clouddn.com/%E4%BF%AE%E6%94%B9nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.png" alt=""><br>3.重启nginx服务<br><code>sudo nginx -s reload</code><br>此时，在浏览器访问testnginx.com会访问到www.bilibili.com;访问testreverse.com会访问到www.acfun.cn;访问testproxy.com会访问到www.zhihu.com。</p>
+<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><p>反向代理(Reverse Proxy)，是一种代理服务器。它根据客户端的请求，从后端的服务器（如WEB服务器）上获取资源，然后再将这些资源返回给客户端。与前向代理不同，前向代理作为一个媒介将互联网上获取的资源返回给相关联的客户端，而反向代理是在服务器端作为代理使用，而不是客户端。客户端通过前向代理可以访问很多不同的资源，而反向代理是很多客户端都通过它访问不同后端服务器上的资源，而不需要知道这些后端服务器的存在，而以为所有资源都来自愿这个反向代理服务器。<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.png?Expires=1541149783&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=e5JNF%2BJTuxUx6agFntuA6ijKzrc%3D" alt=""></p>
+<h3 id="Nginx安装与配置"><a href="#Nginx安装与配置" class="headerlink" title="Nginx安装与配置"></a>Nginx安装与配置</h3><p>1.安装<br><code>brew install nginx</code><br>2.配置<br><code>sudo vim /usr/local/etc/nginx/nginx.conf</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/nginx%E4%BF%AE%E6%94%B9http%E7%9B%91%E5%90%AC%E7%AB%AF%E5%8F%A3.png?Expires=1541149840&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=H5c1evkA%2BK5YKCRJw%2FLemmh91W8%3D" alt=""><br>3.常用命令<br>启动nginx <code>sudo nginx</code><br>重启nginx <code>sudo nginx -s reload</code><br>停止nginx <code>sudo nginx -s stop</code></p>
+<h3 id="Nginx反向代理"><a href="#Nginx反向代理" class="headerlink" title="Nginx反向代理"></a>Nginx反向代理</h3><p>1.通过修改hosts文件模拟多个域名访问本机的nginx。<br><code>sudo vim /etc/hosts</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E4%BF%AE%E6%94%B9hosts.png?Expires=1541149868&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=eOxwFXF5dHaST5DrYL6dGSUPdxU%3D" alt=""><br>2.修改nginx配置文件设置反向代理<br><code>sudo vim /usr/local/etc/nginx/nginx.conf</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E4%BF%AE%E6%94%B9nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.png?Expires=1541149879&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=a3RfJordoKz0VTMhzw%2FtezQK0o8%3D" alt=""><br>3.重启nginx服务<br><code>sudo nginx -s reload</code><br>此时，在浏览器访问testnginx.com会访问到www.bilibili.com;访问testreverse.com会访问到www.acfun.cn;访问testproxy.com会访问到www.zhihu.com。</p>
 
           
         
@@ -1099,7 +1248,7 @@
       
         
           
-            <p>MySQL安装时会有一个临时密码，如下图：<br><img src="http://owsmors0l.bkt.clouddn.com/MySQL%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81.png" alt=""></p>
+            <p>MySQL安装时会有一个临时密码，如下图：<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/MySQL%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81.png?Expires=1541149740&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=y6YiLp3CGKMOeuf0cj65eEOXfIo%3D" alt=""></p>
 <p>在知道临时密码的情况下，我直接使用<br><code>mysqladmin -u root password &#39;your new password&#39;</code><br>然而，今天发现重启过电脑之后就不再生效了。</p>
 <p>改用以下方法重置密码：<br>1.停止MySQL服务器<br>2.<code>cd /usr/local/mysql/bin</code><br>3.<code>sudo su</code><br>4.输入开机密码<br>5.<code>sudo /usr/local/mysql/bin/mysqld_safe --skip-grant-tables</code><br>6.重新打开一个新的终端<br>7.<code>sudo /usr/local/mysql/bin/mysql -u root</code><br>8.输入开机密码<br>9.<code>UPDATE mysql.user SET authentication_string=PASSWORD(&#39;your new password&#39; WHERE User=&#39;root&#39;;</code><br>10.<code>FLUSH PRIVILEGES;</code><br>11.<code>\q</code></p>
 <p>修改密码后确实能够使用新密码登录，但可能会遇到如下错误：<br><code>You must reset your password using ALTER USER statement before executing this statement</code><br>解决方法如下：<br>1.<code>mysql&gt;SET PASSWORD = PASSWORD(&#39;your new password&#39;);</code><br>2.<code>mysql&gt;ALTER USER &#39;root&#39;@&#39;localhost&#39; PASSWORD EXPIRE NEVER;</code><br>3.<code>mysql&gt;FLUSH PRIVILEGES;</code></p>
@@ -1245,8 +1394,8 @@
         
           
             <h3 id="MySQL开启binlog"><a href="#MySQL开启binlog" class="headerlink" title="MySQL开启binlog"></a>MySQL开启binlog</h3><p>1.查询是否支持binlog</p>
-<p><img src="http://owsmors0l.bkt.clouddn.com/mysql_binlog.png" alt=""></p>
-<p>2.在/etc目录下新建my.cnf文件支持binlog<br><code>cd /etc</code><br><code>sudo vim my.cnf</code><br><img src="http://owsmors0l.bkt.clouddn.com/%E5%BC%80%E5%90%AFbinlog.png" alt=""><br><img src="http://owsmors0l.bkt.clouddn.com/binlog.png" alt=""></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/mysql_binlog.png?Expires=1541149271&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=2QepDxhQ4%2F7but78ZPfmeWdx898%3D" alt=""></p>
+<p>2.在/etc目录下新建my.cnf文件支持binlog<br><code>cd /etc</code><br><code>sudo vim my.cnf</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlog.png?Expires=1541149058&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=NJbbowunsS0cDKavITWHJTHN7ZA%3D" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#log_bin</div><div class="line">log-bin=mysql-bin #开启binlog</div><div class="line">binlog-format=ROW</div><div class="line">server_id=1</div></pre></td></tr></table></figure>
 <p>3.重启MySQL查询是否支持binlog<br><img src="http://owsmors0l.bkt.clouddn.com/%E6%88%90%E5%8A%9F%E5%BC%80%E5%90%AFbinlog.png" alt=""></p>
 <h3 id="使用binlog恢复数据库"><a href="#使用binlog恢复数据库" class="headerlink" title="使用binlog恢复数据库"></a>使用binlog恢复数据库</h3><p>1.创建test数据库<br><code>mysql&gt;CREATE DATABASE test;</code><br>2.创建binlog_test数据表</p>
@@ -1255,12 +1404,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt;INSERT INTO binlog_test VALUES(1,&apos;yvette&apos;);</div><div class="line">mysql&gt;INSERT INTO binlog_test VALUES(2,&apos;fiona&apos;);</div></pre></td></tr></table></figure>
 <p>4.刷新binlog日志</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt;FLUSH LOGS;</div><div class="line">mysql&gt;SHOW MASTER LOGS;</div></pre></td></tr></table></figure>
-<p><img src="http://owsmors0l.bkt.clouddn.com/masterlogs.png" alt=""></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/masterlogs.png?Expires=1541149679&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=9zXwWtDbzKIqEjEMnZ86kUBtusM%3D" alt=""></p>
 <p>5.binlog日志内容解析<br><code>mysqlbinlog mysql-bin.000001</code><br>可能会报错mysqlbinlog: unknown variable ‘default-character-set=utf8’<br><code>mysqlbinlog --no-defaults mysql-bin.000001</code><br>可能会报错mysql-bin.000001 not found</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">~ cd /usr/local/mysql</div><div class="line">mysql sudo chmod -R 777 data</div></pre></td></tr></table></figure>
-<p><img src="http://owsmors0l.bkt.clouddn.com/binlog%E6%97%A5%E5%BF%97%E6%9D%83%E9%99%90.png" alt=""></p>
-<p>修改权限之后,进入data文件夹<br><code>data mysqlbinlog --no-defaults mysql-bin.000001</code><br><img src="http://owsmors0l.bkt.clouddn.com/binlog000001.png" alt=""><br>6.完整备份test数据库<br>使用mysqldump命令：<br><code>~ /usr/local/mysql/bin/mysqldump -uroot -p test &gt;/usr/local/mysql/data/baktest.sql</code><br><img src="http://owsmors0l.bkt.clouddn.com/baktest.png" alt=""><br>打开本地文件夹，可见备份文件：<br><img src="http://owsmors0l.bkt.clouddn.com/baksql.png" alt=""><br>查看备份文件内容：<br><code>~ cd /usr/local/mysql/data</code><br><code>cat baktest.sql</code><br><img src="http://owsmors0l.bkt.clouddn.com/baktestsql.png" alt=""></p>
-<p>7.删除binlog_test表部分数据<br><code>mysql&gt;DELETE FROM binlog_test WHERE id = 2;</code><br><img src="http://owsmors0l.bkt.clouddn.com/binlogdel.png" alt=""><br>8.恢复test数据库<br>通过备份文件恢复数据<br><code>mysql -uroot -p test&lt;/usr/local/mysql/data/baktest.sql</code><br><img src="http://owsmors0l.bkt.clouddn.com/%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D.png" alt=""><br>通过指定时间或指定位置来恢复数据<br><img src="http://owsmors0l.bkt.clouddn.com/binlogpos.png" alt=""></p>
+<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlog%E6%97%A5%E5%BF%97%E6%9D%83%E9%99%90.png?Expires=1541149174&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=BQmPbslG474%2FzkzfqFNf7uCqlaA%3D" alt=""></p>
+<p>修改权限之后,进入data文件夹<br><code>data mysqlbinlog --no-defaults mysql-bin.000001</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlog000001.png?Expires=1541149133&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=30ttCNqXFhfjxvU5GEwOi4ImdU8%3D" alt=""><br>6.完整备份test数据库<br>使用mysqldump命令：<br><code>~ /usr/local/mysql/bin/mysqldump -uroot -p test &gt;/usr/local/mysql/data/baktest.sql</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/baktest.png?Expires=1541149513&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=9oWfTv18KAupAvMki%2BVHjXo0pxw%3D" alt=""><br>打开本地文件夹，可见备份文件：<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/baksql.png?Expires=1541149497&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=YOmbZJIown3%2BpbnClI3mFsiqBnA%3D" alt=""><br>查看备份文件内容：<br><code>~ cd /usr/local/mysql/data</code><br><code>cat baktest.sql</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/baktestsql.png?Expires=1541149527&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=3KOk0drghovUEVidrTWffRB9jBo%3D" alt=""></p>
+<p>7.删除binlog_test表部分数据<br><code>mysql&gt;DELETE FROM binlog_test WHERE id = 2;</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlogdel.png?Expires=1541149155&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=%2BCF%2Fj4D%2B5Sa0fPmIFJ%2FVys7eYkw%3D" alt=""><br>8.恢复test数据库<br>通过备份文件恢复数据<br><code>mysql -uroot -p test&lt;/usr/local/mysql/data/baktest.sql</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D.png?Expires=1541149627&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=XqYOCbdK6hbQQPVUT%2FX8X1GwXak%3D" alt=""><br>通过指定时间或指定位置来恢复数据<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlogpos.png?Expires=1541149236&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=GmUVlcofZjJMngUByR7ioANXegk%3D" alt=""></p>
 
           
         
@@ -1611,175 +1760,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/03/Redis安装及配置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yvette Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CharingCrossRoad">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/03/Redis安装及配置/" itemprop="url">Redis安装及配置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-03T11:39:23+08:00">
-                2017-10-03
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/DataBase/" itemprop="url" rel="index">
-                    <span itemprop="name">DataBase</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Redis简介"><a href="#Redis简介" class="headerlink" title="Redis简介"></a>Redis简介</h3><p>Redis是一个高性能的key-value数据库，是开源的并遵守BSD协议的。</p>
-<p>Redis的特点：</p>
-<ul>
-<li>支持数据的持久化，可以将内存中的数据保存到磁盘中，重启的时候可以再次加载进行使用。</li>
-<li>不仅仅支出简单的key-value类型的数据，同时还提供list,set,hash等数据结构的存储。</li>
-<li>支持数据的备份，即master-slave模式的数据备份。</li>
-</ul>
-<p>Redis的优势：</p>
-<ul>
-<li>性能极高。Redis读的速度是110000次/秒，写的速度是81000次/秒。</li>
-<li>丰富的数据类型。Redis支持String,List,Hash,Set等数据类型操作。</li>
-<li>原子性。Redis所有操作都是原子性的，同时还支持对几个操作合并后的原子性执行。</li>
-<li>丰富的特性。Redis还支持publish/subscribe，通知，key过期等等特性。 </li>
-</ul>
-<h3 id="Redis安装"><a href="#Redis安装" class="headerlink" title="Redis安装"></a>Redis安装</h3><ol>
-<li>wget <a href="http://download.redis.io/releases/redis-3.2.9.tar.gz" target="_blank" rel="external">http://download.redis.io/releases/redis-3.2.9.tar.gz</a></li>
-<li>tar xzf redis-3.2.9.tar.gz</li>
-<li>mv redis-3.2.9 redis</li>
-<li>make</li>
-<li>make test</li>
-<li>make install<br><img src="http://owsmors0l.bkt.clouddn.com/redis-server.png" alt=""></li>
-</ol>
-<h3 id="Redis配置"><a href="#Redis配置" class="headerlink" title="Redis配置"></a>Redis配置</h3><p>修改配置文件以开启进程守护模式</p>
-<p><code>sudo vim /usr/local/etc/redis.conf</code></p>
-<p><img src="http://owsmors0l.bkt.clouddn.com/redis%E5%BC%80%E5%90%AF%E5%AE%88%E6%8A%A4%E8%BF%9B%E7%A8%8B.png" alt=""></p>
-<h3 id="Redis常用命令"><a href="#Redis常用命令" class="headerlink" title="Redis常用命令"></a>Redis常用命令</h3><p>redis-server redis服务器<br>redis-cli redis客户端<br>redis-benchmark redis性能测试工具<br>redis-check-aof AOF文件修复工具<br>redis-check-rdb RDB文件修复工具</p>
-<p>检查是否启动:<br>redis-cli ping</p>
-<p>关闭命令：<br>redis-cli shutdown</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1833,7 +1813,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1844,7 +1824,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>

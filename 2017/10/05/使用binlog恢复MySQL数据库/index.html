@@ -77,24 +77,23 @@
 <meta property="og:site_name" content="CharingCrossRoad">
 <meta property="og:description" content="MySQL开启binlog1.查询是否支持binlog  2.在/etc目录下新建my.cnf文件支持binlogcd /etcsudo vim my.cnf 1234#log_binlog-bin=mysql-bin #开启binlogbinlog-format=ROWserver_id=1 3.重启MySQL查询是否支持binlog 使用binlog恢复数据库1.创建test数据库mysql&amp;">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/mysql_binlog.png">
-<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/%E5%BC%80%E5%90%AFbinlog.png">
-<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/binlog.png">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/mysql_binlog.png?Expires=1541149271&OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&Signature=2QepDxhQ4%2F7but78ZPfmeWdx898%3D">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlog.png?Expires=1541149058&OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&Signature=NJbbowunsS0cDKavITWHJTHN7ZA%3D">
 <meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/%E6%88%90%E5%8A%9F%E5%BC%80%E5%90%AFbinlog.png">
-<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/masterlogs.png">
-<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/binlog%E6%97%A5%E5%BF%97%E6%9D%83%E9%99%90.png">
-<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/binlog000001.png">
-<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/baktest.png">
-<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/baksql.png">
-<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/baktestsql.png">
-<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/binlogdel.png">
-<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D.png">
-<meta property="og:image" content="http://owsmors0l.bkt.clouddn.com/binlogpos.png">
-<meta property="og:updated_time" content="2018-01-13T06:14:08.000Z">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/masterlogs.png?Expires=1541149679&OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&Signature=9zXwWtDbzKIqEjEMnZ86kUBtusM%3D">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlog%E6%97%A5%E5%BF%97%E6%9D%83%E9%99%90.png?Expires=1541149174&OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&Signature=BQmPbslG474%2FzkzfqFNf7uCqlaA%3D">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlog000001.png?Expires=1541149133&OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&Signature=30ttCNqXFhfjxvU5GEwOi4ImdU8%3D">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/baktest.png?Expires=1541149513&OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&Signature=9oWfTv18KAupAvMki%2BVHjXo0pxw%3D">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/baksql.png?Expires=1541149497&OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&Signature=YOmbZJIown3%2BpbnClI3mFsiqBnA%3D">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/baktestsql.png?Expires=1541149527&OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&Signature=3KOk0drghovUEVidrTWffRB9jBo%3D">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlogdel.png?Expires=1541149155&OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&Signature=%2BCF%2Fj4D%2B5Sa0fPmIFJ%2FVys7eYkw%3D">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D.png?Expires=1541149627&OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&Signature=XqYOCbdK6hbQQPVUT%2FX8X1GwXak%3D">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlogpos.png?Expires=1541149236&OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&Signature=GmUVlcofZjJMngUByR7ioANXegk%3D">
+<meta property="og:updated_time" content="2018-11-02T08:08:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用binlog恢复MySQL数据库">
 <meta name="twitter:description" content="MySQL开启binlog1.查询是否支持binlog  2.在/etc目录下新建my.cnf文件支持binlogcd /etcsudo vim my.cnf 1234#log_binlog-bin=mysql-bin #开启binlogbinlog-format=ROWserver_id=1 3.重启MySQL查询是否支持binlog 使用binlog恢复数据库1.创建test数据库mysql&amp;">
-<meta name="twitter:image" content="http://owsmors0l.bkt.clouddn.com/mysql_binlog.png">
+<meta name="twitter:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/mysql_binlog.png?Expires=1541149271&OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&Signature=2QepDxhQ4%2F7but78ZPfmeWdx898%3D">
 
 
 
@@ -357,8 +356,8 @@
 
       
         <h3 id="MySQL开启binlog"><a href="#MySQL开启binlog" class="headerlink" title="MySQL开启binlog"></a>MySQL开启binlog</h3><p>1.查询是否支持binlog</p>
-<p><img src="http://owsmors0l.bkt.clouddn.com/mysql_binlog.png" alt=""></p>
-<p>2.在/etc目录下新建my.cnf文件支持binlog<br><code>cd /etc</code><br><code>sudo vim my.cnf</code><br><img src="http://owsmors0l.bkt.clouddn.com/%E5%BC%80%E5%90%AFbinlog.png" alt=""><br><img src="http://owsmors0l.bkt.clouddn.com/binlog.png" alt=""></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/mysql_binlog.png?Expires=1541149271&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=2QepDxhQ4%2F7but78ZPfmeWdx898%3D" alt=""></p>
+<p>2.在/etc目录下新建my.cnf文件支持binlog<br><code>cd /etc</code><br><code>sudo vim my.cnf</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlog.png?Expires=1541149058&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=NJbbowunsS0cDKavITWHJTHN7ZA%3D" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#log_bin</div><div class="line">log-bin=mysql-bin #开启binlog</div><div class="line">binlog-format=ROW</div><div class="line">server_id=1</div></pre></td></tr></table></figure>
 <p>3.重启MySQL查询是否支持binlog<br><img src="http://owsmors0l.bkt.clouddn.com/%E6%88%90%E5%8A%9F%E5%BC%80%E5%90%AFbinlog.png" alt=""></p>
 <h3 id="使用binlog恢复数据库"><a href="#使用binlog恢复数据库" class="headerlink" title="使用binlog恢复数据库"></a>使用binlog恢复数据库</h3><p>1.创建test数据库<br><code>mysql&gt;CREATE DATABASE test;</code><br>2.创建binlog_test数据表</p>
@@ -367,12 +366,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt;INSERT INTO binlog_test VALUES(1,&apos;yvette&apos;);</div><div class="line">mysql&gt;INSERT INTO binlog_test VALUES(2,&apos;fiona&apos;);</div></pre></td></tr></table></figure>
 <p>4.刷新binlog日志</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt;FLUSH LOGS;</div><div class="line">mysql&gt;SHOW MASTER LOGS;</div></pre></td></tr></table></figure>
-<p><img src="http://owsmors0l.bkt.clouddn.com/masterlogs.png" alt=""></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/masterlogs.png?Expires=1541149679&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=9zXwWtDbzKIqEjEMnZ86kUBtusM%3D" alt=""></p>
 <p>5.binlog日志内容解析<br><code>mysqlbinlog mysql-bin.000001</code><br>可能会报错mysqlbinlog: unknown variable ‘default-character-set=utf8’<br><code>mysqlbinlog --no-defaults mysql-bin.000001</code><br>可能会报错mysql-bin.000001 not found</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">~ cd /usr/local/mysql</div><div class="line">mysql sudo chmod -R 777 data</div></pre></td></tr></table></figure>
-<p><img src="http://owsmors0l.bkt.clouddn.com/binlog%E6%97%A5%E5%BF%97%E6%9D%83%E9%99%90.png" alt=""></p>
-<p>修改权限之后,进入data文件夹<br><code>data mysqlbinlog --no-defaults mysql-bin.000001</code><br><img src="http://owsmors0l.bkt.clouddn.com/binlog000001.png" alt=""><br>6.完整备份test数据库<br>使用mysqldump命令：<br><code>~ /usr/local/mysql/bin/mysqldump -uroot -p test &gt;/usr/local/mysql/data/baktest.sql</code><br><img src="http://owsmors0l.bkt.clouddn.com/baktest.png" alt=""><br>打开本地文件夹，可见备份文件：<br><img src="http://owsmors0l.bkt.clouddn.com/baksql.png" alt=""><br>查看备份文件内容：<br><code>~ cd /usr/local/mysql/data</code><br><code>cat baktest.sql</code><br><img src="http://owsmors0l.bkt.clouddn.com/baktestsql.png" alt=""></p>
-<p>7.删除binlog_test表部分数据<br><code>mysql&gt;DELETE FROM binlog_test WHERE id = 2;</code><br><img src="http://owsmors0l.bkt.clouddn.com/binlogdel.png" alt=""><br>8.恢复test数据库<br>通过备份文件恢复数据<br><code>mysql -uroot -p test&lt;/usr/local/mysql/data/baktest.sql</code><br><img src="http://owsmors0l.bkt.clouddn.com/%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D.png" alt=""><br>通过指定时间或指定位置来恢复数据<br><img src="http://owsmors0l.bkt.clouddn.com/binlogpos.png" alt=""></p>
+<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlog%E6%97%A5%E5%BF%97%E6%9D%83%E9%99%90.png?Expires=1541149174&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=BQmPbslG474%2FzkzfqFNf7uCqlaA%3D" alt=""></p>
+<p>修改权限之后,进入data文件夹<br><code>data mysqlbinlog --no-defaults mysql-bin.000001</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlog000001.png?Expires=1541149133&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=30ttCNqXFhfjxvU5GEwOi4ImdU8%3D" alt=""><br>6.完整备份test数据库<br>使用mysqldump命令：<br><code>~ /usr/local/mysql/bin/mysqldump -uroot -p test &gt;/usr/local/mysql/data/baktest.sql</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/baktest.png?Expires=1541149513&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=9oWfTv18KAupAvMki%2BVHjXo0pxw%3D" alt=""><br>打开本地文件夹，可见备份文件：<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/baksql.png?Expires=1541149497&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=YOmbZJIown3%2BpbnClI3mFsiqBnA%3D" alt=""><br>查看备份文件内容：<br><code>~ cd /usr/local/mysql/data</code><br><code>cat baktest.sql</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/baktestsql.png?Expires=1541149527&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=3KOk0drghovUEVidrTWffRB9jBo%3D" alt=""></p>
+<p>7.删除binlog_test表部分数据<br><code>mysql&gt;DELETE FROM binlog_test WHERE id = 2;</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlogdel.png?Expires=1541149155&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=%2BCF%2Fj4D%2B5Sa0fPmIFJ%2FVys7eYkw%3D" alt=""><br>8.恢复test数据库<br>通过备份文件恢复数据<br><code>mysql -uroot -p test&lt;/usr/local/mysql/data/baktest.sql</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D.png?Expires=1541149627&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=XqYOCbdK6hbQQPVUT%2FX8X1GwXak%3D" alt=""><br>通过指定时间或指定位置来恢复数据<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlogpos.png?Expires=1541149236&amp;OSSAccessKeyId=TMP.AQFrkj1tathZKu5wWRFD6RuEWRnRpSHmC8OR8wqYErQWDZjwpqzvozJpildDMC4CFQDkpQ5n1rCt1Z2u3t5VG2eMlfkNVwIVAPgQKYoCRjWNqW8oOgX2NZNxGOVd&amp;Signature=GmUVlcofZjJMngUByR7ioANXegk%3D" alt=""></p>
 
       
     </div>
@@ -495,7 +494,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -506,7 +505,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
