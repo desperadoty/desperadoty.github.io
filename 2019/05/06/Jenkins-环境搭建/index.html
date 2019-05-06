@@ -69,25 +69,28 @@
 
 
 
-<meta name="description" content="Download Fiddler  Download Mono  /Library/Frameworks/Mono.framework/Versions/5.8.1.0/bin/mozroots --import --sync  cd /Library/Frameworks/Mono.framework/Versions/ ls 查看当前版本信息 /Library/Frameworks/Mono.">
+<meta name="description" content="brew install jenkins mdfind -name jenkins.war java -jar yourjenkins.war --httpport=8080启动报错，原因是8080端口被占用,kill占用该端口的进程，重新执行命令即可 浏览器访问：http://localhost:8080前往以下路径找到初始密码即可解锁 创建自己的用户登录安装推荐的插件安装其他插件，如：Perf">
 <meta name="keywords" content="Note">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fiddler 环境搭建">
-<meta property="og:url" content="http://yoursite.com/2018/05/04/Fiddler环境搭建/index.html">
+<meta property="og:title" content="Jenkins 环境搭建">
+<meta property="og:url" content="http://yoursite.com/2019/05/06/Jenkins-环境搭建/index.html">
 <meta property="og:site_name" content="CharingCrossRoad">
-<meta property="og:description" content="Download Fiddler  Download Mono  /Library/Frameworks/Mono.framework/Versions/5.8.1.0/bin/mozroots --import --sync  cd /Library/Frameworks/Mono.framework/Versions/ ls 查看当前版本信息 /Library/Frameworks/Mono.">
+<meta property="og:description" content="brew install jenkins mdfind -name jenkins.war java -jar yourjenkins.war --httpport=8080启动报错，原因是8080端口被占用,kill占用该端口的进程，重新执行命令即可 浏览器访问：http://localhost:8080前往以下路径找到初始密码即可解锁 创建自己的用户登录安装推荐的插件安装其他插件，如：Perf">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/guide.png?">
-<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/mono.png?">
-<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/mono3.png?">
-<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/mono4.png?">
-<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/runfiddler.png?">
-<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/fiddler.png?">
-<meta property="og:updated_time" content="2018-11-09T08:59:55.000Z">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins1.png">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins2.png">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins4.png">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins5.png">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins6.png">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins7.png">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins8.png">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins3.png">
+<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins9.png">
+<meta property="og:updated_time" content="2019-05-06T03:02:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fiddler 环境搭建">
-<meta name="twitter:description" content="Download Fiddler  Download Mono  /Library/Frameworks/Mono.framework/Versions/5.8.1.0/bin/mozroots --import --sync  cd /Library/Frameworks/Mono.framework/Versions/ ls 查看当前版本信息 /Library/Frameworks/Mono.">
-<meta name="twitter:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/guide.png?">
+<meta name="twitter:title" content="Jenkins 环境搭建">
+<meta name="twitter:description" content="brew install jenkins mdfind -name jenkins.war java -jar yourjenkins.war --httpport=8080启动报错，原因是8080端口被占用,kill占用该端口的进程，重新执行命令即可 浏览器访问：http://localhost:8080前往以下路径找到初始密码即可解锁 创建自己的用户登录安装推荐的插件安装其他插件，如：Perf">
+<meta name="twitter:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins1.png">
 
 
 
@@ -117,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/05/04/Fiddler环境搭建/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/05/06/Jenkins-环境搭建/"/>
 
 
 
 
 
-  <title>Fiddler 环境搭建 | CharingCrossRoad</title>
+  <title>Jenkins 环境搭建 | CharingCrossRoad</title>
   
 
 
@@ -260,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/04/Fiddler环境搭建/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/06/Jenkins-环境搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yvette Young">
@@ -277,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Fiddler 环境搭建</h1>
+          <h1 class="post-title" itemprop="name headline">Jenkins 环境搭建</h1>
         
 
         <div class="post-meta">
@@ -289,8 +292,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-04T20:30:21+08:00">
-                2018-05-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-06T09:59:36+08:00">
+                2019-05-06
               </time>
             
 
@@ -299,6 +302,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Jenkins/" itemprop="url" rel="index">
+                    <span itemprop="name">Jenkins</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -327,20 +352,12 @@
       
 
       
-        <p><a href="https://www.telerik.com/download/fiddler" target="_blank" rel="external">Download Fiddler</a></p>
-<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/guide.png?" alt=""></p>
-<p><a href="http://www.mono-project.com/download/stable/" target="_blank" rel="external">Download Mono</a></p>
-<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/mono.png?" alt=""></p>
-<p><code>/Library/Frameworks/Mono.framework/Versions/5.8.1.0/bin/mozroots --import --sync</code></p>
-<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/mono3.png?" alt=""></p>
-<p><code>cd /Library/Frameworks/Mono.framework/Versions/</code></p>
-<p><code>ls</code> 查看当前版本信息</p>
-<p><code>/Library/Frameworks/Mono.framework/Versions/5.8.1/bin/mozroots --import --sync</code></p>
-<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/mono4.png?" alt=""></p>
-<p><code>mono Fiddler.exe</code> 启动失败</p>
-<p>解决办法如下：<br><code>mono --arch=32 Fiddler.exe</code></p>
-<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/runfiddler.png?" alt=""></p>
-<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/fiddler.png?" alt=""></p>
+        <p><code>brew install jenkins</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins1.png" alt=""></p>
+<p><code>mdfind -name jenkins.war</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins2.png" alt=""></p>
+<p><code>java -jar yourjenkins.war --httpport=8080</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins4.png" alt=""><br>启动报错，原因是8080端口被占用,kill占用该端口的进程，重新执行命令即可<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins5.png" alt=""></p>
+<p>浏览器访问：<a href="http://localhost:8080" target="_blank" rel="external">http://localhost:8080</a><br>前往以下路径找到初始密码即可解锁<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins6.png" alt=""></p>
+<p>创建自己的用户<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins7.png" alt=""><br>登录<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins8.png" alt=""><br>安装推荐的插件<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins3.png" alt=""><br>安装其他插件，如：Performance Plugin<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins9.png" alt=""></p>
+<p>登录：<a href="http://localhost:8080/login?form=%2F" target="_blank" rel="external">http://localhost:8080/login?form=%2F</a><br>退出：<a href="http://localhost:8080/exit" target="_blank" rel="external">http://localhost:8080/exit</a><br>重启：<a href="http://localhost:8080/restart" target="_blank" rel="external">http://localhost:8080/restart</a><br>重载：<a href="http://localhost:8080/reload" target="_blank" rel="external">http://localhost:8080/reload</a></p>
 
       
     </div>
@@ -371,8 +388,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/25/Jmeter安装与配置/" rel="next" title="Jmeter 安装与配置">
-                <i class="fa fa-chevron-left"></i> Jmeter 安装与配置
+              <a href="/2019/04/27/Charles录制APP的接口HAR文件/" rel="next" title="Charles 录制APP的接口HAR文件">
+                <i class="fa fa-chevron-left"></i> Charles 录制APP的接口HAR文件
               </a>
             
           </div>
@@ -380,10 +397,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/11/Virtualenv环境搭建/" rel="prev" title="Virtualenv 环境搭建">
-                Virtualenv 环境搭建 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
