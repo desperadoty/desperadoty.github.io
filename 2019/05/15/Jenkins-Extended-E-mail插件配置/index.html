@@ -69,23 +69,27 @@
 
 
 
-<meta name="description" content="负载均衡负载均衡(Loading Balancing)，是一种计算机网络技术，用来在多个计算机（计算机集群）、网络连接、CPU、磁盘驱动器或其他资源中分配负载，以达到最优化资源使用、最大化吞吐率、最小化响应时间、同时避免过载的目的。 反向代理反向代理(Reverse Proxy)，是一种代理服务器。它根据客户端的请求，从后端的服务器（如WEB服务器）上获取资源，然后再将这些资源返回给客户端。与前向">
+<meta name="description" content="点击系统管理，进行系统设置。   邮件正文模板： 12345678910111213141516171819202122232425262728293031323334353637383940414243&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;&amp;lt;title&amp;gt;$&amp;">
 <meta name="keywords" content="Note">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx负载均衡与反向代理">
-<meta property="og:url" content="http://yoursite.com/2017/10/07/Nginx负载均衡与反向代理/index.html">
+<meta property="og:title" content="Jenkins Extended E-mail插件配置">
+<meta property="og:url" content="http://yoursite.com/2019/05/15/Jenkins-Extended-E-mail插件配置/index.html">
 <meta property="og:site_name" content="CharingCrossRoad">
-<meta property="og:description" content="负载均衡负载均衡(Loading Balancing)，是一种计算机网络技术，用来在多个计算机（计算机集群）、网络连接、CPU、磁盘驱动器或其他资源中分配负载，以达到最优化资源使用、最大化吞吐率、最小化响应时间、同时避免过载的目的。 反向代理反向代理(Reverse Proxy)，是一种代理服务器。它根据客户端的请求，从后端的服务器（如WEB服务器）上获取资源，然后再将这些资源返回给客户端。与前向">
+<meta property="og:description" content="点击系统管理，进行系统设置。   邮件正文模板： 12345678910111213141516171819202122232425262728293031323334353637383940414243&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;&amp;lt;title&amp;gt;$&amp;">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.png?">
-<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/nginx%E4%BF%AE%E6%94%B9http%E7%9B%91%E5%90%AC%E7%AB%AF%E5%8F%A3.png?">
-<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E4%BF%AE%E6%94%B9hosts.png?">
-<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E4%BF%AE%E6%94%B9nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.png?">
-<meta property="og:updated_time" content="2018-11-09T08:57:12.000Z">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email1.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email2.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email3.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email4.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email6.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email7.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email8.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email9.png">
+<meta property="og:updated_time" content="2019-05-15T09:45:10.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginx负载均衡与反向代理">
-<meta name="twitter:description" content="负载均衡负载均衡(Loading Balancing)，是一种计算机网络技术，用来在多个计算机（计算机集群）、网络连接、CPU、磁盘驱动器或其他资源中分配负载，以达到最优化资源使用、最大化吞吐率、最小化响应时间、同时避免过载的目的。 反向代理反向代理(Reverse Proxy)，是一种代理服务器。它根据客户端的请求，从后端的服务器（如WEB服务器）上获取资源，然后再将这些资源返回给客户端。与前向">
-<meta name="twitter:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.png?">
+<meta name="twitter:title" content="Jenkins Extended E-mail插件配置">
+<meta name="twitter:description" content="点击系统管理，进行系统设置。   邮件正文模板： 12345678910111213141516171819202122232425262728293031323334353637383940414243&amp;lt;!DOCTYPE html&amp;gt;&amp;lt;html&amp;gt;&amp;lt;head&amp;gt;&amp;lt;meta charset=&amp;quot;UTF-8&amp;quot;&amp;gt;&amp;lt;title&amp;gt;$&amp;">
+<meta name="twitter:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email1.png">
 
 
 
@@ -115,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/07/Nginx负载均衡与反向代理/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/05/15/Jenkins-Extended-E-mail插件配置/"/>
 
 
 
 
 
-  <title>Nginx负载均衡与反向代理 | CharingCrossRoad</title>
+  <title>Jenkins Extended E-mail插件配置 | CharingCrossRoad</title>
   
 
 
@@ -258,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/07/Nginx负载均衡与反向代理/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/15/Jenkins-Extended-E-mail插件配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yvette Young">
@@ -275,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Nginx负载均衡与反向代理</h1>
+          <h1 class="post-title" itemprop="name headline">Jenkins Extended E-mail插件配置</h1>
         
 
         <div class="post-meta">
@@ -287,8 +291,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-07T15:55:36+08:00">
-                2017-10-07
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-15T17:15:04+08:00">
+                2019-05-15
               </time>
             
 
@@ -310,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NetWork/" itemprop="url" rel="index">
-                    <span itemprop="name">NetWork</span>
+                  <a href="/categories/Jenkins/" itemprop="url" rel="index">
+                    <span itemprop="name">Jenkins</span>
                   </a>
                 </span>
 
@@ -347,10 +351,12 @@
       
 
       
-        <h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><p>负载均衡(Loading Balancing)，是一种计算机网络技术，用来在多个计算机（计算机集群）、网络连接、CPU、磁盘驱动器或其他资源中分配负载，以达到最优化资源使用、最大化吞吐率、最小化响应时间、同时避免过载的目的。</p>
-<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><p>反向代理(Reverse Proxy)，是一种代理服务器。它根据客户端的请求，从后端的服务器（如WEB服务器）上获取资源，然后再将这些资源返回给客户端。与前向代理不同，前向代理作为一个媒介将互联网上获取的资源返回给相关联的客户端，而反向代理是在服务器端作为代理使用，而不是客户端。客户端通过前向代理可以访问很多不同的资源，而反向代理是很多客户端都通过它访问不同后端服务器上的资源，而不需要知道这些后端服务器的存在，而以为所有资源都来自愿这个反向代理服务器。<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.png?" alt=""></p>
-<h3 id="Nginx安装与配置"><a href="#Nginx安装与配置" class="headerlink" title="Nginx安装与配置"></a>Nginx安装与配置</h3><p>1.安装<br><code>brew install nginx</code><br>2.配置<br><code>sudo vim /usr/local/etc/nginx/nginx.conf</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/nginx%E4%BF%AE%E6%94%B9http%E7%9B%91%E5%90%AC%E7%AB%AF%E5%8F%A3.png?" alt=""><br>3.常用命令<br>启动nginx <code>sudo nginx</code><br>重启nginx <code>sudo nginx -s reload</code><br>停止nginx <code>sudo nginx -s stop</code></p>
-<h3 id="Nginx反向代理"><a href="#Nginx反向代理" class="headerlink" title="Nginx反向代理"></a>Nginx反向代理</h3><p>1.通过修改hosts文件模拟多个域名访问本机的nginx。<br><code>sudo vim /etc/hosts</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E4%BF%AE%E6%94%B9hosts.png?" alt=""><br>2.修改nginx配置文件设置反向代理<br><code>sudo vim /usr/local/etc/nginx/nginx.conf</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E4%BF%AE%E6%94%B9nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.png?" alt=""><br>3.重启nginx服务<br><code>sudo nginx -s reload</code><br>此时，在浏览器访问testnginx.com会访问到www.bilibili.com;访问testreverse.com会访问到www.acfun.cn;访问testproxy.com会访问到www.zhihu.com。</p>
+        <p>点击系统管理，进行系统设置。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email1.png" alt=""></p>
+<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email2.png" alt=""></p>
+<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email3.png" alt=""><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email4.png" alt=""><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email6.png" alt=""></p>
+<p>邮件正文模板：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset=&quot;UTF-8&quot;&gt;</div><div class="line">&lt;title&gt;$&#123;PROJECT_NAME&#125;-第$&#123;BUILD_NUMBER&#125;次构建日志&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"></div><div class="line">&lt;body leftmargin=&quot;8&quot; marginwidth=&quot;0&quot; topmargin=&quot;8&quot; marginheight=&quot;4&quot;</div><div class="line">    offset=&quot;0&quot;&gt;</div><div class="line">    &lt;table width=&quot;95%&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot;</div><div class="line">        style=&quot;font-size: 11pt; font-family: Tahoma, Arial, Helvetica, sans-serif&quot;&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;(本邮件是程序自动下发的，请勿回复！)&lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;&lt;br /&gt;</div><div class="line">            &lt;b&gt;&lt;font color=&quot;#0B610B&quot;&gt;构建信息($BUILD_STATUS)&lt;/font&gt;&lt;/b&gt;</div><div class="line">            &lt;hr size=&quot;2&quot; width=&quot;100%&quot; align=&quot;center&quot; /&gt;&lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;</div><div class="line">                &lt;ul&gt;</div><div class="line">                    &lt;li&gt;项目名称 ： $&#123;PROJECT_NAME&#125;&lt;/li&gt;</div><div class="line">                    &lt;li&gt;构建编号 ： 第$&#123;BUILD_NUMBER&#125;次构建&lt;/li&gt;</div><div class="line">                    &lt;li&gt;触发原因 ： $&#123;CAUSE&#125;&lt;/li&gt;</div><div class="line">                    &lt;li&gt;构建日志 ： &lt;a href=&quot;$&#123;BUILD_URL&#125;console&quot;&gt;$&#123;BUILD_URL&#125;console&lt;/a&gt;&lt;/li&gt;</div><div class="line">                    &lt;li&gt;工作目录 ： &lt;a href=&quot;$&#123;PROJECT_URL&#125;ws&quot;&gt;$&#123;PROJECT_URL&#125;ws&lt;/a&gt;&lt;/li&gt;</div><div class="line">                    &lt;li&gt;Allure Report ： &lt;a href=&quot;$&#123;BUILD_URL&#125;allure&quot;&gt;$&#123;BUILD_URL&#125;allure&lt;/a&gt;&lt;/li&gt;</div><div class="line">                &lt;/ul&gt;</div><div class="line">            &lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;&lt;b&gt;&lt;font color=&quot;#0B610B&quot;&gt;构建日志(最后100行):&lt;/font&gt;&lt;/b&gt;</div><div class="line">            &lt;hr size=&quot;2&quot; width=&quot;100%&quot; align=&quot;center&quot; /&gt;&lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">        &lt;tr&gt;</div><div class="line">            &lt;td&gt;&lt;textarea cols=&quot;80&quot; rows=&quot;30&quot; readonly=&quot;readonly&quot;</div><div class="line">                    style=&quot;font-family: Courier New&quot;&gt;$&#123;BUILD_LOG, maxLines=100&#125;&lt;/textarea&gt;</div><div class="line">            &lt;/td&gt;</div><div class="line">        &lt;/tr&gt;</div><div class="line">    &lt;/table&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
+<p>新建项目，添加构建后操作Editable Email Notification。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email7.png" alt=""><br>配置收件人。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email8.png" alt=""><br>构建完成，前往控制台查看日志。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/email9.png" alt=""></p>
 
       
     </div>
@@ -381,8 +387,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/06/MySQL重置密码/" rel="next" title="MySQL重置密码">
-                <i class="fa fa-chevron-left"></i> MySQL重置密码
+              <a href="/2019/05/14/Dropbox使用说明/" rel="next" title="Dropbox 使用说明">
+                <i class="fa fa-chevron-left"></i> Dropbox 使用说明
               </a>
             
           </div>
@@ -390,10 +396,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/09/Java23种设计模式之单例模式/" rel="prev" title="Java23种设计模式之单例模式">
-                Java23种设计模式之单例模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -445,17 +447,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -520,22 +513,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#负载均衡"><span class="nav-number">1.</span> <span class="nav-text">负载均衡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反向代理"><span class="nav-number">2.</span> <span class="nav-text">反向代理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx安装与配置"><span class="nav-number">3.</span> <span class="nav-text">Nginx安装与配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nginx反向代理"><span class="nav-number">4.</span> <span class="nav-text">Nginx反向代理</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
