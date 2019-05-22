@@ -69,20 +69,24 @@
 
 
 
-<meta name="description" content="MySQL安装时会有一个临时密码，如下图： 在知道临时密码的情况下，我直接使用mysqladmin -u root password &amp;#39;your new password&amp;#39;然而，今天发现重启过电脑之后就不再生效了。 改用以下方法重置密码：1.停止MySQL服务器2.cd /usr/local/mysql/bin3.sudo su4.输入开机密码5.sudo /usr/local/m">
+<meta name="description" content="Download jmeter.results.shanhe.me.xsl 将新的测试报告样式文件放在jmeter的extras目录下修改build.xml中的样式文件配置信息在Invoke Ant之前执行shell命令rm -rf,删除之前的测试报告html及jtl文件。配置构建后操作，需要注意相对路径及绝对路径。最终的测试报告如下">
 <meta name="keywords" content="Note">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL重置密码">
-<meta property="og:url" content="http://yoursite.com/2017/10/06/MySQL重置密码/index.html">
+<meta property="og:title" content="Jenkins Publish HTML &amp; Performance 插件配置">
+<meta property="og:url" content="http://yoursite.com/2019/05/21/Jenkins-Publish-HTML-Performance-插件配置/index.html">
 <meta property="og:site_name" content="CharingCrossRoad">
-<meta property="og:description" content="MySQL安装时会有一个临时密码，如下图： 在知道临时密码的情况下，我直接使用mysqladmin -u root password &amp;#39;your new password&amp;#39;然而，今天发现重启过电脑之后就不再生效了。 改用以下方法重置密码：1.停止MySQL服务器2.cd /usr/local/mysql/bin3.sudo su4.输入开机密码5.sudo /usr/local/m">
+<meta property="og:description" content="Download jmeter.results.shanhe.me.xsl 将新的测试报告样式文件放在jmeter的extras目录下修改build.xml中的样式文件配置信息在Invoke Ant之前执行shell命令rm -rf,删除之前的测试报告html及jtl文件。配置构建后操作，需要注意相对路径及绝对路径。最终的测试报告如下">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/MySQL%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81.png?">
-<meta property="og:updated_time" content="2018-11-09T08:56:45.000Z">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance3.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance2.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance5.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance4.png">
+<meta property="og:updated_time" content="2019-05-22T02:49:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySQL重置密码">
-<meta name="twitter:description" content="MySQL安装时会有一个临时密码，如下图： 在知道临时密码的情况下，我直接使用mysqladmin -u root password &amp;#39;your new password&amp;#39;然而，今天发现重启过电脑之后就不再生效了。 改用以下方法重置密码：1.停止MySQL服务器2.cd /usr/local/mysql/bin3.sudo su4.输入开机密码5.sudo /usr/local/m">
-<meta name="twitter:image" content="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/MySQL%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81.png?">
+<meta name="twitter:title" content="Jenkins Publish HTML &amp; Performance 插件配置">
+<meta name="twitter:description" content="Download jmeter.results.shanhe.me.xsl 将新的测试报告样式文件放在jmeter的extras目录下修改build.xml中的样式文件配置信息在Invoke Ant之前执行shell命令rm -rf,删除之前的测试报告html及jtl文件。配置构建后操作，需要注意相对路径及绝对路径。最终的测试报告如下">
+<meta name="twitter:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance3.png">
 
 
 
@@ -112,13 +116,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/06/MySQL重置密码/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/05/21/Jenkins-Publish-HTML-Performance-插件配置/"/>
 
 
 
 
 
-  <title>MySQL重置密码 | CharingCrossRoad</title>
+  <title>Jenkins Publish HTML & Performance 插件配置 | CharingCrossRoad</title>
   
 
 
@@ -255,7 +259,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/06/MySQL重置密码/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/Jenkins-Publish-HTML-Performance-插件配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Yvette Young">
@@ -272,7 +276,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySQL重置密码</h1>
+          <h1 class="post-title" itemprop="name headline">Jenkins Publish HTML & Performance 插件配置</h1>
         
 
         <div class="post-meta">
@@ -284,8 +288,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-06T14:21:08+08:00">
-                2017-10-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-21T16:08:48+08:00">
+                2019-05-21
               </time>
             
 
@@ -307,8 +311,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/DataBase/" itemprop="url" rel="index">
-                    <span itemprop="name">DataBase</span>
+                  <a href="/categories/Jenkins/" itemprop="url" rel="index">
+                    <span itemprop="name">Jenkins</span>
                   </a>
                 </span>
 
@@ -344,10 +348,8 @@
       
 
       
-        <p>MySQL安装时会有一个临时密码，如下图：<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/MySQL%E4%B8%B4%E6%97%B6%E5%AF%86%E7%A0%81.png?" alt=""></p>
-<p>在知道临时密码的情况下，我直接使用<br><code>mysqladmin -u root password &#39;your new password&#39;</code><br>然而，今天发现重启过电脑之后就不再生效了。</p>
-<p>改用以下方法重置密码：<br>1.停止MySQL服务器<br>2.<code>cd /usr/local/mysql/bin</code><br>3.<code>sudo su</code><br>4.输入开机密码<br>5.<code>sudo /usr/local/mysql/bin/mysqld_safe --skip-grant-tables</code><br>6.重新打开一个新的终端<br>7.<code>sudo /usr/local/mysql/bin/mysql -u root</code><br>8.输入开机密码<br>9.<code>UPDATE mysql.user SET authentication_string=PASSWORD(&#39;your new password&#39; WHERE User=&#39;root&#39;;</code><br>10.<code>FLUSH PRIVILEGES;</code><br>11.<code>\q</code></p>
-<p>修改密码后确实能够使用新密码登录，但可能会遇到如下错误：<br><code>You must reset your password using ALTER USER statement before executing this statement</code><br>解决方法如下：<br>1.<code>mysql&gt;SET PASSWORD = PASSWORD(&#39;your new password&#39;);</code><br>2.<code>mysql&gt;ALTER USER &#39;root&#39;@&#39;localhost&#39; PASSWORD EXPIRE NEVER;</code><br>3.<code>mysql&gt;FLUSH PRIVILEGES;</code></p>
+        <p><code>Download</code> <a href="http://shanhe.me/node/18/314" target="_blank" rel="external">jmeter.results.shanhe.me.xsl</a></p>
+<p>将新的测试报告样式文件放在jmeter的extras目录下<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance3.png" alt=""><br>修改build.xml中的样式文件配置信息<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance2.png" alt=""><br>在Invoke Ant之前执行shell命令<code>rm -rf</code>,删除之前的测试报告html及jtl文件。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance5.png" alt=""><br>配置构建后操作，需要注意相对路径及绝对路径。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance.png" alt=""><br>最终的测试报告如下<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance4.png" alt=""></p>
 
       
     </div>
@@ -378,8 +380,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/05/使用binlog恢复MySQL数据库/" rel="next" title="使用binlog恢复MySQL数据库">
-                <i class="fa fa-chevron-left"></i> 使用binlog恢复MySQL数据库
+              <a href="/2019/05/15/Jenkins-Extended-E-mail插件配置/" rel="next" title="Jenkins Extended E-mail 插件配置">
+                <i class="fa fa-chevron-left"></i> Jenkins Extended E-mail 插件配置
               </a>
             
           </div>
@@ -387,10 +389,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/07/Nginx负载均衡与反向代理/" rel="prev" title="Nginx负载均衡与反向代理">
-                Nginx负载均衡与反向代理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
