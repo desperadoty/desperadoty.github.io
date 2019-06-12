@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Note," />
 
 
 
@@ -69,16 +69,29 @@
 
 
 
-<meta name="description" content="better late than never">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CharingCrossRoad">
-<meta property="og:url" content="http://yoursite.com/archives/2017/09/index.html">
+<meta name="description" content="以coding为例，使用BeanShell PostProcessor提取session id 经分析，coding.net以sid作为登录凭证。sid使用uuid，长度为36位，格式包含字母、数字及-。 12345678910111213import java.util.regex.Matcher;import java.util.regex.Pattern;String str=prev.ge">
+<meta name="keywords" content="Note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jmeter Plugins - BeanShell PostProcessor">
+<meta property="og:url" content="http://yoursite.com/2019/06/12/Jmeter-Plugins-BeanShell-PostProcessor/index.html">
 <meta property="og:site_name" content="CharingCrossRoad">
-<meta property="og:description" content="better late than never">
+<meta property="og:description" content="以coding为例，使用BeanShell PostProcessor提取session id 经分析，coding.net以sid作为登录凭证。sid使用uuid，长度为36位，格式包含字母、数字及-。 12345678910111213import java.util.regex.Matcher;import java.util.regex.Pattern;String str=prev.ge">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell8.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell9.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell10.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell1.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell2.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell4.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell5.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell6.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell7.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell3.png">
+<meta property="og:updated_time" content="2019-06-12T09:48:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CharingCrossRoad">
-<meta name="twitter:description" content="better late than never">
+<meta name="twitter:title" content="Jmeter Plugins - BeanShell PostProcessor">
+<meta name="twitter:description" content="以coding为例，使用BeanShell PostProcessor提取session id 经分析，coding.net以sid作为登录凭证。sid使用uuid，长度为36位，格式包含字母、数字及-。 12345678910111213import java.util.regex.Matcher;import java.util.regex.Pattern;String str=prev.ge">
+<meta name="twitter:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell8.png">
 
 
 
@@ -108,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2017/09/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/06/12/Jmeter-Plugins-BeanShell-PostProcessor/"/>
 
 
 
 
 
-  <title>Archive | CharingCrossRoad</title>
+  <title>Jmeter Plugins - BeanShell PostProcessor | CharingCrossRoad</title>
   
 
 
@@ -133,7 +146,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,406 +250,172 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
 
-      <span class="archive-page-counter">
-        
-        
-         
-        
-        OK! 45 posts in total. Keep on posting.
-      </span>
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/Jmeter-Plugins-BeanShell-PostProcessor/">
 
-      
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
 
         
         
+          <h1 class="post-title" itemprop="name headline">Jmeter Plugins - BeanShell PostProcessor</h1>
         
 
-        
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-12T08:54:09+08:00">
+                2019-06-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2017">2017</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/30/TCP三次握手及四次挥手/" itemprop="url">
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
               
-                <span itemprop="name">TCP三次握手及四次挥手</span>
+                <span class="post-meta-item-text">In</span>
               
-            </a>
-        
-      </h2>
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Jmeter/" itemprop="url" rel="index">
+                    <span itemprop="name">Jmeter</span>
+                  </a>
+                </span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-30T22:20:27+08:00"
-              content="2017-09-30" >
-          09-30
-        </time>
-      </div>
+                
+                
+              
+            </span>
+          
 
-    </header>
-  </article>
+          
+            
+          
 
+          
+          
 
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/28/Java多线程/" itemprop="url">
-              
-                <span itemprop="name">Java多线程</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-28T17:20:05+08:00"
-              content="2017-09-28" >
-          09-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/28/Java集合框架/" itemprop="url">
-              
-                <span itemprop="name">Java集合框架</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-28T17:19:02+08:00"
-              content="2017-09-28" >
-          09-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>以coding为例，使用BeanShell PostProcessor提取session id<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell8.png" alt=""><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell9.png" alt=""></p>
+<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell10.png" alt=""><br>经分析，coding.net以sid作为登录凭证。sid使用uuid，长度为36位，格式包含字母、数字及-。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell1.png" alt=""><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell2.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import java.util.regex.Matcher;</div><div class="line">import java.util.regex.Pattern;</div><div class="line">String str=prev.getResponseHeaders();</div><div class="line">log.info(&quot;head=&quot;+str);</div><div class="line">// 把要匹配的字符串写成正则表达式，然后要提取的字符使用括号括起来</div><div class="line">Pattern p = Pattern.compile(&quot;[A-Za-z0-9\\-]&#123;36&#125;&quot;);</div><div class="line">Matcher m = p.matcher(str);</div><div class="line">log.info(&quot;m=&quot;+m);</div><div class="line">if(m.find()) &#123; </div><div class="line">    String result= m.group(0);</div><div class="line">    log.info(&quot;sid=&quot;+result);</div><div class="line">    vars.put(&quot;sid&quot;,result);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell4.png" alt=""><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell5.png" alt=""><br>Cookie中无登录会话标识sid，请求接口提示：用户未登录。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell6.png" alt=""><br>Cookie中带登录会话标识sid，请求接口正常。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell7.png" alt=""><br>命令行查看日志 <code>less jmeter.log</code>，或者直接找到日志文件双击打开。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell3.png" alt=""></p>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/28/HTTP状态码及含义/" itemprop="url">
-              
-                <span itemprop="name">HTTP状态码及含义</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-28T14:23:10+08:00"
-              content="2017-09-28" >
-          09-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/27/Git命令提交本地代码至GitHub/" itemprop="url">
-              
-                <span itemprop="name">Git命令提交本地代码至GitHub</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-27T00:38:06+08:00"
-              content="2017-09-27" >
-          09-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/26/Java中String和StringBuffer的区别/" itemprop="url">
-              
-                <span itemprop="name">Java中String和StringBuffer的区别</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-26T14:29:25+08:00"
-              content="2017-09-26" >
-          09-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/26/当你输入一个网址的时候/" itemprop="url">
-              
-                <span itemprop="name">当你输入一个网址的时候</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-26T14:21:51+08:00"
-              content="2017-09-26" >
-          09-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/25/HTTP2-0协议/" itemprop="url">
-              
-                <span itemprop="name">HTTP2.0协议</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-25T20:57:18+08:00"
-              content="2017-09-25" >
-          09-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/24/IDEA配置JDK及Tomcat/" itemprop="url">
-              
-                <span itemprop="name">IDEA配置JDK及Tomcat</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-24T17:22:59+08:00"
-              content="2017-09-24" >
-          09-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/21/hello-world/" itemprop="url">
-              
-                <span itemprop="name">Hello World</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-21T16:34:22+08:00"
-              content="2017-09-21" >
-          09-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Note/" rel="tag"># Note</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/30/Jmeter-Plugins-Stepping-Thread-Group/" rel="next" title="Jmeter Plugins - Concurrency Thread Group">
+                <i class="fa fa-chevron-left"></i> Jmeter Plugins - Concurrency Thread Group
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -644,6 +423,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         

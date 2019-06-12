@@ -252,6 +252,151 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/12/Jmeter-Plugins-BeanShell-PostProcessor/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/12/Jmeter-Plugins-BeanShell-PostProcessor/" itemprop="url">Jmeter Plugins - BeanShell PostProcessor</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-12T08:54:09+08:00">
+                2019-06-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Jmeter/" itemprop="url" rel="index">
+                    <span itemprop="name">Jmeter</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>以coding为例，使用BeanShell PostProcessor提取session id<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell8.png" alt=""><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell9.png" alt=""></p>
+<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell10.png" alt=""><br>经分析，coding.net以sid作为登录凭证。sid使用uuid，长度为36位，格式包含字母、数字及-。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell1.png" alt=""><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell2.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">import java.util.regex.Matcher;</div><div class="line">import java.util.regex.Pattern;</div><div class="line">String str=prev.getResponseHeaders();</div><div class="line">log.info(&quot;head=&quot;+str);</div><div class="line">// 把要匹配的字符串写成正则表达式，然后要提取的字符使用括号括起来</div><div class="line">Pattern p = Pattern.compile(&quot;[A-Za-z0-9\\-]&#123;36&#125;&quot;);</div><div class="line">Matcher m = p.matcher(str);</div><div class="line">log.info(&quot;m=&quot;+m);</div><div class="line">if(m.find()) &#123; </div><div class="line">    String result= m.group(0);</div><div class="line">    log.info(&quot;sid=&quot;+result);</div><div class="line">    vars.put(&quot;sid&quot;,result);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell4.png" alt=""><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell5.png" alt=""><br>Cookie中无登录会话标识sid，请求接口提示：用户未登录。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell6.png" alt=""><br>Cookie中带登录会话标识sid，请求接口正常。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell7.png" alt=""><br>命令行查看日志 <code>less jmeter.log</code>，或者直接找到日志文件双击打开。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/beanshell3.png" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/30/Jmeter-Plugins-Stepping-Thread-Group/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1549,154 +1694,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/27/Charles录制APP的接口HAR文件/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yvette Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CharingCrossRoad">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/27/Charles录制APP的接口HAR文件/" itemprop="url">Charles 录制APP的接口HAR文件</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-27T23:13:25+08:00">
-                2019-04-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Charles/" itemprop="url" rel="index">
-                    <span itemprop="name">Charles</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>前提条件：WEB与APP端链接同一个WIFI</p>
-<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/charles22.png" alt=""></p>
-<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/charles23.png" alt=""></p>
-<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/charles5.png" alt=""></p>
-<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/charles25.png" alt=""></p>
-<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/charles26.png" alt=""></p>
-<h5 id="File-→-Export-Session"><a href="#File-→-Export-Session" class="headerlink" title="File → Export Session"></a>File → Export Session</h5><p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/charles27.png" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1750,7 +1747,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">44</span>
+                <span class="site-state-item-count">45</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1772,7 +1769,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">1</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
