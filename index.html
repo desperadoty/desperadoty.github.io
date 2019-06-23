@@ -634,7 +634,7 @@
         
           
             <p>每次构建都会生成html和jtl文件，随着构建次数的增加，文件就会越来越多。之前想的过于简单，在Ant构建之前执行<code>rm -rf</code>命令，现在发现这样会导致Performance Trend展示异常。</p>
-<p><strong>更新思路</strong>：每次执行构建之前，执行<code>cd path &amp;&amp; rm ls -t  |tail -n +2</code>，只保留上一次构建的结果，其余删除。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/performance0616.png" alt=""></p>
+<p><strong>更新思路</strong>：每次执行构建之前，执行<em>cd $path &amp;&amp; rm `ls -t  |tail -n +2`</em> ，只保留上一次构建的结果，其余删除。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/performance0616.png" alt=""></p>
 <p>另外，之前未发现使用jmeter-results-shanhe-me.xsl时html报告未获取到请求具体信息，比如：请求方式、请求参数及响应数据。</p>
 <p><strong>更新配置</strong>：修改jmeter.properties</p>
 <p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/performance06161.png" alt=""></p>
