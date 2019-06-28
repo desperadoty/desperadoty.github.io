@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Note," />
 
 
 
@@ -69,16 +69,21 @@
 
 
 
-<meta name="description" content="better late than never">
-<meta property="og:type" content="website">
-<meta property="og:title" content="CharingCrossRoad">
-<meta property="og:url" content="http://yoursite.com/categories/NetWork/index.html">
+<meta name="description" content="之前都是自己手动在工作空间新建report文件夹，但是必须要先构建一次才会有工作空间生成。所以，我们在构建时执行Shell自动生成这个文件夹，但也不能每次都新建，这时可先判断工作空间是否存在这两个文件夹，没有的时候才执行新建操作。 1234cd $&amp;#123;WORKSPACE&amp;#125;if [ ! -d report ];then    mkdir -p report/html report/">
+<meta name="keywords" content="Note">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Jenkins Publish HTML &amp; Performance 插件配置(三）">
+<meta property="og:url" content="http://yoursite.com/2019/06/23/Jenkins-Publish-HTML-Performance-插件配置-三）/index.html">
 <meta property="og:site_name" content="CharingCrossRoad">
-<meta property="og:description" content="better late than never">
+<meta property="og:description" content="之前都是自己手动在工作空间新建report文件夹，但是必须要先构建一次才会有工作空间生成。所以，我们在构建时执行Shell自动生成这个文件夹，但也不能每次都新建，这时可先判断工作空间是否存在这两个文件夹，没有的时候才执行新建操作。 1234cd $&amp;#123;WORKSPACE&amp;#125;if [ ! -d report ];then    mkdir -p report/html report/">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Jenkins06231.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Jenkins06232.png">
+<meta property="og:updated_time" content="2019-06-28T08:32:48.959Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CharingCrossRoad">
-<meta name="twitter:description" content="better late than never">
+<meta name="twitter:title" content="Jenkins Publish HTML &amp; Performance 插件配置(三）">
+<meta name="twitter:description" content="之前都是自己手动在工作空间新建report文件夹，但是必须要先构建一次才会有工作空间生成。所以，我们在构建时执行Shell自动生成这个文件夹，但也不能每次都新建，这时可先判断工作空间是否存在这两个文件夹，没有的时候才执行新建操作。 1234cd $&amp;#123;WORKSPACE&amp;#125;if [ ! -d report ];then    mkdir -p report/html report/">
+<meta name="twitter:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Jenkins06231.png">
 
 
 
@@ -108,13 +113,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/categories/NetWork/"/>
+  <link rel="canonical" href="http://yoursite.com/2019/06/23/Jenkins-Publish-HTML-Performance-插件配置-三）/"/>
 
 
 
 
 
-  <title>Category: NetWork | CharingCrossRoad</title>
+  <title>Jenkins Publish HTML & Performance 插件配置(三） | CharingCrossRoad</title>
   
 
 
@@ -133,7 +138,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,139 +242,172 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>NetWork<small>Category</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/23/Jenkins-Publish-HTML-Performance-插件配置-三）/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2017/10/07/Nginx负载均衡与反向代理/" itemprop="url">
-              
-                <span itemprop="name">Nginx负载均衡与反向代理</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Jenkins Publish HTML & Performance 插件配置(三）</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-10-07T15:55:36+08:00"
-              content="2017-10-07" >
-          10-07
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-23T15:45:09+08:00">
+                2019-06-23
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Jenkins/" itemprop="url" rel="index">
+                    <span itemprop="name">Jenkins</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/28/HTTP状态码及含义/" itemprop="url">
-              
-                <span itemprop="name">HTTP状态码及含义</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-28T14:23:10+08:00"
-              content="2017-09-28" >
-          09-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/26/当你输入一个网址的时候/" itemprop="url">
-              
-                <span itemprop="name">当你输入一个网址的时候</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-26T14:21:51+08:00"
-              content="2017-09-26" >
-          09-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/09/25/HTTP2-0协议/" itemprop="url">
-              
-                <span itemprop="name">HTTP2.0协议</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-09-25T20:57:18+08:00"
-              content="2017-09-25" >
-          09-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>之前都是自己手动在工作空间新建report文件夹，但是必须要先构建一次才会有工作空间生成。所以，我们在构建时执行Shell自动生成这个文件夹，但也不能每次都新建，这时可先判断工作空间是否存在这两个文件夹，没有的时候才执行新建操作。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">cd $&#123;WORKSPACE&#125;</div><div class="line">if [ ! -d report ];then</div><div class="line">    mkdir -p report/html report/jtl</div><div class="line">fi</div></pre></td></tr></table></figure>
+<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Jenkins06231.png" alt=""></p>
+<p>采取环境变量${WORKSPACE}代表当前工作空间。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Jenkins06232.png" alt=""></p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Note/" rel="tag"># Note</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/18/Jmeter-Plugins-Once-Only-Controller/" rel="next" title="Jmeter Plugins - Once Only Controller">
+                <i class="fa fa-chevron-left"></i> Jmeter Plugins - Once Only Controller
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -377,6 +415,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
