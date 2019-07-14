@@ -252,6 +252,142 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/TCP三次握手及四次挥手/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/30/TCP三次握手及四次挥手/" itemprop="url">TCP三次握手及四次挥手</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-09-30T22:20:27+08:00">
+                2017-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>OSI七层模型：<br>物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。</p>
+<p>TCP/IP协议族常用协议：<br>应用层：HTTP,FTP,DNS<br>传输层：TCP,UDP<br>网络层：IP,ICMP<br>数据链路层：PPP</p>
+<p>建立TCP连接的三次握手过程：</p>
+<ol>
+<li>Client给Server发送一个SYN报文请求</li>
+<li>Server给Client发送SYN+ACK报文，告知对方已收到请求</li>
+<li>Client再给Server一个ACK报文回应</li>
+</ol>
+<p><strong>中断连接端可以是Client也可以是Server</strong></p>
+<p>断开TCP连接的四次挥手过程：</p>
+<ol>
+<li>Client给Server发送FIN报文请求</li>
+<li>Server给Client发送ACK报文，告知对方已收到请求</li>
+<li>Server给Client发送FIN报文</li>
+<li>Client给Server发送ACK报文回应</li>
+</ol>
+<p>为什么断开连接需要四次挥手呢？<br>原因是在断开连接的时候，Server端收到FIN报文，可能并不会立即关闭Socket，而是先回复一个ACK报文，告诉Client自己已收到请求，等Server端的所有报文都发送完，才会发送FIN报文给Client。这时候，Client收到FIN报文就知道可以断开连接了，就给Server发送一个ACK报文回应。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/28/Java多线程/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1658,7 +1794,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">49</span>
+                <span class="site-state-item-count">50</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
