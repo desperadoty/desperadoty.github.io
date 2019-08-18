@@ -252,6 +252,166 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/18/Android-APP性能测试基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.JPG">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/18/Android-APP性能测试基础/" itemprop="url">Android APP性能测试基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-18T13:42:24+08:00">
+                2019-08-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/APP/" itemprop="url" rel="index">
+                    <span itemprop="name">APP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>adb devices</code></p>
+<h5 id="查看CPU占用率的两条命令："><a href="#查看CPU占用率的两条命令：" class="headerlink" title="查看CPU占用率的两条命令："></a>查看CPU占用率的两条命令：</h5><p>①<code>adb shell top -n 1</code> </p>
+<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb08171.png" alt=""></p>
+<p>②<code>adb shell dumpsys cpuinfo | grep pkgname</code><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb08172.png" alt=""></p>
+<h5 id="基本数据存储位置"><a href="#基本数据存储位置" class="headerlink" title="基本数据存储位置"></a>基本数据存储位置</h5><p><code>adb shell</code><br><code>cd /proc/$pid</code><br><code>ls</code><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb08177.png" alt=""></p>
+<h5 id="查看程序的内存使用情况"><a href="#查看程序的内存使用情况" class="headerlink" title="查看程序的内存使用情况:"></a>查看程序的内存使用情况:</h5><p><code>adb shell dumpsys meminfo pkgname</code><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb08173.png" alt=""></p>
+<p>VSS - Virtual Set Size 虚拟耗用内存<br>RSS - Resident Set Size 实际物理内存<br>PSS - Proportional Set Size 比例分配物理内存（统计内存大小）<br>USS - Unique Set Size 进程独占内存（测试内存泄露）</p>
+<p>一般来说，以上四个数据依次递减</p>
+<h5 id="帧率，最直接的影响是界面的流畅度"><a href="#帧率，最直接的影响是界面的流畅度" class="headerlink" title="帧率，最直接的影响是界面的流畅度"></a>帧率，最直接的影响是界面的流畅度</h5><p><code>adb shell dumpsys gfxinfo pkgname</code><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb08174.png" alt=""></p>
+<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb08175.png" alt=""></p>
+<p>安卓⼿机屏幕的最⾼高帧率是60帧/秒， 那么为了保持这个帧率，一个界⾯面的渲染时间不不能超过1/60秒,即16.7ms</p>
+<p>计算方法：<br>实时帧率 = 1 / ⼀个界⾯渲染所花费的时间<br>帧率 = 60-(单位时间内所有问题帧的耗时/16.7)</p>
+<p>手机开发者选项开启GPU呈现模式分析<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb081710.png" alt=""><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb081711.png" alt=""></p>
+<h5 id="界面重绘"><a href="#界面重绘" class="headerlink" title="界面重绘"></a>界面重绘</h5><p>手机开发者选项开启调试GPU过度绘制<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb08179.png" alt=""><br>浅紫 → 浅绿 → 浅红 → 红色<br>1x → 2x → 3x → 4x<br>尽量避免3x、4x重绘超过屏幕的1/3</p>
+<h5 id="耗时"><a href="#耗时" class="headerlink" title="耗时"></a>耗时</h5><p>①<code>adb logcat ActivityManager:D</code></p>
+<p>②录屏后使用工具拆帧，计算耗时</p>
+<p><code>adb shell screenrecord /sdcard/test.mp4</code><br><code>adb pull /sdcard/test.mp4</code><br><code>brew install ffmpeg</code><br><code>ffmpeg -i test.mp4 %d.jpg</code><br>③埋点<br>④自动化脚本判断元素出现，计算耗时<br>⑤traceview</p>
+<h5 id="电量"><a href="#电量" class="headerlink" title="电量"></a>电量</h5><h6 id="清空耗电数据"><a href="#清空耗电数据" class="headerlink" title="清空耗电数据"></a>清空耗电数据</h6><p><code>adb shell dumpsys batterystats --reset</code><br><code>adb shell dumpsys batterystats --enable full-wake-history</code><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb08178.png" alt=""></p>
+<h6 id="获取电量数据"><a href="#获取电量数据" class="headerlink" title="获取电量数据"></a>获取电量数据</h6><p><code>adb shell dumpsys batterystats &gt;battery.txt</code><br><code>adb bugreport bugreport.zip</code><br><code>adb bugreport &gt;bugreport.txt</code><br><code>adb shell bugreport &gt;/sdcard/bugreport.txt</code><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb081713.png" alt=""><br>可使用工具<a href="https://github.com/google/battery-historian" target="_blank" rel="external">Battery Historian 2.0</a><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb08176.png" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/17/Brup-Suite-安装与破解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1534,149 +1694,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/21/Jenkins-Publish-HTML-Performance-插件配置/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yvette Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.JPG">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CharingCrossRoad">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/21/Jenkins-Publish-HTML-Performance-插件配置/" itemprop="url">Jenkins Publish HTML & Performance 插件配置</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-21T16:08:48+08:00">
-                2019-05-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Jenkins/" itemprop="url" rel="index">
-                    <span itemprop="name">Jenkins</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>Download</code> <a href="http://shanhe.me/node/18/314" target="_blank" rel="external">jmeter.results.shanhe.me.xsl</a></p>
-<p>将新的测试报告样式文件放在jmeter的extras目录下<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance3.png" alt=""><br>修改build.xml中的样式文件配置信息<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance2.png" alt=""><br>在Invoke Ant之前执行shell命令<code>rm -rf</code>,删除之前的测试报告html及jtl文件。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance5.png" alt=""><br>配置构建后操作，需要注意相对路径及绝对路径。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance.png" alt=""><br>最终的测试报告如下<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Performance4.png" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1730,7 +1747,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">51</span>
+                <span class="site-state-item-count">52</span>
                 <span class="site-state-item-name">posts</span>
               </a>
             </div>
@@ -1741,7 +1758,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">categories</span>
               </a>
             </div>
