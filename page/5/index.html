@@ -252,6 +252,326 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/05/使用binlog恢复MySQL数据库/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/u.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/05/使用binlog恢复MySQL数据库/" itemprop="url">使用binlog恢复MySQL数据库</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-05T20:33:29+08:00">
+                2017-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/DataBase/" itemprop="url" rel="index">
+                    <span itemprop="name">DataBase</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="MySQL开启binlog"><a href="#MySQL开启binlog" class="headerlink" title="MySQL开启binlog"></a>MySQL开启binlog</h3><p>1.查询是否支持binlog</p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/mysql_binlog.png?" alt=""></p>
+<p>2.在/etc目录下新建my.cnf文件支持binlog<br><code>cd /etc</code><br><code>sudo vim my.cnf</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlog.png?" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#log_bin</div><div class="line">log-bin=mysql-bin #开启binlog</div><div class="line">binlog-format=ROW</div><div class="line">server_id=1</div></pre></td></tr></table></figure>
+<p>3.重启MySQL查询是否支持binlog<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E5%BC%80%E5%90%AFbinlog.png" alt=""></p>
+<h3 id="使用binlog恢复数据库"><a href="#使用binlog恢复数据库" class="headerlink" title="使用binlog恢复数据库"></a>使用binlog恢复数据库</h3><p>1.创建test数据库<br><code>mysql&gt;CREATE DATABASE test;</code><br>2.创建binlog_test数据表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">mysql&gt;USE test;</div><div class="line">mysql&gt;CREATE TABLE binlog_test (</div><div class="line">        id INT(4) PRIMARY KEY,</div><div class="line">        name CHAR(6)</div><div class="line">      );</div></pre></td></tr></table></figure>
+<p>3.添加数据至binlog_test表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt;INSERT INTO binlog_test VALUES(1,&apos;yvette&apos;);</div><div class="line">mysql&gt;INSERT INTO binlog_test VALUES(2,&apos;fiona&apos;);</div></pre></td></tr></table></figure>
+<p>4.刷新binlog日志</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt;FLUSH LOGS;</div><div class="line">mysql&gt;SHOW MASTER LOGS;</div></pre></td></tr></table></figure>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/masterlogs.png?" alt=""></p>
+<p>5.binlog日志内容解析<br><code>mysqlbinlog mysql-bin.000001</code><br>可能会报错mysqlbinlog: unknown variable ‘default-character-set=utf8’<br><code>mysqlbinlog --no-defaults mysql-bin.000001</code><br>可能会报错mysql-bin.000001 not found</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">~ cd /usr/local/mysql</div><div class="line">mysql sudo chmod -R 777 data</div></pre></td></tr></table></figure>
+<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlog%E6%97%A5%E5%BF%97%E6%9D%83%E9%99%90.png?" alt=""></p>
+<p>修改权限之后,进入data文件夹<br><code>data mysqlbinlog --no-defaults mysql-bin.000001</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlog000001.png?" alt=""><br>6.完整备份test数据库<br>使用mysqldump命令：<br><code>~ /usr/local/mysql/bin/mysqldump -uroot -p test &gt;/usr/local/mysql/data/baktest.sql</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/baktest.png?" alt=""><br>打开本地文件夹，可见备份文件：<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/baksql.png?" alt=""><br>查看备份文件内容：<br><code>~ cd /usr/local/mysql/data</code><br><code>cat baktest.sql</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/baktestsql.png?" alt=""></p>
+<p>7.删除binlog_test表部分数据<br><code>mysql&gt;DELETE FROM binlog_test WHERE id = 2;</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlogdel.png?" alt=""><br>8.恢复test数据库<br>通过备份文件恢复数据<br><code>mysql -uroot -p test&lt;/usr/local/mysql/data/baktest.sql</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D.png?" alt=""><br>通过指定时间或指定位置来恢复数据<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/binlogpos.png?" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/05/数据库基本操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/u.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/05/数据库基本操作/" itemprop="url">MySQL数据库基本操作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-05T19:34:33+08:00">
+                2017-10-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/DataBase/" itemprop="url" rel="index">
+                    <span itemprop="name">DataBase</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><p>1.创建数据库<br><code>mysql&gt;CREATE DATABASE test; //创建test数据库</code></p>
+<p>2.查看数据库<br><code>mysql&gt;SHOW DATABASES; //查看所有数据库</code></p>
+<p>3.选择数据库<br><code>mysql&gt;USE DATABASE test; //使test成为当前默认数据库</code></p>
+<p>4.删除数据库<br><code>mysql&gt;DROP DATABASE test; //删掉test数据库</code></p>
+<p>5.备份数据库</p>
+<p><code>mysqldump -u root -p test &gt; /home/bak.sql //备份test数据库</code><br><code>mysqldump -u root -p --databases db1 db2 db3 &gt; /home/bak.sql //备份多个数据库</code><br><code>mysqldump -u root -p -all-databases &gt; /home/bak.sql //备份所有数据库</code><br><code>cat bak.sql //查看备份文件是否与原来数据库一致</code></p>
+<p>6.还原数据库<br><code>mysql -u root -p test &lt; /home/bak.sql //执行备份文件进行恢复</code></p>
+<h3 id="数据表操作"><a href="#数据表操作" class="headerlink" title="数据表操作"></a>数据表操作</h3><p>1.创建数据表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysql&gt;CREATE TABLE IF NOT EXISTS student (</div><div class="line">        id INT(11),</div><div class="line">        name VARCHAR(20) NOT NULL,</div><div class="line">        courseId CHAR(3) NOT NULL,</div><div class="line">        PRIMARY KEY(id)</div><div class="line">    )ENGINE=InnoDB;</div></pre></td></tr></table></figure>
+<p>2.查看表结构<br><code>mysql&gt;SHOW COLUMNS FROM student; //查看student表的结构</code></p>
+<p>3.修改表结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt;ALTER TABLE student ADD CONSTRAINT FK_STU_COURSE FOREIGN KEY(courseId) </div><div class="line">      REFERENCES course(id); //给student表添加外键约束</div></pre></td></tr></table></figure>
+<p>4.重命名表<br><code>mysql&gt;RENAME TABLE student TO stu;</code></p>
+<p>5.删除表<br><code>mysql&gt;DROP TABLE IF EXISTS student;</code></p>
+<h3 id="SQL操作"><a href="#SQL操作" class="headerlink" title="SQL操作"></a>SQL操作</h3><p>1.新增记录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mysql&gt;INSERT INTO student(id,name,courseId) </div><div class="line">      VALUES(&apos;14151106149&apos;,&apos;yvette&apos;,&apos;002&apos;);</div></pre></td></tr></table></figure>
+<p>2.修改记录<br><code>mysql&gt;UPDATE student SET name = &#39;young&#39;; //修改所有记录</code><br><code>mysql&gt;UPDATE student SET name = &#39;young&#39; WHERE id = &#39;14151106149&#39;; //修改一行记录</code></p>
+<p>3.删除记录<br><code>mysql&gt;DELETE FROM student; //删除所有记录</code><br><code>mysql&gt;DELETE FROM student WHERE id =  &#39;14151106149&#39;; //删除一行记录</code></p>
+<p>4.查询记录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">mysql&gt;SELECT id,name,COUNT(courseId) AS totalCourse</div><div class="line">      FROM student</div><div class="line">      WHERE name IS NOT NULL</div><div class="line">      GROUP BY id,name</div><div class="line">      ORDER BY id,name DESC</div><div class="line">      HAVING COUNT(courseId) &gt; 0;</div></pre></td></tr></table></figure>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><code>mysql&gt;source test.sql //执行test.sql文件</code></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/03/MySQL数据库优化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1446,312 +1766,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/28/HTTP状态码及含义/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yvette Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/u.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CharingCrossRoad">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/28/HTTP状态码及含义/" itemprop="url">HTTP状态码及含义</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-28T14:23:10+08:00">
-                2017-09-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NetWork/" itemprop="url" rel="index">
-                    <span itemprop="name">NetWork</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>HTTP状态码(HTTP Status Code)是用以表示网页服务器(Web Server)超文本传输协议(HTTP)响应状态的3位数字代码。</p>
-<p>1xx 消息，服务器成功收到请求，需要请求者继续执行操作</p>
-<p>2xx 成功，操作被成功接收并处理</p>
-<p>3xx 重定向，需要进一步的操作以完成请求</p>
-<p>4xx 客户端错误，请求包含语法错误或无法完成请求</p>
-<p>5xx 服务器错误，服务器在处理请求的过程中发生了错误</p>
-<p>常见HTTP状态码如下：</p>
-<p>200 OK 请求成功</p>
-<p>301 Moved Permanently 资源被永久转移到其他URL</p>
-<p>400 Bad Request 客户端请求的语法错误，服务器不能或不会处理该请求</p>
-<p>401 Unauthorized 当前请求需要用户验证</p>
-<p>403 Forbidden 服务器已经理解请求，但还是拒绝执行它</p>
-<p>404 Not Found 请求失败，服务器无法根据客户端的请求找到资源</p>
-<p>500 Internal Server Error 内部服务器错误</p>
-<p>502 Bad Gateway 充当网关或代理的服务器，从远端服务器接收到了一个无效的请求</p>
-<p>504 Gateway Time-out 充当网关或者代理的服务器，未及时从远端服务器获取请求</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/27/Git命令提交本地代码至GitHub/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yvette Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/u.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CharingCrossRoad">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/09/27/Git命令提交本地代码至GitHub/" itemprop="url">Git命令提交本地代码至GitHub</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-27T00:38:06+08:00">
-                2017-09-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li>git init</li>
-<li>git add .</li>
-<li>git commit -m “first commit”</li>
-<li>git remote add origin <a href="https://github.com/username/xxx.git" target="_blank" rel="external">https://github.com/username/xxx.git</a></li>
-<li>git push -u origin master</li>
-</ol>
-<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/git.png" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1805,7 +1819,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-count">57</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1816,7 +1830,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

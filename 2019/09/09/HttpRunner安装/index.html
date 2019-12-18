@@ -69,23 +69,29 @@
 
 
 
-<meta name="description" content="HttpRunner官方文档 pip3 install httprunner 使用Charles抓包，将请求另存为HAR文件，参考Charles录制APP的接口HAR文件 har2case demo-quickstart.har -2y，将HAR文件转换为YAML格式的测试用例hrun demo-quickstart.yml，执行测试用例">
+<meta name="description" content="HttpRunner官方文档 pip3 install httprunner 使用Charles抓包，将请求另存为HAR文件，参考Charles录制APP的接口HAR文件 har2case demo-quickstart.har -2y，将HAR文件转换为YAML格式的测试用例hrun demo-quickstart.yml，执行测试用例    HttpRunnerManager环境搭建HttpR">
 <meta name="keywords" content="Note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="HttpRunner安装">
 <meta property="og:url" content="http://yoursite.com/2019/09/09/HttpRunner安装/index.html">
 <meta property="og:site_name" content="CharingCrossRoad">
-<meta property="og:description" content="HttpRunner官方文档 pip3 install httprunner 使用Charles抓包，将请求另存为HAR文件，参考Charles录制APP的接口HAR文件 har2case demo-quickstart.har -2y，将HAR文件转换为YAML格式的测试用例hrun demo-quickstart.yml，执行测试用例">
+<meta property="og:description" content="HttpRunner官方文档 pip3 install httprunner 使用Charles抓包，将请求另存为HAR文件，参考Charles录制APP的接口HAR文件 har2case demo-quickstart.har -2y，将HAR文件转换为YAML格式的测试用例hrun demo-quickstart.yml，执行测试用例    HttpRunnerManager环境搭建HttpR">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09091.png">
 <meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09092.png">
 <meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09093.png">
 <meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09094.png">
 <meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09095.png">
-<meta property="og:updated_time" content="2019-09-27T02:42:43.062Z">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09096.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09097.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09098.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09101.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09102.png">
+<meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09103.png">
+<meta property="og:updated_time" content="2019-12-18T09:54:16.028Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HttpRunner安装">
-<meta name="twitter:description" content="HttpRunner官方文档 pip3 install httprunner 使用Charles抓包，将请求另存为HAR文件，参考Charles录制APP的接口HAR文件 har2case demo-quickstart.har -2y，将HAR文件转换为YAML格式的测试用例hrun demo-quickstart.yml，执行测试用例">
+<meta name="twitter:description" content="HttpRunner官方文档 pip3 install httprunner 使用Charles抓包，将请求另存为HAR文件，参考Charles录制APP的接口HAR文件 har2case demo-quickstart.har -2y，将HAR文件转换为YAML格式的测试用例hrun demo-quickstart.yml，执行测试用例    HttpRunnerManager环境搭建HttpR">
 <meta name="twitter:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09091.png">
 
 
@@ -333,6 +339,8 @@
 <p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09093.png" alt=""></p>
 <p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09094.png" alt=""></p>
 <p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09095.png" alt=""></p>
+<h4 id="HttpRunnerManager环境搭建"><a href="#HttpRunnerManager环境搭建" class="headerlink" title="HttpRunnerManager环境搭建"></a>HttpRunnerManager环境搭建</h4><p>HttpRunnerManager依赖很多环境，需要一一提前安装，当然也可以在报错之后根据提示安装<br><code>pip3 install pipenv</code><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09096.png" alt=""><br><code>brew install rabbitmq</code><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09097.png" alt=""><br><code>vi ~/.zshrc</code></p>
+<p>配置rabbitmq环境变量<br><code>export RIBBITMQ_HOME=/usr/local/Cellar/rabbitmq/3.7.16</code><br><code>export PATH=${PATH}:${RIBBITMQ_HOME}/sbin</code><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09098.png" alt=""><br><code>rabbitmq-server</code>启动服务<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09101.png" alt=""><br><code>http://localhost:15672/</code><br>默认账密guest/guest<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09102.png" alt=""><br>登录之后页面<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/hrun09103.png" alt=""></p>
 
       
     </div>
@@ -427,8 +435,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -446,7 +463,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">55</span>
+                <span class="site-state-item-count">57</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -457,7 +474,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -493,6 +510,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HttpRunnerManager环境搭建"><span class="nav-number">1.</span> <span class="nav-text">HttpRunnerManager环境搭建</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
