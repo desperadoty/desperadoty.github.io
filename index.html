@@ -294,6 +294,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HBase/" itemprop="url" rel="index">
+                    <span itemprop="name">HBase</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -323,7 +345,20 @@
       
         
           
-            
+            <blockquote>
+<p>HBase 简介</p>
+</blockquote>
+<p>HBase是一个开源的非关系型分布式数据库，实现的编程语言为Java。它是Apache Hadoop的一部分，运行于HDFS文件系统之上，为Hadoop提供类似于Google BigTable规模的服务。因此，它可以容错地存储海量稀疏的数据。</p>
+<p>HBase是一个高可靠、高性能、面向列、可伸缩的分布式数据库，主要用来存储非结构化和半结构化的松散数据。HBase的目标是处理非常庞大的表，可以通过水平扩展的方式，利用廉价计算机集群处理由超过10亿行数据和数百万列元素组成的数据表。</p>
+<h5 id="HBase-API"><a href="#HBase-API" class="headerlink" title="HBase API"></a>HBase API</h5><p>查看一行数据：<br><code>get &#39;test_table&#39;,&#39;rowkey&#39;</code></p>
+<p><code>get &#39;test_table&#39;,&#39;rowkey&#39;,&#39;cf:qf&#39;</code></p>
+<p>更新数据：<br><code>put &#39;test_table&#39;,&#39;rowkey&#39;,&#39;cf:qf&#39;,&#39;test_value&#39;</code></p>
+<p>删除数据某一列：<br><code>delete &#39;test_table&#39;,&#39;rowkey&#39;,&#39;cf:qf&#39;</code></p>
+<p>扫描前两行数据：<br><code>scan &#39;test_table&#39;,{LIMIT=&gt;2}</code></p>
+<p>根据rowkey模糊查询：<br><code>scan &#39;test_table&#39;,{ROWPREFIXFILTER =&gt;&#39;rowkeyprefix&#39; ,LIMIT =&gt;2}</code></p>
+<p>根据时间范围查询：<br><code>scan &#39;test_table&#39;,{TIMERANGE=&gt;[1561951612000,1562642812000]}</code></p>
+<p>根据rowkey范围查询：<br><code>scan &#39;test_table&#39;,{STARTROW=&gt;&#39;start_rowkey&#39;,ENDROW=&gt;&#39;end_rowkey&#39;}</code></p>
+
           
         
       
@@ -443,7 +478,8 @@
         
           
             <p><code>brew install lrzsz</code></p>
-<p><code>cd ／usr/local/bin</code><br><code>vi iterm2-recv-zmodem.sh</code></p>
+<p><code>cd ／usr/local/bin</code></p>
+<p><code>vi iterm2-recv-zmodem.sh</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line"># Author: Matt Mastracci (matthew@mastracci.com)</div><div class="line"># AppleScript from http://stackoverflow.com/questions/4309087/cancel-button-on-osascript-in-a-bash-script</div><div class="line"># licensed under cc-wiki with attribution required </div><div class="line"># Remainder of script public domain</div><div class="line"></div><div class="line">osascript -e &apos;tell application &quot;iTerm2&quot; to version&apos; &gt; /dev/null 2&gt;&amp;1 &amp;&amp; NAME=iTerm2 || NAME=iTerm</div><div class="line">if [[ $NAME = &quot;iTerm&quot; ]]; then</div><div class="line">    FILE=`osascript -e &apos;tell application &quot;iTerm&quot; to activate&apos; -e &apos;tell application &quot;iTerm&quot; to set thefile to choose folder with prompt &quot;Choose a folder to place received files in&quot;&apos; -e &quot;do shell script (\&quot;echo \&quot;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&quot;\&quot;)&quot;`</div><div class="line">else</div><div class="line">    FILE=`osascript -e &apos;tell application &quot;iTerm2&quot; to activate&apos; -e &apos;tell application &quot;iTerm2&quot; to set thefile to choose folder with prompt &quot;Choose a folder to place received files in&quot;&apos; -e &quot;do shell script (\&quot;echo \&quot;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&quot;\&quot;)&quot;`</div><div class="line">fi</div><div class="line"></div><div class="line">if [[ $FILE = &quot;&quot; ]]; then</div><div class="line">    echo Cancelled.</div><div class="line">    # Send ZModem cancel</div><div class="line">    echo -e \\x18\\x18\\x18\\x18\\x18</div><div class="line">    sleep 1</div><div class="line">    echo</div><div class="line">    echo \# Cancelled transfer</div><div class="line">else</div><div class="line">    cd &quot;$FILE&quot;</div><div class="line">    /usr/local/bin/rz -E -e -b</div><div class="line">    sleep 1</div><div class="line">    echo</div><div class="line">    echo</div><div class="line">    echo \# Sent \-\&gt; $FILE</div><div class="line">fi</div></pre></td></tr></table></figure>
 <p><code>vi iterm2-send-zmodem.sh</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">#!/bin/bash</div><div class="line"># Author: Matt Mastracci (matthew@mastracci.com)</div><div class="line"># AppleScript from http://stackoverflow.com/questions/4309087/cancel-button-on-osascript-in-a-bash-script</div><div class="line"># licensed under cc-wiki with attribution required </div><div class="line"># Remainder of script public domain</div><div class="line"></div><div class="line">osascript -e &apos;tell application &quot;iTerm2&quot; to version&apos; &gt; /dev/null 2&gt;&amp;1 &amp;&amp; NAME=iTerm2 || NAME=iTerm</div><div class="line">if [[ $NAME = &quot;iTerm&quot; ]]; then</div><div class="line">    FILE=`osascript -e &apos;tell application &quot;iTerm&quot; to activate&apos; -e &apos;tell application &quot;iTerm&quot; to set thefile to choose file with prompt &quot;Choose a file to send&quot;&apos; -e &quot;do shell script (\&quot;echo \&quot;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&quot;\&quot;)&quot;`</div><div class="line">else</div><div class="line">    FILE=`osascript -e &apos;tell application &quot;iTerm2&quot; to activate&apos; -e &apos;tell application &quot;iTerm2&quot; to set thefile to choose file with prompt &quot;Choose a file to send&quot;&apos; -e &quot;do shell script (\&quot;echo \&quot;&amp;(quoted form of POSIX path of thefile as Unicode text)&amp;\&quot;\&quot;)&quot;`</div><div class="line">fi</div><div class="line">if [[ $FILE = &quot;&quot; ]]; then</div><div class="line">    echo Cancelled.</div><div class="line">    # Send ZModem cancel</div><div class="line">    echo -e \\x18\\x18\\x18\\x18\\x18</div><div class="line">    sleep 1</div><div class="line">    echo</div><div class="line">    echo \# Cancelled transfer</div><div class="line">else</div><div class="line">    /usr/local/bin/sz &quot;$FILE&quot; -e -b</div><div class="line">    sleep 1</div><div class="line">    echo</div><div class="line">    echo \# Received $FILE</div><div class="line">fi</div></pre></td></tr></table></figure>
@@ -1702,7 +1738,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>

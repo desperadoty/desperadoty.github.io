@@ -53,7 +53,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Note," />
 
 
 
@@ -69,17 +69,18 @@
 
 
 
-<meta name="description" content="better late than never">
+<meta name="description" content="HBase 简介  HBase是一个开源的非关系型分布式数据库，实现的编程语言为Java。它是Apache Hadoop的一部分，运行于HDFS文件系统之上，为Hadoop提供类似于Google BigTable规模的服务。因此，它可以容错地存储海量稀疏的数据。 HBase是一个高可靠、高性能、面向列、可伸缩的分布式数据库，主要用来存储非结构化和半结构化的松散数据。HBase的目标是处理非常庞大">
+<meta name="keywords" content="Note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hbase shell">
 <meta property="og:url" content="http://yoursite.com/2020/08/02/hbase-shell/index.html">
 <meta property="og:site_name" content="CharingCrossRoad">
-<meta property="og:description" content="better late than never">
+<meta property="og:description" content="HBase 简介  HBase是一个开源的非关系型分布式数据库，实现的编程语言为Java。它是Apache Hadoop的一部分，运行于HDFS文件系统之上，为Hadoop提供类似于Google BigTable规模的服务。因此，它可以容错地存储海量稀疏的数据。 HBase是一个高可靠、高性能、面向列、可伸缩的分布式数据库，主要用来存储非结构化和半结构化的松散数据。HBase的目标是处理非常庞大">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-02T14:26:30.740Z">
+<meta property="og:updated_time" content="2020-08-02T15:00:38.019Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hbase shell">
-<meta name="twitter:description" content="better late than never">
+<meta name="twitter:description" content="HBase 简介  HBase是一个开源的非关系型分布式数据库，实现的编程语言为Java。它是Apache Hadoop的一部分，运行于HDFS文件系统之上，为Hadoop提供类似于Google BigTable规模的服务。因此，它可以容错地存储海量稀疏的数据。 HBase是一个高可靠、高性能、面向列、可伸缩的分布式数据库，主要用来存储非结构化和半结构化的松散数据。HBase的目标是处理非常庞大">
 
 
 
@@ -292,6 +293,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HBase/" itemprop="url" rel="index">
+                    <span itemprop="name">HBase</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -319,7 +342,20 @@
       
 
       
-        
+        <blockquote>
+<p>HBase 简介</p>
+</blockquote>
+<p>HBase是一个开源的非关系型分布式数据库，实现的编程语言为Java。它是Apache Hadoop的一部分，运行于HDFS文件系统之上，为Hadoop提供类似于Google BigTable规模的服务。因此，它可以容错地存储海量稀疏的数据。</p>
+<p>HBase是一个高可靠、高性能、面向列、可伸缩的分布式数据库，主要用来存储非结构化和半结构化的松散数据。HBase的目标是处理非常庞大的表，可以通过水平扩展的方式，利用廉价计算机集群处理由超过10亿行数据和数百万列元素组成的数据表。</p>
+<h5 id="HBase-API"><a href="#HBase-API" class="headerlink" title="HBase API"></a>HBase API</h5><p>查看一行数据：<br><code>get &#39;test_table&#39;,&#39;rowkey&#39;</code></p>
+<p><code>get &#39;test_table&#39;,&#39;rowkey&#39;,&#39;cf:qf&#39;</code></p>
+<p>更新数据：<br><code>put &#39;test_table&#39;,&#39;rowkey&#39;,&#39;cf:qf&#39;,&#39;test_value&#39;</code></p>
+<p>删除数据某一列：<br><code>delete &#39;test_table&#39;,&#39;rowkey&#39;,&#39;cf:qf&#39;</code></p>
+<p>扫描前两行数据：<br><code>scan &#39;test_table&#39;,{LIMIT=&gt;2}</code></p>
+<p>根据rowkey模糊查询：<br><code>scan &#39;test_table&#39;,{ROWPREFIXFILTER =&gt;&#39;rowkeyprefix&#39; ,LIMIT =&gt;2}</code></p>
+<p>根据时间范围查询：<br><code>scan &#39;test_table&#39;,{TIMERANGE=&gt;[1561951612000,1562642812000]}</code></p>
+<p>根据rowkey范围查询：<br><code>scan &#39;test_table&#39;,{STARTROW=&gt;&#39;start_rowkey&#39;,ENDROW=&gt;&#39;end_rowkey&#39;}</code></p>
+
       
     </div>
     
@@ -333,6 +369,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Note/" rel="tag"># Note</a>
+          
+        </div>
       
 
       
@@ -403,8 +445,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           
             <img class="site-author-image" itemprop="image"
@@ -433,7 +484,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -469,6 +520,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#HBase-API"><span class="nav-number">1.</span> <span class="nav-text">HBase API</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
