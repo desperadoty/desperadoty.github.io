@@ -89,7 +89,7 @@
 <meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb08178.png">
 <meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb081713.png">
 <meta property="og:image" content="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb08176.png">
-<meta property="og:updated_time" content="2019-08-18T07:42:50.468Z">
+<meta property="og:updated_time" content="2019-12-22T11:06:51.560Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Android APP性能测试基础">
 <meta name="twitter:description" content="adb devices 查看CPU占用率的两条命令：①adb shell top -n 1   ②adb shell dumpsys cpuinfo | grep pkgname 基本数据存储位置adb shellcd /proc/$pidls 查看程序的内存使用情况:adb shell dumpsys meminfo pkgname VSS - Virtual Set Size 虚拟耗用内存RS">
@@ -365,7 +365,7 @@
 <p>一般来说，以上四个数据依次递减</p>
 <h5 id="帧率，最直接的影响是界面的流畅度"><a href="#帧率，最直接的影响是界面的流畅度" class="headerlink" title="帧率，最直接的影响是界面的流畅度"></a>帧率，最直接的影响是界面的流畅度</h5><p><code>adb shell dumpsys gfxinfo pkgname</code><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb08174.png" alt=""></p>
 <p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb08175.png" alt=""></p>
-<p>安卓⼿机屏幕的最⾼高帧率是60帧/秒， 那么为了保持这个帧率，一个界⾯面的渲染时间不不能超过1/60秒,即16.7ms</p>
+<p>安卓⼿机屏幕的最高帧率是60帧/秒， 那么为了保持这个帧率，一个界⾯面的渲染时间不不能超过1/60秒,即16.7ms</p>
 <p>计算方法：<br>实时帧率 = 1 / ⼀个界⾯渲染所花费的时间<br>帧率 = 60-(单位时间内所有问题帧的耗时/16.7)</p>
 <p>手机开发者选项开启GPU呈现模式分析<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb081710.png" alt=""><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb081711.png" alt=""></p>
 <h5 id="界面重绘"><a href="#界面重绘" class="headerlink" title="界面重绘"></a>界面重绘</h5><p>手机开发者选项开启调试GPU过度绘制<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/adb08179.png" alt=""><br>浅紫 → 浅绿 → 浅红 → 红色<br>1x → 2x → 3x → 4x<br>尽量避免3x、4x重绘超过屏幕的1/3</p>
@@ -496,7 +496,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">56</span>
+                <span class="site-state-item-count">58</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -576,7 +576,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -252,6 +252,294 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/Jmeter-Plugins-Once-Only-Controller/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/u.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/18/Jmeter-Plugins-Once-Only-Controller/" itemprop="url">Jmeter Plugins - Once Only Controller</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-18T11:37:16+08:00">
+                2019-06-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Jmeter/" itemprop="url" rel="index">
+                    <span itemprop="name">Jmeter</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>顾名思义，Once Only Controller在每个线程组仅执行一次。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/OOC.png" alt=""><br>一般将它作为Loop Controller的子节点，常常应用于用户登录场景。</p>
+<pre><code>eg.设置所有请求循环两次，但对登录请求添加Once Only Controller。
+</code></pre><p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/OOC1.png" alt=""><br>执行测试计划并查看结果，可见登录请求仅执行一次，其他请求执行两次。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/OOC2.png" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/Jmeter-Plugins-If-Controller/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/u.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/06/18/Jmeter-Plugins-If-Controller/" itemprop="url">Jmeter Plugins - If Controller</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-18T11:36:53+08:00">
+                2019-06-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Jmeter/" itemprop="url" rel="index">
+                    <span itemprop="name">Jmeter</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>以coding为例，私信功能是需要双方互相关注的，不然会需要图形验证码进行简单验证。</p>
+<p>If Controller应用场景：给coding发送消息，非好友则进行关注好友操作。</p>
+<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/IFC.png" alt=""><br>非好友时请求code返回值为3302<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/IFC8.png" alt=""><br>使用JSON Path Extractor提取code值，保存在sendCode变量中。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/IFC6.png" alt=""><br>使用Debug Sampler判断sendCode变量是否成功保存code值<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/IFC5.png" alt=""><br>If Controller判断code值是否为3302<br><strong>此时需要注意不要勾选Condition下方的多选框</strong><br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/IFC1.png" alt=""><br>进入到If Controller,执行关注好友请求。<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/IFC4.png" alt=""><br>关注成功<br><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/IFC7.png" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/16/Jenkins-Publish-HTML-Performance-插件配置-二）/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1404,298 +1692,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/09/Jmeter-Ant-Jenkins-接口自动化测试/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yvette Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/u.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CharingCrossRoad">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/09/Jmeter-Ant-Jenkins-接口自动化测试/" itemprop="url">Jmeter + Ant + Jenkins 接口自动化测试</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-09T10:07:43+08:00">
-                2019-05-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Jenkins/" itemprop="url" rel="index">
-                    <span itemprop="name">Jenkins</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Jenkins全局工具配置<br><code>vi ~/.zshrc</code> 查看JAVA_HOME<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkinssettings1.png" alt=""><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins32.png" alt=""></p>
-<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/Ant22.png" alt=""></p>
-<p>在Jenkins中新建一个任务<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins22.png" alt=""><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins23.png" alt=""><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins24.png" alt=""><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins25.png" alt=""><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins26.png" alt=""><br>添加Groovy Script，使测试报告正常展示HTML的CSS样式。<br><code>System.setProperty(&quot;hudson.model.DirectoryBrowserSupport.CSP&quot;, &quot;&quot;)</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins27.png" alt=""><br>修改Ant的构建文件build.xml中生成报告的路径，更新至Jenkins工作空间下。<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins30.png" alt=""><br>执行构建<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkins29.png" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/06/Jmeter-Ant-集成测试/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yvette Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/u.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CharingCrossRoad">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/05/06/Jmeter-Ant-集成测试/" itemprop="url">Jmeter & Ant 集成测试</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-06T23:29:31+08:00">
-                2019-05-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Jenkins/" itemprop="url" rel="index">
-                    <span itemprop="name">Jenkins</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><code>brew install ant</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/ant.png" alt=""><br>将Jmeter安装目录extras下的ant-jemter-1.1.1.jar包拷贝至Ant安装目录的lib中，以便Ant构建时可以找到org.programmerplanet.ant.taskdefs.jmeter.JMeterTask来运行Jmeter脚本。<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkinssettings2.png" alt=""></p>
-<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkinssettings3.png" alt=""><br>将Jmeter安装目录bin下的jmeter.properties中：jmeter.save.saveservice.output_format=csv改为xml<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkinssettings4.png" alt=""></p>
-<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkinssettings5.png" alt=""><br>在Jmeter安装目录下新建report和script文件夹，用来存放报告及脚本。<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkinssettings11.png" alt=""><br>在script目录下新建build.xml，作为Ant的构建文件，并将jmx脚本也保存在该目录下。<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkinssettings12.png" alt=""></p>
-<p>build.xml通用模板：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</div><div class="line"></div><div class="line">&lt;project name=&quot;ant-jmeter-test&quot; default=&quot;run&quot; basedir=&quot;.&quot;&gt;</div><div class="line">    &lt;tstamp&gt;</div><div class="line">        &lt;format property=&quot;time&quot; pattern=&quot;yyyyMMddHHmm&quot; /&gt;</div><div class="line">    &lt;/tstamp&gt;</div><div class="line">    &lt;!-- 需要改成自己本地的 Jmeter 目录--&gt;</div><div class="line">    &lt;property name=&quot;jmeter.home&quot; value=&quot;/usr/local/Cellar/jmeter/4.0/libexec&quot; /&gt;</div><div class="line">    &lt;!-- jmeter生成jtl格式的结果报告的路径--&gt;</div><div class="line">    &lt;property name=&quot;jmeter.result.jtl.dir&quot; value=&quot;/usr/local/Cellar/jmeter/4.0/report/jtl&quot; /&gt;</div><div class="line">    &lt;!-- jmeter生成html格式的结果报告的路径--&gt;</div><div class="line">    &lt;property name=&quot;jmeter.result.html.dir&quot; value=&quot;/usr/local/Cellar/jmeter/4.0/report/html&quot; /&gt; </div><div class="line">    &lt;!-- 生成的报告的前缀--&gt;</div><div class="line">    &lt;property name=&quot;ReportName&quot; value=&quot;TestReport&quot; /&gt;</div><div class="line">    &lt;property name=&quot;jmeter.result.jtlName&quot; value=&quot;$&#123;jmeter.result.jtl.dir&#125;/$&#123;ReportName&#125;$&#123;time&#125;.jtl&quot; /&gt;</div><div class="line">    &lt;property name=&quot;jmeter.result.htmlName&quot; value=&quot;$&#123;jmeter.result.html.dir&#125;/$&#123;ReportName&#125;$&#123;time&#125;.html&quot; /&gt;</div><div class="line">    &lt;!-- 输出生成的报告名称和存放路径--&gt;</div><div class="line">    &lt;echo message=&quot;$&#123;jmeter.result.jtlName&#125;&quot;/&gt;</div><div class="line">    &lt;echo message=&quot;$&#123;jmeter.result.htmlName&#125;&quot;/&gt;</div><div class="line">    &lt;echo message=&quot;$&#123;jmeter.result.html.dir&#125;&quot;/&gt;</div><div class="line"></div><div class="line">    &lt;target name=&quot;run&quot;&gt;</div><div class="line">        &lt;antcall target=&quot;test&quot;/&gt;</div><div class="line">        &lt;antcall target=&quot;report&quot;/&gt;</div><div class="line">    &lt;/target&gt;</div><div class="line"></div><div class="line">    &lt;!--加载jar包,解决显示时间问题--&gt;  </div><div class="line">    &lt;path id=&quot;xslt.classpath&quot;&gt;  </div><div class="line">        &lt;fileset dir=&quot;$&#123;jmeter.home&#125;/lib&quot; includes=&quot;xalan*.jar&quot;/&gt;  </div><div class="line">        &lt;fileset dir=&quot;$&#123;jmeter.home&#125;/lib&quot; includes=&quot;serializer*.jar&quot;/&gt;  </div><div class="line">    &lt;/path&gt; </div><div class="line">    </div><div class="line">    &lt;target name=&quot;test&quot;&gt;</div><div class="line">        &lt;taskdef name=&quot;jmeter&quot; classname=&quot;org.programmerplanet.ant.taskdefs.jmeter.JMeterTask&quot; /&gt;</div><div class="line">        &lt;jmeter jmeterhome=&quot;$&#123;jmeter.home&#125;&quot; resultlog=&quot;$&#123;jmeter.result.jtlName&#125;&quot;&gt;</div><div class="line">            &lt;!-- 声明要运行的脚本。&quot;*.jmx&quot;指包含此目录下的所有jmeter脚本--&gt;</div><div class="line">            &lt;testplans dir=&quot;/usr/local/Cellar/jmeter/4.0/script&quot; includes=&quot;*.jmx&quot; /&gt;</div><div class="line">            </div><div class="line">            &lt;property name=&quot;jmeter.save.saveservice.output_format&quot; value=&quot;xml&quot;/&gt;</div><div class="line">        &lt;/jmeter&gt;</div><div class="line">    &lt;/target&gt;</div><div class="line">    </div><div class="line">    &lt;target name=&quot;report&quot;&gt;</div><div class="line">    &lt;tstamp&gt; &lt;format property=&quot;report.datestamp&quot; pattern=&quot;yyyy-MM-dd HH:mm&quot; /&gt;&lt;/tstamp&gt; </div><div class="line">        &lt;xslt</div><div class="line">              classpathref=&quot;xslt.classpath&quot;  </div><div class="line">              force=&quot;true&quot; </div><div class="line">              </div><div class="line">              in=&quot;$&#123;jmeter.result.jtlName&#125;&quot;</div><div class="line">              out=&quot;$&#123;jmeter.result.htmlName&#125;&quot;</div><div class="line">              style=&quot;$&#123;jmeter.home&#125;/extras/jmeter-results-detail-report_21.xsl&quot;&gt;</div><div class="line">              &lt;!--显示dateReport的时间--&gt; </div><div class="line">              &lt;param name=&quot;dateReport&quot; expression=&quot;$&#123;report.datestamp&#125;&quot;/&gt; </div><div class="line">        &lt;/xslt&gt;</div><div class="line">        &lt;!-- 因为上面生成报告的时候，不会将相关的图片也一起拷贝至目标目录，所以，需要手动拷贝 --&gt;</div><div class="line">        &lt;copy todir=&quot;$&#123;jmeter.result.html.dir&#125;&quot;&gt;</div><div class="line">            &lt;fileset dir=&quot;$&#123;jmeter.home&#125;/extras&quot;&gt;</div><div class="line">                &lt;include name=&quot;collapse.png&quot; /&gt;</div><div class="line">                &lt;include name=&quot;expand.png&quot; /&gt;</div><div class="line">            &lt;/fileset&gt;</div><div class="line">        &lt;/copy&gt;</div><div class="line">    &lt;/target&gt;</div><div class="line">&lt;/project&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">build.xml中jmeter.home是/usr/local/Cellar/jmeter/4.0/libexec，而不是/usr/local/Cellar/jmeter/4.0/libexec/lib</div></pre></td></tr></table></figure>
-<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkinssettings6.png" alt=""><br>配置完成，执行<code>ant run</code>。<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkinssettings7.png" alt=""><br>前往新建的report/html文件夹查看测试报告。<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkinssettings13.png" alt=""><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/jenkinssettings8.png" alt=""></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1749,7 +1745,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">56</span>
+                <span class="site-state-item-count">58</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1813,7 +1809,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2019</span>
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
