@@ -69,18 +69,18 @@
 
 
 
-<meta name="description" content="获取kubectl命令文档 =&amp;gt;kubectl的常用格式为： kubectl 动作 方法  kubectl  查看集群中可用的节点（nodes）=&amp;gt;获取可部署应用的节点，节点为物理机或虚拟  kubectl get nodes  获取运行中的pods  kubectl get pods kubectl get pods --all-namespaces|grep $POD_NAME">
+<meta name="description" content="获取kubectl命令文档 =&amp;gt;kubectl的常用格式为： kubectl 动作 方法   kubectl  查看集群中可用的节点（nodes）=&amp;gt;获取可部署应用的节点，节点为物理机或虚拟   kubectl get nodes    获取运行中的pods   kubectl get pods   kubectl get pods --all-namespaces|grep $PO">
 <meta name="keywords" content="Note">
 <meta property="og:type" content="article">
 <meta property="og:title" content="k8s shell">
 <meta property="og:url" content="http://yoursite.com/2020/08/02/k8s-shell/index.html">
 <meta property="og:site_name" content="CharingCrossRoad">
-<meta property="og:description" content="获取kubectl命令文档 =&amp;gt;kubectl的常用格式为： kubectl 动作 方法  kubectl  查看集群中可用的节点（nodes）=&amp;gt;获取可部署应用的节点，节点为物理机或虚拟  kubectl get nodes  获取运行中的pods  kubectl get pods kubectl get pods --all-namespaces|grep $POD_NAME">
+<meta property="og:description" content="获取kubectl命令文档 =&amp;gt;kubectl的常用格式为： kubectl 动作 方法   kubectl  查看集群中可用的节点（nodes）=&amp;gt;获取可部署应用的节点，节点为物理机或虚拟   kubectl get nodes    获取运行中的pods   kubectl get pods   kubectl get pods --all-namespaces|grep $PO">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-08-02T15:51:05.237Z">
+<meta property="og:updated_time" content="2021-02-21T15:23:13.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="k8s shell">
-<meta name="twitter:description" content="获取kubectl命令文档 =&amp;gt;kubectl的常用格式为： kubectl 动作 方法  kubectl  查看集群中可用的节点（nodes）=&amp;gt;获取可部署应用的节点，节点为物理机或虚拟  kubectl get nodes  获取运行中的pods  kubectl get pods kubectl get pods --all-namespaces|grep $POD_NAME">
+<meta name="twitter:description" content="获取kubectl命令文档 =&amp;gt;kubectl的常用格式为： kubectl 动作 方法   kubectl  查看集群中可用的节点（nodes）=&amp;gt;获取可部署应用的节点，节点为物理机或虚拟   kubectl get nodes    获取运行中的pods   kubectl get pods   kubectl get pods --all-namespaces|grep $PO">
 
 
 
@@ -343,27 +343,26 @@
 
       
         <ul>
-<li>获取kubectl命令文档 =&gt;kubectl的常用格式为： kubectl 动作 方法</li>
+<li><p>获取kubectl命令文档 =&gt;kubectl的常用格式为： kubectl 动作 方法</p>
+<p>  <code>kubectl</code></p>
+</li>
+<li><p>查看集群中可用的节点（nodes）=&gt;获取可部署应用的节点，节点为物理机或虚拟</p>
+<p>  <code>kubectl get nodes</code></p>
+</li>
 </ul>
-<p><code>kubectl</code></p>
 <ul>
-<li>查看集群中可用的节点（nodes）=&gt;获取可部署应用的节点，节点为物理机或虚拟</li>
+<li><p>获取运行中的pods</p>
+<p>  <code>kubectl get pods</code></p>
+<p>  <code>kubectl get pods --all-namespaces|grep $POD_NAME</code></p>
+</li>
+<li><p>查看pod中的容器以及镜像</p>
+<p>  <code>kubectl describe pods</code></p>
+</li>
+<li><p>进入到pod的容器中</p>
+<p>  <code>kubectl exec -ti $POD_NAME bash</code></p>
+<p>  <code>kubectl exec -ti $POD_NAME /bin/bash -n $POD_NAME</code></p>
+</li>
 </ul>
-<p><code>kubectl get nodes</code></p>
-<ul>
-<li>获取运行中的pods</li>
-</ul>
-<p><code>kubectl get pods</code></p>
-<p><code>kubectl get pods --all-namespaces|grep $POD_NAME</code></p>
-<ul>
-<li>查看pod中的容器以及镜像</li>
-</ul>
-<p><code>kubectl describe pods</code></p>
-<ul>
-<li>进入到pod的容器中</li>
-</ul>
-<p><code>kubectl exec -ti $POD_NAME bash</code></p>
-<p><code>kubectl exec -ti $POD_NAME /bin/bash -n $POD_NAME</code></p>
 
       
     </div>
