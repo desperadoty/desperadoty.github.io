@@ -252,6 +252,329 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/30/Git-Lab安装与配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/u.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/30/Git-Lab安装与配置/" itemprop="url">Git Lab 安装与配置</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-30T17:26:53+08:00">
+                2018-07-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="https://docs.docker.com/docker-for-mac/install/" target="_blank" rel="external">Download Docker</a></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/docker%E4%B8%8B%E8%BD%BD%E9%A1%B5%E9%9D%A2.png?" alt=""></p>
+<h5 id="Install-Portainer"><a href="#Install-Portainer" class="headerlink" title="Install Portainer"></a>Install Portainer</h5><p><code>docker run -d -v &quot;/var/run/docker.sock:/var/run/docker.sock&quot; -p 9000:9000 portainer/portainer</code></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/install%20portainer.png?" alt=""></p>
+<p><code>localhost:9000</code></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/portainer.png?" alt=""><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/portainer2.png?" alt=""><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/portainer3.png?" alt=""></p>
+<h5 id="Install-gitlab-ce"><a href="#Install-gitlab-ce" class="headerlink" title="Install gitlab-ce"></a>Install gitlab-ce</h5><p><code>sudo docker run --detach \
+    --hostname mygitlab.com \
+    --publish 443:443 --publish 81:80 --publish 22:22 \
+    --name gitlab \
+    --restart always \
+    --volume /Users/Shared/gitlab/config:/etc/gitlab \
+    --volume /Users/Shared/gitlab/logs:/var/log/gitlab \
+    --volume /Users/Shared/gitlab/data:/var/opt/gitlab \
+    gitlab/gitlab-ce:latest</code></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/gitlab.png?" alt=""></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/gitlab2.png?" alt=""> </p>
+<p><code>localhost:81</code></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/localhost81.png?" alt=""></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/gitlab4.png?" alt=""></p>
+<h5 id="Install-gitlab-runner"><a href="#Install-gitlab-runner" class="headerlink" title="Install gitlab-runner"></a>Install gitlab-runner</h5><p><a href="https://docs.gitlab.com/runner/install/docker.html" target="_blank" rel="external">GitLab Docs</a></p>
+<p><code>docker run -d --name gitlab-runner --restart always \
+  -v /Users/Shared/gitlab-runner/config:/etc/gitlab-runner \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  gitlab/gitlab-runner:latest</code></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/gitlabrunner.png?" alt=""></p>
+<h5 id="Register-gitlab-runner"><a href="#Register-gitlab-runner" class="headerlink" title="Register gitlab-runner"></a>Register gitlab-runner</h5><p><code>docker exec -it gitlab-runner gitlab-runner register</code></p>
+<p><code>https://gitlab.com</code></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/runnertoken2.png?" alt=""></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/runner%20register2.png?" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/27/BeautifulSoup安装及使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/u.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/27/BeautifulSoup安装及使用/" itemprop="url">BeautifulSoup 安装及使用</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T13:53:07+08:00">
+                2018-07-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><code>sudo pip3 install beautifulsoup4</code></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E5%AE%89%E8%A3%85beautifulsoup4.png?" alt=""></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E6%88%90%E5%8A%9F%E5%AE%89%E8%A3%85bs4.png?" alt=""></p>
+<p><a href="http://phantomjs.org/download.html" target="_blank" rel="external">Download Phantomjs</a></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E4%B8%8B%E8%BD%BDphantomjs.png?" alt=""></p>
+<p><code>export PATH=&quot;$PATH:/Users/yvetteyoung/phantomjs-2.1.1-macosx/bin</code></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E5%AE%89%E8%A3%85phantomjs2.png?" alt=""></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/phantomjslearning.png?" alt=""></p>
+<p><strong><em>Selenium support for PhantomJS has been deprecated, please use headless</em></strong></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/driverlearning.png?" alt=""></p>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/indexhtml.png?" alt=""></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/11/Virtualenv环境搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1420,303 +1743,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/09/Java23种设计模式之单例模式/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yvette Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/u.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CharingCrossRoad">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/09/Java23种设计模式之单例模式/" itemprop="url">Java23种设计模式之单例模式</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-09T10:37:44+08:00">
-                2017-10-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Java23种设计模式：<br>Abstract Factory(抽象工厂模式)、Builder(建造者模式)、Factory Method(工厂方法模式)、Prototype(原始模型模式)、Singleton(单例模式)、Facade(门面模式)、Adapter(适配器模式)、Bridge(桥梁模式)、Composite(合成模式)、Decorator(装饰模式)、Flyweight(享元模式)、Proxy(代理模式)、Command(命令模式)、Interpreter(解释器模式)、Visitor(访问者模式)、Iterator(迭代子模式)、Mediator(调停者模式)、Memento(备忘录模式)、Observer(观察者模式)、State(状态模式)、Strategy(策略模式)、Template Method(模板方法模式)、Chain Of Responsibility(责任链模式)。</p>
-<p>单例模式：<br>确保一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。</p>
-<h3 id="饿汉式单例"><a href="#饿汉式单例" class="headerlink" title="饿汉式单例"></a>饿汉式单例</h3><p>饿汉式单例在单例类被加载时就实例化一个对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">public class Singleton &#123;</div><div class="line">    private static Singleton singleton = new Singleton();</div><div class="line">    private Singleton() &#123;&#125;</div><div class="line">    public static Singleton getInstance() &#123;</div><div class="line">        return singleton;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="懒汉式单例"><a href="#懒汉式单例" class="headerlink" title="懒汉式单例"></a>懒汉式单例</h3><p>懒汉式单例在调用getInstance方法时实例化对象。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">public class Singleton &#123;</div><div class="line">    private static Singleton singleton;</div><div class="line">    private Singleton() &#123;&#125;</div><div class="line">    public static synchronized Singleton getInstance() &#123;</div><div class="line">        if(singleton == null)</div><div class="line">            singleton = new Singleton();</div><div class="line">        return singleton;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="单例模式的优点"><a href="#单例模式的优点" class="headerlink" title="单例模式的优点"></a>单例模式的优点</h3><ul>
-<li>只有一个可全局访问的对象，节省内存空间。</li>
-<li>避免频繁地创建和销毁对象，可以提高性能。</li>
-<li>避免对共享资源的多重占用。</li>
-</ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/07/Nginx负载均衡与反向代理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Yvette Young">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/u.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="CharingCrossRoad">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/07/Nginx负载均衡与反向代理/" itemprop="url">Nginx负载均衡与反向代理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-07T15:55:36+08:00">
-                2017-10-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/NetWork/" itemprop="url" rel="index">
-                    <span itemprop="name">NetWork</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><p>负载均衡(Loading Balancing)，是一种计算机网络技术，用来在多个计算机（计算机集群）、网络连接、CPU、磁盘驱动器或其他资源中分配负载，以达到最优化资源使用、最大化吞吐率、最小化响应时间、同时避免过载的目的。</p>
-<h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><p>反向代理(Reverse Proxy)，是一种代理服务器。它根据客户端的请求，从后端的服务器（如WEB服务器）上获取资源，然后再将这些资源返回给客户端。与前向代理不同，前向代理作为一个媒介将互联网上获取的资源返回给相关联的客户端，而反向代理是在服务器端作为代理使用，而不是客户端。客户端通过前向代理可以访问很多不同的资源，而反向代理是很多客户端都通过它访问不同后端服务器上的资源，而不需要知道这些后端服务器的存在，而以为所有资源都来自愿这个反向代理服务器。<br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86.png?" alt=""></p>
-<h3 id="Nginx安装与配置"><a href="#Nginx安装与配置" class="headerlink" title="Nginx安装与配置"></a>Nginx安装与配置</h3><p>1.安装<br><code>brew install nginx</code><br>2.配置<br><code>sudo vim /usr/local/etc/nginx/nginx.conf</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/nginx%E4%BF%AE%E6%94%B9http%E7%9B%91%E5%90%AC%E7%AB%AF%E5%8F%A3.png?" alt=""><br>3.常用命令<br>启动nginx <code>sudo nginx</code><br>重启nginx <code>sudo nginx -s reload</code><br>停止nginx <code>sudo nginx -s stop</code></p>
-<h3 id="Nginx反向代理"><a href="#Nginx反向代理" class="headerlink" title="Nginx反向代理"></a>Nginx反向代理</h3><p>1.通过修改hosts文件模拟多个域名访问本机的nginx。<br><code>sudo vim /etc/hosts</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E4%BF%AE%E6%94%B9hosts.png?" alt=""><br>2.修改nginx配置文件设置反向代理<br><code>sudo vim /usr/local/etc/nginx/nginx.conf</code><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/%E4%BF%AE%E6%94%B9nginx%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6.png?" alt=""><br>3.重启nginx服务<br><code>sudo nginx -s reload</code><br>此时，在浏览器访问testnginx.com会访问到www.bilibili.com;访问testreverse.com会访问到www.acfun.cn;访问testproxy.com会访问到www.zhihu.com。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1770,7 +1796,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1781,7 +1807,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1834,7 +1860,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

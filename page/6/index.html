@@ -252,6 +252,278 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/30/TCP三次握手及四次挥手/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/u.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/30/TCP三次握手及四次挥手/" itemprop="url">TCP三次握手及四次挥手</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-30T22:20:27+08:00">
+                2017-09-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>OSI七层模型：<br>物理层、数据链路层、网络层、传输层、会话层、表示层、应用层。</p>
+<p>TCP/IP协议族常用协议：<br>应用层：HTTP,FTP,DNS<br>传输层：TCP,UDP<br>网络层：IP,ICMP<br>数据链路层：PPP</p>
+<p>建立TCP连接的三次握手过程：</p>
+<ol>
+<li>Client给Server发送一个SYN报文请求</li>
+<li>Server给Client发送SYN+ACK报文，告知对方已收到请求</li>
+<li>Client再给Server一个ACK报文回应</li>
+</ol>
+<p><strong>中断连接端可以是Client也可以是Server</strong></p>
+<p>断开TCP连接的四次挥手过程：</p>
+<ol>
+<li>Client给Server发送FIN报文请求</li>
+<li>Server给Client发送ACK报文，告知对方已收到请求</li>
+<li>Server给Client发送FIN报文</li>
+<li>Client给Server发送ACK报文回应</li>
+</ol>
+<p>为什么断开连接需要四次挥手呢？<br>原因是在断开连接的时候，Server端收到FIN报文，可能并不会立即关闭Socket，而是先回复一个ACK报文，告诉Client自己已收到请求，等Server端的所有报文都发送完，才会发送FIN报文给Client。这时候，Client收到FIN报文就知道可以断开连接了，就给Server发送一个ACK报文回应。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/28/Java多线程/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yvette Young">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/u.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="CharingCrossRoad">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/09/28/Java多线程/" itemprop="url">Java多线程</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-28T17:20:05+08:00">
+                2017-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在OS中引入进程的目的是为了使多个程序能并发执行，以提高资源利用率和系统吞吐量，引入线程的目的是为了减少程序在并发执行时所付出的时空开销，使OS具有更好的并发性。</p>
+<p>在引入线程的OS中，进程是拥有资源的基本单位，线程是调度和分派的基本单位。</p>
+<h3 id="多线程的实现方式"><a href="#多线程的实现方式" class="headerlink" title="多线程的实现方式"></a>多线程的实现方式</h3><ul>
+<li><strong>继承Thread类</strong></li>
+</ul>
+<p><img src="https://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/MyThread2.png" alt=""><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/MyThreadDemo2.png" alt=""></p>
+<ul>
+<li><strong>实现Runnable接口</strong></li>
+</ul>
+<p><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/MyThread.png" alt=""><br><img src="http://charingcrossroad.oss-cn-shenzhen.aliyuncs.com/MyThreadDemo.png" alt=""></p>
+<p>从上面的实例来看，直接继承Thread类，创建的3个线程每一个都售出3张票；而实现Runnable接口，创建的3个线程一起共售出3张票，更符合现实需求。</p>
+<p>一般都选择实现Runnable接口，主要有如下优势：</p>
+<ul>
+<li>可以避免由于Java单继承带来的弊端</li>
+<li>可以增强程序的健壮性，代码能够被多个线程共享，代码与数据是独立的</li>
+<li>适合多个相同程序代码的线程区处理同一资源的情况</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/28/Java集合框架/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1522,7 +1794,7 @@
             
               <a href="/archives/">
             
-                <span class="site-state-item-count">58</span>
+                <span class="site-state-item-count">60</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1533,7 +1805,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1586,7 +1858,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
